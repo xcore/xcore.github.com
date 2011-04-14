@@ -1,0 +1,124 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Versioning &mdash; XCore Community Documentation v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <link rel="top" title="XCore Community Documentation v0.1 documentation" href="index.html" />
+    <link rel="up" title="About the Repositories" href="About-the-repositories.html" />
+    <link rel="next" title="Repository index" href="repo-index.html" />
+    <link rel="prev" title="Repository management" href="Repository-management.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="Repository-management.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="repo-index.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="versioning">
+<h1>Versioning<a class="headerlink" href="#versioning" title="Permalink to this headline">¶</a></h1>
+<p>This document describes how version numbering reflects the type of changes in a new release.
+The version numbering is a normal one: X.Y.Z, where X is major, Y is minor and Z is bugfix release number. If Z is zero, it is omitted from the version string. So, for example, 1.1.2 and 1.2 are valid version numbers but 1.2.0 is not.
+Each number is (usually) increased by one at a time, and when one of the numbers is increased, the less significant numbers are reset to zero. To show an example, a valid sequence would be 1.0.3 → 1.0.4 → 1.1 → 1.1.1.</p>
+<p>When a new release is made, the version number is increased according to the following rules:</p>
+<ul class="simple">
+<li>If there are only bugfixes and the API hasn’t changed at all, the bugfix number Z is increased, e.g. 1.0.3 → 1.0.4</li>
+<li>If there are backwards compatible changes (for example, additions to API), the minor number Y is increased, e.g. 1.0.4 → 1.1</li>
+<li>If there are backwards incompatible changes (for example, changed or removed API), the major number X is increased, e.g. 1.2 → 2.0</li>
+</ul>
+<p>This versioning scheme also dictates the development of new features and especially changes in API. There should be a considerable amount of new features when the minor version is increased so that it doesn’t grow very fast. And the major version number should only be increased when there is a serious reason to make backwards incompatible changes to the design.</p>
+<p>When a design is in early development, its primary version (X) will be 0.  Users of designs at primary version 0 should have few expectations, these designs may not even build.  However, the transition to version 1.Y.Z requires some compliance to established models, which will depend on the class of design (software component, hardware design etc).  For further details see <a class="reference internal" href="Classes-of-Repository.html"><em>Classes of Repositories</em></a>.</p>
+<p>This scheme follows that of <a class="reference external" href="http://semver.org/">Semantic Versioning</a>.</p>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">XCore Community Documentation (0.1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="About-the-community.html">About the Community</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="About-the-repositories.html">About the Repositories</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Classes-of-Repository.html">Classes of Repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Repository-usage.html">Repository usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Repository-management.html">Repository management</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repo-index.html">Repository index</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Participating-in-the-community.html">Participating in the Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About-XMOS-technology.html">About XMOS Technology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Planned-developments.html">Planned Developments</a></li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

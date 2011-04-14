@@ -1,0 +1,171 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Software Components Background &mdash; XCore Community Documentation v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <link rel="top" title="XCore Community Documentation v0.1 documentation" href="index.html" />
+    <link rel="up" title="Classes of Repositories" href="Classes-of-Repository.html" />
+    <link rel="next" title="Applications" href="Applications.html" />
+    <link rel="prev" title="Classes of Repositories" href="Classes-of-Repository.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="Classes-of-Repository.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="Applications.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="software-components-background">
+<h1>Software Components Background<a class="headerlink" href="#software-components-background" title="Permalink to this headline">¶</a></h1>
+<p>A key aim of this project is to encourage development of firmware for use in applications based on XMOS technology, and more specifically, for the development of inter operable and re-usable software. For this vision to be realised, there need to be some standards, especially for component level software.</p>
+<p>There is value in components using a common structure, interface, test
+harness, documentation, etc. This common part is still; in its infancy,
+and hence the guidelines below will evolve over time.</p>
+<p>As a standard, we suggest that all documentation is supplied in ReStructuredText format (.rst). There is a good <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickstart.html">primer</a> and <a class="reference external" href="http://docutils.sourceforge.net/docs/user/rst/quickref.html">quick reference</a> on sourceforge. The xdoc repository (<a class="reference external" href="http://github.com/xcore/xdoc">http://github.com/xcore/xdoc</a>) provides a useful structure for building larger reference documentation based on Sphinx, which uses ReStructuredText as its markup format (<a class="reference external" href="http://sphinx.pocoo.org/">http://sphinx.pocoo.org/</a>) .</p>
+<div class="section" id="component-metadata">
+<h2>Component Metadata<a class="headerlink" href="#component-metadata" title="Permalink to this headline">¶</a></h2>
+<p>This is an abstract machine readable description of the component. This data is kept in its own file at the top level of the repo. It includes:</p>
+<ul class="simple">
+<li>A guide to expected resource usage of the component in terms of MIPs, threads, memory, ports, timers, clock blocks, synchronizers and locks. The resource usage may include some padding to ensure that future enhancements or bug fixes remain within the resource budget allocated for a component.</li>
+<li>A Pretty Picture. Ideally components will have a block diagram or other useful picture in SVG format with a standard filename at the top level of the repo. This is ideally incorporated in the README.rst (and hence it would appear on the repo home page). It can also be reused in the User Guide.</li>
+<li>API type designations (e.g. channels, shared memory etc) and component sub-category designations</li>
+</ul>
+</div>
+<div class="section" id="readme-rst">
+<h2>README.rst<a class="headerlink" href="#readme-rst" title="Permalink to this headline">¶</a></h2>
+<p>A README.rst file should be placed at the top level of the repo, and github will then render it as the home page of the repo. An example can be found in the <a class="reference external" href="https://github.com/xcore/xcore_template">xcore_template</a> repo.</p>
+</div>
+<div class="section" id="changelog-rst">
+<h2>CHANGELOG.rst<a class="headerlink" href="#changelog-rst" title="Permalink to this headline">¶</a></h2>
+<p>A note in ReStructuredText format defining the changes to the component since its last release.</p>
+</div>
+<div class="section" id="user-guide">
+<h2>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h2>
+<p>Ideally a component will have a User Guide covering the API, System Architecture and Key features.</p>
+</div>
+<div class="section" id="developer-documentation-formal-spec-and-testplan">
+<h2>Developer Documentation: Formal Spec and Testplan<a class="headerlink" href="#developer-documentation-formal-spec-and-testplan" title="Permalink to this headline">¶</a></h2>
+<p>This is an optional set of documentation. XMOS uses this internally to formally specify component and application features, which can be extracted by automated tools and associated with a formal testplan which relates testcases to features and provides a structured way of tracking the subsequent verification process.</p>
+<p>Developer documentation is, as you would expect, a guide for developers as opposed to end users, which is why we keep them separate. This is entirely optional, especially for simple components.</p>
+</div>
+<div class="section" id="build-infrastructure">
+<h2>Build Infrastructure<a class="headerlink" href="#build-infrastructure" title="Permalink to this headline">¶</a></h2>
+<p>A key requirement for any component worthy of the term is that it has a common system for building it. An application (and more specifically, the application build infrastructure) is much more easily constructed from a series of components which already follow a similar recipe. If you clone <a class="reference external" href="https://github.com/xcore/xcore_template">xcore_template</a> then it is easy to use the makefiles from <a class="reference external" href="https://github.com/xcore/xcommon">xcommon</a> for your repo.</p>
+</div>
+<div class="section" id="test-infrastructure">
+<h2>Test Infrastructure<a class="headerlink" href="#test-infrastructure" title="Permalink to this headline">¶</a></h2>
+<p>If a component has a test infrastructure, it should follow the standard test infrastructure methodology that covers the mechanism for defining unit tests using the XMOS simulator and plugin testbenches, and make it easy for developers to add new tests.</p>
+</div>
+<div class="section" id="hardware-demo-test-applications">
+<h2>Hardware Demo/Test applications<a class="headerlink" href="#hardware-demo-test-applications" title="Permalink to this headline">¶</a></h2>
+<p>A description of a test application provided with the component in order to demonstrate or test its capability. If possible, the test application should run on a readily available development board. We believe that successful sharing of components is going to greatly improved by having components that run on common, openly specified and above all cheap development platforms to prove that they really do work! This is why we are trying to establish an <a class="reference external" href="https://github.com/xcore/hw_slicekit_system">open source hardware standard</a> project.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">XCore Community Documentation (0.1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="About-the-community.html">About the Community</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="About-the-repositories.html">About the Repositories</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="Classes-of-Repository.html">Classes of Repositories</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Software Components Background</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#component-metadata">Component Metadata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#readme-rst">README.rst</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#changelog-rst">CHANGELOG.rst</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-guide">User Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#developer-documentation-formal-spec-and-testplan">Developer Documentation: Formal Spec and Testplan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#build-infrastructure">Build Infrastructure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#test-infrastructure">Test Infrastructure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hardware-demo-test-applications">Hardware Demo/Test applications</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Hardware-designs.html">Hardware Designs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tools.html">Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Repository-usage.html">Repository usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Repository-management.html">Repository management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Versioning.html">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repo-index.html">Repository index</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Participating-in-the-community.html">Participating in the Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About-XMOS-technology.html">About XMOS Technology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Planned-developments.html">Planned Developments</a></li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

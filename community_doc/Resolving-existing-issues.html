@@ -1,0 +1,143 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Resolving existing issues &mdash; XCore Community Documentation v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <link rel="top" title="XCore Community Documentation v0.1 documentation" href="index.html" />
+    <link rel="up" title="Participating in the Community" href="Participating-in-the-community.html" />
+    <link rel="next" title="Contributing to documentation" href="Contributing-to-documentation.html" />
+    <link rel="prev" title="Reporting an issue" href="Reporting-an-issue.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="Reporting-an-issue.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="Contributing-to-documentation.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="resolving-existing-issues">
+<h1>Resolving existing issues<a class="headerlink" href="#resolving-existing-issues" title="Permalink to this headline">¶</a></h1>
+<p>As a next step beyond reporting issues, you can help the community resolve existing issues. If you check the open issues list in any repository, you’ll likely find issues already requiring attention. What can you do for these? Quite a bit, actually:</p>
+<div class="section" id="verifying-issue-reports">
+<h2>Verifying Issue Reports<a class="headerlink" href="#verifying-issue-reports" title="Permalink to this headline">¶</a></h2>
+<p>For starters, it helps to just verify issue reports. Can you reproduce the reported issue on your own computer? If so, you can add a comment to the ticket saying that you’re seeing the same thing.  If something is very vague, can you help squish it down into something specific? Maybe you can provide additional information to help reproduce a issue, or eliminate needless steps that aren’t required to help demonstrate the problem.</p>
+<p>If you find an issue report without a test, it’s very useful to contribute a failing test. This is also a great way to get started exploring the source code: looking at the existing test files will teach you how to write more tests. New tests are contributed like any other piece of code - see <a class="reference internal" href="Contributing-to-the-codebase.html"><em>Contributing to the codebase</em></a>.</p>
+<p>Anything you can do to make issue reports more succinct or easier to reproduce is a help to folks trying to write code to fix those issues – whether you end up writing the code yourself or not.</p>
+</div>
+<div class="section" id="fixing-other-peoples-code">
+<h2>Fixing Other Peoples Code<a class="headerlink" href="#fixing-other-peoples-code" title="Permalink to this headline">¶</a></h2>
+<p>To fix code in a repo you don&#8217;t have push access to, you can simply fork it, fix it and then submit an issue with a link to the fork. If the fix looks good, you can then submit a pull request to the origin repo.</p>
+<p>Some things to think about when submitting fixes:</p>
+<ul>
+<li><p class="first">Does the fix actually work?</p>
+</li>
+<li><p class="first">Are you happy with the tests? Can you follow what they’re testing? Are there any tests missing?</p>
+</li>
+<li><p class="first">Does the documentation still seem right to you?</p>
+</li>
+<li><p class="first">Do you like the implementation? Can you think of a nicer or faster way to implement a part of their change?</p>
+</li>
+<li><p class="first">Once you’re happy that the fix contains a good change, comment on the issue indicating your approval. Your comment should indicate that you like the change and what you like about it. Something like:</p>
+<blockquote>
+<div><p>I like the way you’ve restructured that code in uart_rx_impl.xc, much nicer. The tests look good too.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>If your comment simply says “+1”, then odds are that other reviewers aren’t going to take it too seriously. Show that you took the time to review the fix.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">XCore Community Documentation (0.1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="About-the-community.html">About the Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About-the-repositories.html">About the Repositories</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Participating-in-the-community.html">Participating in the Community</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Reporting-an-issue.html">Reporting an issue</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Resolving existing issues</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#verifying-issue-reports">Verifying Issue Reports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixing-other-peoples-code">Fixing Other Peoples Code</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Contributing-to-documentation.html">Contributing to documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Contributing-to-the-codebase.html">Contributing to the codebase</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="About-XMOS-technology.html">About XMOS Technology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Planned-developments.html">Planned Developments</a></li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

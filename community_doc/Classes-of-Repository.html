@@ -1,0 +1,129 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Classes of Repositories &mdash; XCore Community Documentation v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <link rel="top" title="XCore Community Documentation v0.1 documentation" href="index.html" />
+    <link rel="up" title="About the Repositories" href="About-the-repositories.html" />
+    <link rel="next" title="Software Components Background" href="Software-components.html" />
+    <link rel="prev" title="About the Repositories" href="About-the-repositories.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="About-the-repositories.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="Software-components.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="classes-of-repositories">
+<h1>Classes of Repositories<a class="headerlink" href="#classes-of-repositories" title="Permalink to this headline">¶</a></h1>
+<p>Unlike many open source projects, the Xcore  open source project consists of many different classes of design, and we expect the number of classes may also grow over time.  Each class may have its own conventions - for example, creating a v1 release of a software component will have a completely different set of requirements to the release of a v1 printed circuit board.  There may be other differences relating to how a project is built and tested etc.</p>
+<p>The following lists the different classes that we currently use and/or expect in the future.  The links are to pages which describe attributes that they share in common, which could relate to build systems, test infrastructure, versioning etc.  These restrictions enable the use of automated build and regression systems, which we can all use to interpret the status and maturity of development projects:</p>
+<ul class="simple">
+<li><a class="reference internal" href="Software-components.html"><em>Software Components Background</em></a> are bits of code that can be used in applications. They are written for other developers, and can be integrated by other developers. Software components may require a specific peripheral device on one or more I/O ports.</li>
+<li><a class="reference internal" href="Applications.html"><em>Applications</em></a> are programs that are designed for an end-user. An application may use code form one or more Software components. Applications are often written for a particular hardware platform that incorporates specific peripheral devices on specific I/O pins.</li>
+<li><a class="reference internal" href="Hardware-designs.html"><em>Hardware Designs</em></a> are schematics and or gerber files that specify a design that incorporates one or more XCores. Hardware designs often have a port-map stating which device is connected to which I/O port, and a network description.</li>
+<li><a class="reference internal" href="Tools.html"><em>Tools</em></a> are programs that are used by developers to create software and/or hardware. Example tools are assemblers, debuggers, and compilers. Some tools will not be hosted in github, because they have a home elsewhere (for example, the LLVM compiler).</li>
+</ul>
+<p>Follow the links above to find out more, or, to contribute your views in how the community should manage this diversity, post to the <a class="reference external" href="https://www.xcore.com/forum/viewforum.php?f=32">Xcore open source project user forum</a></p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">XCore Community Documentation (0.1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="About-the-community.html">About the Community</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="About-the-repositories.html">About the Repositories</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Classes of Repositories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Software-components.html">Software Components Background</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Hardware-designs.html">Hardware Designs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tools.html">Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Repository-usage.html">Repository usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Repository-management.html">Repository management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Versioning.html">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repo-index.html">Repository index</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Participating-in-the-community.html">Participating in the Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About-XMOS-technology.html">About XMOS Technology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Planned-developments.html">Planned Developments</a></li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

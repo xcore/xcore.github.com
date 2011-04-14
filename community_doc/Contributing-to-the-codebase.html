@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Contributing to the codebase &mdash; XCore Community Documentation v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <link rel="top" title="XCore Community Documentation v0.1 documentation" href="index.html" />
+    <link rel="up" title="Participating in the Community" href="Participating-in-the-community.html" />
+    <link rel="next" title="About XMOS Technology" href="About-XMOS-technology.html" />
+    <link rel="prev" title="Contributing to documentation" href="Contributing-to-documentation.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="Contributing-to-documentation.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="About-XMOS-technology.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="contributing-to-the-codebase">
+<h1>Contributing to the codebase<a class="headerlink" href="#contributing-to-the-codebase" title="Permalink to this headline">¶</a></h1>
+<p>When you’re ready to take the plunge, one of the most helpful ways to contribute to the Xcore open source projects is to actually submit source code. Here’s a step-by-step listing of the things you need to do to make this a successful experience.</p>
+<div class="section" id="learn-the-language-and-the-framework">
+<h2>Learn the Language and the Framework<a class="headerlink" href="#learn-the-language-and-the-framework" title="Permalink to this headline">¶</a></h2>
+<p>Learn at least something about XMOS technology, XC and the Xcore open source projects - there are some pointers in <a class="reference internal" href="About-XMOS-technology.html"><em>About XMOS Technology</em></a>. Guidelines and examples of each class of open source repository can also be found in <a class="reference internal" href="Classes-of-Repository.html"><em>Classes of Repositories</em></a>.</p>
+</div>
+<div class="section" id="install-git">
+<h2>Install git<a class="headerlink" href="#install-git" title="Permalink to this headline">¶</a></h2>
+<p>The Xcore open source project uses git for source code control. The
+<a class="reference external" href="http://git-scm.com/">git homepage</a> has installation instructions. If
+you’re on OS X, use the <a class="reference external" href="http://code.google.com/p/git-osx-installer/">Git for OS X installer</a>. If you’re unfamiliar with git, there are a variety of resources on the net that will help you learn more:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">Everyday Git</a> will teach you just enough about git to get by.</li>
+<li>The <a class="reference external" href="https://peepcode.com/products/git">PeepCode screencast</a> on git ($9) is easier to follow.</li>
+<li>GitHub offers links to a variety of git resources.</li>
+<li><a class="reference external" href="http://progit.org/book/">Pro Git</a> is an entire book about git with a Creative Commons license.</li>
+</ul>
+</div>
+<div class="section" id="pick-a-repository-and-fork-the-source-code">
+<h2>Pick a repository and Fork the Source Code<a class="headerlink" href="#pick-a-repository-and-fork-the-source-code" title="Permalink to this headline">¶</a></h2>
+<p>Unlike many open source projects, the Xcore open source project
+consist of many repositories of multiple types.  We use the
+Fork-And-Pull model - once you have found one that you are interested
+in contributing to, you need to <a class="reference external" href="http://help.github.com/forking/">create a fork</a>.</p>
+</div>
+<div class="section" id="write-your-code">
+<h2>Write Your Code<a class="headerlink" href="#write-your-code" title="Permalink to this headline">¶</a></h2>
+<p>Now get busy and add your code to the project (or edit the existing code). You’re on your fork now, so you can write whatever you want. But if you’re planning to submit your change back for inclusion in the Xcore open source projects, keep a few things in mind:</p>
+<ul class="simple">
+<li>Get the code right</li>
+<li>Follow community best practice</li>
+<li>Include tests that fail without your code, and pass with it</li>
+<li>Update the documentation</li>
+</ul>
+</div>
+<div class="section" id="follow-the-coding-conventions">
+<h2>Follow the Coding Conventions<a class="headerlink" href="#follow-the-coding-conventions" title="Permalink to this headline">¶</a></h2>
+<p>Each repository can be expected to have its own conventions, at least initially. Please be consistent with the conventions already established in any given project. In time, the community may develop more general and more widely applicable guidelines.</p>
+</div>
+<div class="section" id="use-the-community-licenses">
+<h2>Use the community licenses<a class="headerlink" href="#use-the-community-licenses" title="Permalink to this headline">¶</a></h2>
+<p>First - you need to have filled out and clicked through the
+<a class="reference external" href="https://www.xcore.com/OpenSourceAgreement">contributor license agreement</a>.  This protects the community from bogus contributions and ensures that code is safe and easy for everyone to reuse.  If you&#8217;ve already done this and your latest contribution conforms to the requirements, you can skip this step.</p>
+<p>Use (or at least link to) the licenses - there is one for <a class="reference external" href="https://github.com/xcore/Community/raw/gh-pages/HardwareLicense.txt">hardware</a>
+and one for <a class="reference external" href="https://github.com/xcore/Community/raw/gh-pages/SoftwareLicense.txt">software</a>.  Don&#8217;t forget to change the copyright to your name or organisation.</p>
+<p>For example, if you don&#8217;t want to copy the license into the top of your source code, here&#8217;s a lightweight alternative:</p>
+<div class="highlight-none"><div class="highlight"><pre>// Copyright (c) 2011, &lt;insert copyright holder here&gt;, All rights reserved
+// This software is freely distributable under a derivative of the
+// University of Illinois/NCSA Open Source License posted in
+// LICENSE.txt and at &lt;http://github.xcore.com/&gt;
+</pre></div>
+</div>
+<p>In this case you should also place the appropriate license in a LICENSE.txt file at the root of your repository.</p>
+</div>
+<div class="section" id="pull-request">
+<h2>Pull Request<a class="headerlink" href="#pull-request" title="Permalink to this headline">¶</a></h2>
+<p>When you’re happy with the code on your computer, you need to do a
+<a class="reference external" href="http://help.github.com/pull-requests/">pull request</a>.  This (politely!) asks the maintainer to pull your changes in your fork, into the origin repository.</p>
+</div>
+<div class="section" id="iterate-as-necessary">
+<h2>Iterate as Necessary<a class="headerlink" href="#iterate-as-necessary" title="Permalink to this headline">¶</a></h2>
+<p>It’s entirely possible that the feedback you get will suggest
+changes. Don’t get discouraged: the whole point of contributing to an
+active open source project is to tap into community knowledge. If
+people are encouraging you to tweak your code, then it’s worth making
+the tweaks and resubmitting.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">XCore Community Documentation (0.1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="About-the-community.html">About the Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About-the-repositories.html">About the Repositories</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Participating-in-the-community.html">Participating in the Community</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Reporting-an-issue.html">Reporting an issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Resolving-existing-issues.html">Resolving existing issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Contributing-to-documentation.html">Contributing to documentation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Contributing to the codebase</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#learn-the-language-and-the-framework">Learn the Language and the Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-git">Install git</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pick-a-repository-and-fork-the-source-code">Pick a repository and Fork the Source Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-your-code">Write Your Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#follow-the-coding-conventions">Follow the Coding Conventions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-the-community-licenses">Use the community licenses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pull-request">Pull Request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#iterate-as-necessary">Iterate as Necessary</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="About-XMOS-technology.html">About XMOS Technology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Planned-developments.html">Planned Developments</a></li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

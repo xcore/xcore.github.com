@@ -1,0 +1,275 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Repository usage &mdash; XCore Community Documentation v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <link rel="top" title="XCore Community Documentation v0.1 documentation" href="index.html" />
+    <link rel="up" title="About the Repositories" href="About-the-repositories.html" />
+    <link rel="next" title="10.4.2 XDE Usage" href="xde_104.html" />
+    <link rel="prev" title="Tools" href="Tools.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="Tools.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="xde_104.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="repository-usage">
+<h1>Repository usage<a class="headerlink" href="#repository-usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cloning-a-repository">
+<h2>Cloning a repository<a class="headerlink" href="#cloning-a-repository" title="Permalink to this headline">¶</a></h2>
+<p>The first thing you will need to do is clone the repositories you want
+to use. There are a couple of things to remember.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>It is best to clone everything you want to use together in the same working directory.</li>
+<li>You are likely to need the <a class="reference external" href="https://github.com/xcore/xcommon">xcommon repository</a> cloned to build any software repository (see below for more details)</li>
+</ol>
+</div></blockquote>
+<div class="section" id="from-the-command-line">
+<h3>From the command line<a class="headerlink" href="#from-the-command-line" title="Permalink to this headline">¶</a></h3>
+<p>From the command line you need to have git installed on your system
+and then you can follow the <a class="reference external" href="http://help.github.com/forking/">github instructions on forking and cloning repositories</a>.</p>
+</div>
+<div class="section" id="using-the-xde">
+<h3>Using the XDE<a class="headerlink" href="#using-the-xde" title="Permalink to this headline">¶</a></h3>
+<p>If you are using the XMOS Development Tools version 11.2.0 or
+later. You can install <a class="reference external" href="http://www.eclipse.org/egit/">Egit</a> into the
+XDE. This add-on to eclipse integrates git functionality into the XDE.</p>
+<p>To install Egit go to Help &gt; Install New Software... from within the
+XDE. Then click on Add... to add a new software and add the egit
+download site from the eclipse market place (at the time of writing
+this was <a class="reference external" href="http://download.eclipse.org/egit/updates-0.11">http://download.eclipse.org/egit/updates-0.11</a>). Then select
+this site and install the Egit and Jgit add-ons.</p>
+<p>Once you have installed the software you can configure where it places
+cloned git repositories by going to Window &gt; Preferences &gt; Team &gt; Git
+and setting the Default Repository folder.</p>
+<p>You can now import into your workspace straight from github. If you
+wish to make changes
+to a repository then you will want to fork it first (see the Github
+instructions on this). After this, Go to File &gt;
+Import &gt; Git &gt; Import Projects from Git.  Click on Clone and add the
+github repository URI where indicated. You can then click on Next to
+clone off github and then import any projects from within the
+repository. The standard setup is to have one XDE project
+for each repository.</p>
+<p>If you are using the 10.4.2 version of the XDE or older, see <a class="reference internal" href="xde_104.html"><em>10.4.2 XDE Usage</em></a>.</p>
+</div>
+</div>
+<div class="section" id="the-generic-repository-structure">
+<h2>The generic repository structure<a class="headerlink" href="#the-generic-repository-structure" title="Permalink to this headline">¶</a></h2>
+<p>The vast majority of software repositories will have the same
+structure and will consist of several subdirectories containing code,
+documentation, auxilliary tools etc. The actual code will be split
+into modules and apps.</p>
+<div class="section" id="apps-and-modules">
+<h3>apps and modules<a class="headerlink" href="#apps-and-modules" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="modules">
+<h4>modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h4>
+<p>Module directories (prefixed with module_)
+contain a set of source files that can be used in building an
+application. They also contain a file called module_build_info which
+contains information on how to build the files in the module and how
+the module affects the build of the application.</p>
+</div>
+<div class="section" id="apps">
+<h4>apps<a class="headerlink" href="#apps" title="Permalink to this headline">¶</a></h4>
+<p>App directories (prefixed with app_) contain a set of source files that
+build into a single executable (.xe file). This executable is made by
+compiling the application&#8217;s source files and the source files from any
+modules it uses.</p>
+<p>The modules that an application uses, along with other settings such
+as compiler flags etc. are specified in a Makefile with the app_*
+directory. This Makefile will include the common Makefile from the
+xcommon repository which takes care of dependencies, including the
+source from other modules etc.</p>
+<p>Note that the source files in the modules is compiled separately for
+each app.</p>
+<p>Every repositories whose main purpose is to provide modules are likely
+to have some apps to demonstrate/test the functionality of the
+provided modules.</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-xcommon-repository">
+<h2>The xcommon repository<a class="headerlink" href="#the-xcommon-repository" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://github.com/xcore/xcommon">xcommon repository</a> contains the
+common infrastructure to build projects. To use it you just need to
+clone it into the same working directory as the other repositories you
+are using.</p>
+</div>
+<div class="section" id="building-apps">
+<h2>Building apps<a class="headerlink" href="#building-apps" title="Permalink to this headline">¶</a></h2>
+<p>Each repository has a Makefile in its top level directory. This
+Makefile has targets to build all the apps within the repository. So:</p>
+<div class="highlight-none"><div class="highlight"><pre>xmake all
+</pre></div>
+</div>
+<p>will build every application. To build an individual application you
+can do:</p>
+<div class="highlight-none"><div class="highlight"><pre>xmake [app_name].all
+</pre></div>
+</div>
+<p>For example in the sc_uart repository:</p>
+<div class="highlight-none"><div class="highlight"><pre>xmake app_uart_test.all
+</pre></div>
+</div>
+<p>will just build uart_test app, alternative you can do:</p>
+<div class="highlight-none"><div class="highlight"><pre>cd app_uart_test
+xmake all
+</pre></div>
+</div>
+<p>From the XDE you can add specific Make targets to a projects by
+Right-clicking on a project and going to Make Targets &gt; Create. You can then build these
+by Right-clicking on a project and going to Make Targets &gt; Build. To change the default target (i.e. the
+target that is built when you press the build button) you need to change the Build and Clean settings found
+by Right-clicking on a project and going to Properties &gt; C/XC Build  and clicking on the Behaviour tab.</p>
+</div>
+<div class="section" id="building-modules">
+<h2>Building modules<a class="headerlink" href="#building-modules" title="Permalink to this headline">¶</a></h2>
+<p>Modules do not build on their own. They have to be used by an application.</p>
+</div>
+<div class="section" id="creating-new-applications">
+<h2>Creating new applications<a class="headerlink" href="#creating-new-applications" title="Permalink to this headline">¶</a></h2>
+<p>To create a new application you need to create a new directory
+containing your apps and modules in the same directory as you have
+cloned all the other repos you are going to use. The best method is
+to set it up as if it were an XMOS open source repository on
+github. This gives you the option of creating the github repository
+later (though even if you never plan to do this it is best to set it
+up this way so everything plays together).</p>
+</div>
+<div class="section" id="creating-a-new-repository-structure">
+<h2>Creating a new repository structure<a class="headerlink" href="#creating-a-new-repository-structure" title="Permalink to this headline">¶</a></h2>
+<p>To create a new repository you need to clone the repository
+<a class="reference external" href="https://github.com/xcore/xcore_template">xcore_template</a> and follow the instructions in the template howto.
+Once you have done this you can import this new project into the XDE by doing Import &gt; Git (using EGit and 11.2 tools)
+or Import &gt; General &gt; Existing Projects into Workspace (using the 10.4.2 tools).</p>
+</div>
+<div class="section" id="using-other-modules-in-your-new-application">
+<h2>Using other modules in your new application<a class="headerlink" href="#using-other-modules-in-your-new-application" title="Permalink to this headline">¶</a></h2>
+<p>Once you have created a repository structure with an app subdir you
+can use any of the modules within the other repositories you have
+cloned by adding the module name to the USED_MODULES list in the
+application Makefile.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">XCore Community Documentation (0.1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="About-the-community.html">About the Community</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="About-the-repositories.html">About the Repositories</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Classes-of-Repository.html">Classes of Repositories</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Repository usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cloning-a-repository">Cloning a repository</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#from-the-command-line">From the command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-the-xde">Using the XDE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#the-generic-repository-structure">The generic repository structure</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#apps-and-modules">apps and modules</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#modules">modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#apps">apps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#the-xcommon-repository">The xcommon repository</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-apps">Building apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#building-modules">Building modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-new-applications">Creating new applications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-repository-structure">Creating a new repository structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-other-modules-in-your-new-application">Using other modules in your new application</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="xde_104.html">10.4.2 XDE Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Repository-management.html">Repository management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Versioning.html">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repo-index.html">Repository index</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Participating-in-the-community.html">Participating in the Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About-XMOS-technology.html">About XMOS Technology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Planned-developments.html">Planned Developments</a></li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

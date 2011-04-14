@@ -1,0 +1,129 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Hardware Designs &mdash; XCore Community Documentation v0.1 documentation</title>
+    <link rel="stylesheet" href="_static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <link rel="top" title="XCore Community Documentation v0.1 documentation" href="index.html" />
+    <link rel="up" title="Classes of Repositories" href="Classes-of-Repository.html" />
+    <link rel="next" title="Tools" href="Tools.html" />
+    <link rel="prev" title="Applications" href="Applications.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+<a href="Applications.html"
+                        title="previous chapter"> &lt&lt </a>
+<a href="Tools.html"
+                        title="next chapter"> &gt&gt </a></p>
+</div>
+
+            
+  <div class="section" id="hardware-designs">
+<h1>Hardware Designs<a class="headerlink" href="#hardware-designs" title="Permalink to this headline">¶</a></h1>
+<p>Open Hardware is an important component of open firmware, especially for a widely applicable horizontal technology like XMOS processors.</p>
+<p>Hardware repos are the place to park your schematics, gerbers, pinout definitions and so on. Project repos can then refer to both component, application and hardware repos to pull it all together. Its quite possible that some users might love your board design but have little interest in the firmware originally written for it, so it makes sense to separate these aspects of projects.</p>
+<p>There will be two main kinds of hw_ repo:</p>
+<blockquote>
+<div><ul class="simple">
+<li>A hardware design that is designed for use with the
+<a class="reference external" href="https://github.com/xcore/hw_slicekit_system">XCore Open Source Hardware Platform</a>.</li>
+<li>Other hardware designs</li>
+</ul>
+</div></blockquote>
+<p>The former can be considered the hardware equivalent of a compliant Software Component, in that standards for interoperability and documentation will apply. The latter is completely freestyle.</p>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">XCore Community Documentation (0.1)</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="About-the-community.html">About the Community</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="About-the-repositories.html">About the Repositories</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="Classes-of-Repository.html">Classes of Repositories</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Software-components.html">Software Components Background</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Applications.html">Applications</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Hardware Designs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tools.html">Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Repository-usage.html">Repository usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Repository-management.html">Repository management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Versioning.html">Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="repo-index.html">Repository index</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Participating-in-the-community.html">Participating in the Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="About-XMOS-technology.html">About XMOS Technology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Planned-developments.html">Planned Developments</a></li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+
