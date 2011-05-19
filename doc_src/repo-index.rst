@@ -85,8 +85,8 @@ Unclassified applications
 =============================================================== =========================================================================================================
 Repository                                                      Purpose
 =============================================================== =========================================================================================================
-`ap_led_tile_controller </xcore/ap_led_tile_controller>`_       LED Tile Controller
-`ap_pintest </xcore/ap_pintest>`_                               Application for testing pin connectivity
+`sw_led_tile_controller </xcore/sw_led_tile_controller>`_       LED Tile Controller
+`sw_pintest </xcore/sw_pintest>`_                               Application for testing pin connectivity
 `sc_crypto </xcore/sc_crypto>`_                                 Cryptographic algorithms for the XCore
 =============================================================== =========================================================================================================
 
@@ -112,7 +112,7 @@ Repository                                                      Purpose
 `tool_pyxsim </xcore/tool_pyxsim>`_                             Python wrapper for the XMOS simulator testbench
 `sc_xlog </xcore/sc_xlog>`_                                     Logging component
 `sc_lib_xscope </xcore/sc_lib_xscope>`_                         Device side xscope library
-`ap_xscope_examples </xcore/ap_xscope_examples>`_               Examples on how to use the xscope tracing library
+`sw_xscope_examples </xcore/sw_xscope_examples>`_               Examples on how to use the xscope tracing library
 =============================================================== =========================================================================================================
 
 Documents
