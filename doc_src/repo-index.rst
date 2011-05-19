@@ -76,7 +76,8 @@ Networking
 Repository                                                      Purpose
 =============================================================== =========================================================================================================
 `sc_usb </xcore/sc_usb>`_                                       USB device library
-`sc_ethernet </xcore/sc_ethernet>`_                             10/100 Mii ethernet mac and filters
+`sc_ethernet </xcore/sc_ethernet>`_                             10/100 Mii Ethernet mac and filters
+`sc_ethercat </xcore/sc_ethercat>`_                             Feasibility study of EtherCAT
 `sc_xtcp </xcore/sc_xtcp>`_                                     micro TCP/IP stack for use with sc_ethernet
 =============================================================== =========================================================================================================
 
