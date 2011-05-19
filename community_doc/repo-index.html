@@ -71,6 +71,7 @@ are necessarily crude, and will hopefully improve over time.</p>
 <li>I/O:<ul>
 <li><a class="reference internal" href="#serial-interfaces">Serial interfaces</a> such as SPI, UART, JTAG, ...</li>
 <li><a class="reference internal" href="#analogue-interfaces">Analogue interfaces</a> such as PWM</li>
+<li><a class="reference internal" href="#memory-interfaces">Memory interfaces</a> such as SDRAM, FRAM, SD Card</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#networking">Networking</a> such as USB, Ethernet</li>
@@ -110,8 +111,8 @@ are necessarily crude, and will hopefully improve over time.</p>
 <tr><td><a class="reference external" href="/xcore/sc_uart">sc_uart</a></td>
 <td>UART Components</td>
 </tr>
-<tr><td><a class="reference external" href="/xcore/sc_fram_if">sc_fram_if</a></td>
-<td>A lightweight SPI F-RAM interface.</td>
+<tr><td><a class="reference external" href="/xcore/sc_i2c">sc_i2c</a></td>
+<td>Generic I2C support</td>
 </tr>
 </tbody>
 </table>
@@ -137,6 +138,31 @@ are necessarily crude, and will hopefully improve over time.</p>
 </tr>
 <tr><td><a class="reference external" href="/xcore/sc_capacitive_sensing">sc_capacitive_sensing</a></td>
 <td>Capacitive sensing (capsens) on an XCore</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="memory-interfaces">
+<h3>Memory interfaces<a class="headerlink" href="#memory-interfaces" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Repository</th>
+<th class="head">Purpose</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><a class="reference external" href="/xcore/sc_sdram">sc_sdram</a></td>
+<td>SDRAM controller</td>
+</tr>
+<tr><td><a class="reference external" href="/xcore/sc_sdcard">sc_sdcard</a></td>
+<td>SD Card interface</td>
+</tr>
+<tr><td><a class="reference external" href="/xcore/sc_fram_if">sc_fram_if</a></td>
+<td>A lightweight SPI F-RAM interface.</td>
 </tr>
 </tbody>
 </table>
@@ -180,7 +206,7 @@ are necessarily crude, and will hopefully improve over time.</p>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td><a class="reference external" href="/xcore/ap_par_audio_dsp">ap_par_audio_dsp</a></td>
+<tr><td><a class="reference external" href="/xcore/sw_par_audio_dsp">sw_par_audio_dsp</a></td>
 <td>Parallel Audio DSP example</td>
 </tr>
 <tr><td><a class="reference external" href="/xcore/sc_dsp_filters">sc_dsp_filters</a></td>
@@ -245,6 +271,9 @@ are necessarily crude, and will hopefully improve over time.</p>
 <tr><td><a class="reference external" href="/xcore/hw_slicekit_system">hw_slicekit_system</a></td>
 <td>Specifications and use models for Open Source Modular Development Hardware for XMOS applications</td>
 </tr>
+<tr><td><a class="reference external" href="/xcore/hw_l1_48_module">hw_l1_48_module</a></td>
+<td>3V3 powered DIL module with a 48 pin device</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -275,6 +304,9 @@ are necessarily crude, and will hopefully improve over time.</p>
 </tr>
 <tr><td><a class="reference external" href="/xcore/sw_xscope_examples">sw_xscope_examples</a></td>
 <td>Examples on how to use the xscope tracing library</td>
+</tr>
+<tr><td><a class="reference external" href="/mattfyles/xmos_libusb_binaries.git">libusb</a></td>
+<td>Host-side USB library</td>
 </tr>
 </tbody>
 </table>
@@ -353,6 +385,7 @@ are necessarily crude, and will hopefully improve over time.</p>
 <li class="toctree-l3"><a class="reference internal" href="#i-o-interfaces">I/O interfaces</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#serial-interfaces">Serial interfaces</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#analogue-interfaces">Analogue interfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#memory-interfaces">Memory interfaces</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#networking">Networking</a></li>

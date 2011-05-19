@@ -14,6 +14,8 @@ are necessarily crude, and will hopefully improve over time.
 
     - `Analogue interfaces`_ such as PWM
 
+    - `Memory interfaces`_ such as SDRAM, FRAM, SD Card
+
   - `Networking`_ such as USB, Ethernet
 
   - `Numerical`_ fixed point, DSP, filters, transforms
@@ -42,7 +44,7 @@ Repository                                                      Purpose
 `sc_spdif </xcore/sc_spdif>`_                                   S/PDIF TX and RX component
 `sc_spi </xcore/sc_spi>`_                                       SPI Master/Slave Software Component
 `sc_uart </xcore/sc_uart>`_                                     UART Components
-`sc_fram_if </xcore/sc_fram_if>`_                               A lightweight SPI F-RAM interface.
+`sc_i2c </xcore/sc_i2c>`_                                       Generic I2C support
 =============================================================== =========================================================================================================
 
 Analogue interfaces
@@ -54,6 +56,17 @@ Repository                                                      Purpose
 `sc_class_d_amplifier </xcore/sc_class_d_amplifier>`_           Class D amplifier
 `sc_pwm </xcore/sc_pwm>`_                                       Pulse Width Modulation (PWM) components
 `sc_capacitive_sensing </xcore/sc_capacitive_sensing>`_         Capacitive sensing (capsens) on an XCore
+=============================================================== =========================================================================================================
+
+Memory interfaces
+.................
+
+=============================================================== =========================================================================================================
+Repository                                                      Purpose
+=============================================================== =========================================================================================================
+`sc_sdram </xcore/sc_sdram>`_                                   SDRAM controller
+`sc_sdcard </xcore/sc_sdcard>`_                                 SD Card interface
+`sc_fram_if </xcore/sc_fram_if>`_                               A lightweight SPI F-RAM interface.
 =============================================================== =========================================================================================================
 
 Networking
@@ -73,7 +86,7 @@ Numerical
 =============================================================== =========================================================================================================
 Repository                                                      Purpose
 =============================================================== =========================================================================================================
-`ap_par_audio_dsp </xcore/ap_par_audio_dsp>`_                   Parallel Audio DSP example
+`sw_par_audio_dsp </xcore/sw_par_audio_dsp>`_                   Parallel Audio DSP example
 `sc_dsp_filters </xcore/sc_dsp_filters>`_                       Standard DSP filters, such as Biquads and FIRs
 `sc_dsp_transforms </xcore/sc_dsp_transforms>`_                 DSP transforms, such as DCT.
 `sc_lib_fixed_point </xcore/sc_lib_fixed_point>`_               A fixed point library with functions that manipulate 8.24 fixed point numbers.
@@ -100,6 +113,7 @@ Repository                                                      Purpose
 `proj_xmp64 </xcore/proj_xmp64>`_                               Project repository for the XMP 64 multiprocessor board
 `proj_xtag2 </xcore/proj_xtag2>`_                               XTAG2 hardware and software
 `hw_slicekit_system </xcore/hw_slicekit_system>`_               Specifications and use models for Open Source Modular Development Hardware for XMOS applications 
+`hw_l1_48_module </xcore/hw_l1_48_module>`_                     3V3 powered DIL module with a 48 pin device
 =============================================================== =========================================================================================================
 
 Tools
@@ -113,6 +127,7 @@ Repository                                                      Purpose
 `sc_xlog </xcore/sc_xlog>`_                                     Logging component
 `sc_lib_xscope </xcore/sc_lib_xscope>`_                         Device side xscope library
 `sw_xscope_examples </xcore/sw_xscope_examples>`_               Examples on how to use the xscope tracing library
+`libusb </mattfyles/xmos_libusb_binaries.git>`_                 Host-side USB library
 =============================================================== =========================================================================================================
 
 Documents
