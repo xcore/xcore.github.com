@@ -59,9 +59,9 @@ are necessarily crude, and will hopefully improve over time.
 |                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
 |                 | `sc_ethernet <http://github.com/xcore/sc_ethernet>`_                       | 10/100 Mii Ethernet mac and filters                         | ?     |
 |                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
-|                 | `sc_ethercat <http://github.com/xcore/sc_ethercat>`_                       | Feasibility study of EtherCAT                               | XOSL  |
+|                 | `sc_xtcp <http://github.com/xcore/sc_xtcp>`_                               | micro TCP/IP stack for use with sc_ethernet                 | ?     |
 |                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
-|                 | `sc_xtcp <http://github.com/xcore/sc_xtcp>`_                               | micro TCP/IP stack for use with sc_ethernet                 | XOSL  |
+|                 | `sc_ethercat <http://github.com/xcore/sc_ethercat>`_                       | Feasibility study of EtherCAT                               | XOSL  |
 +-----------------+----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
 |Numerical        | `sw_par_audio_dsp <http://github.com/xcore/sw_par_audio_dsp>`_             | Parallel Audio DSP example                                  | XOSL  |
 |                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
