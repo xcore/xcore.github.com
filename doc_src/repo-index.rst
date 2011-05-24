@@ -73,6 +73,8 @@ are necessarily crude, and will hopefully improve over time.
 +-----------------+----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
 |Unclassified     | `sw_led_tile_controller <http://github.com/xcore/sw_led_tile_controller>`_ | LED Tile Controller                                         | XOSL  |
 |apps             +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
+|                 | `sw_avb <http://github.com/xcore/sw_avb>`_                                 | AVB Audio Video Bridge implementation (IEEE 1722)           | XOSL  |
+|                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
 |                 | `sw_pintest <http://github.com/xcore/sw_pintest>`_                         | Application for testing pin connectivity                    | XOSL  |
 |                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
 |                 | `sc_crypto <http://github.com/xcore/sc_crypto>`_                           | Cryptographic algorithms for the XCore                      | XOSL  |
