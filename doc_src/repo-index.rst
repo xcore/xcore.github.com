@@ -77,7 +77,7 @@ are necessarily crude, and will hopefully improve over time.
 |                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
 |                 | `sc_crypto <http://github.com/xcore/sc_crypto>`_                           | Cryptographic algorithms for the XCore                      | XOSL  |
 +-----------------+----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
-|Boards           | `proj_shift_registers <http://github.com/xcore/proj_shift_registers>`_     | Shift register board                                        | XOSL  |
+|Hardware         | `proj_shift_registers <http://github.com/xcore/proj_shift_registers>`_     | Shift register board                                        | XOSL  |
 |                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
 |                 | `proj_xmp64 <http://github.com/xcore/proj_xmp64>`_                         | Project repository for the XMP 64 multiprocessor board      | XOSL  |
 |                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
@@ -86,6 +86,8 @@ are necessarily crude, and will hopefully improve over time.
 |                 | `hw_slicekit_system <http://github.com/xcore/hw_slicekit_system>`_         | Specifications for Open Source Modular Development Hardware | XOSL  |
 |                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
 |                 | `hw_l1_48_module <http://github.com/xcore/hw_l1_48_module>`_               | 3V3 powered DIL module with a 48 pin device                 | XOSL  |
+|                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
+|                 | `xmos_kicad_parts <https://github.com/topiaruss/xmos_kicad_parts>`_        | KiCAD schematics and footprints for L1-128 and L1-64        | ?     |
 +-----------------+----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
 |Tools            | `tool_sire <http://github.com/xcore/tool_sire>`_                           | Language and runtime system for dynamic process creation    | XOSL  |
 |                 +----------------------------------------------------------------------------+-------------------------------------------------------------+-------+
