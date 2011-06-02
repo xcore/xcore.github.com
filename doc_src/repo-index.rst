@@ -41,6 +41,8 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_spdif <http://github.com/xcore/sc_spdif>`_                             | S/PDIF TX and RX component                                | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_adat <http://github.com/xcore/sc_adat>`_                               | ADAT TX and RX component                                  | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_spi <http://github.com/xcore/sc_spi>`_                                 | SPI Master/Slave Software Component                       | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_uart <http://github.com/xcore/sc_uart>`_                               | UART Components                                           | XOSL  | xcommon|
