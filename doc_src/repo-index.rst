@@ -99,6 +99,8 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Tools            | `tool_sire <http://github.com/xcore/tool_sire>`_                           | Language and runtime system for dynamic process creation  | XOSL  | N/A    |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `dis-xs1 <http://git.infradead.org/users/segher/dis-xs1.git>`_             | XS1 Disassembler, Assembler, XC-1A JTAG tools             | GPL   | N/A    |
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `tool_pyxsim <http://github.com/xcore/tool_pyxsim>`_                       | Python wrapper for the XMOS simulator testbench           | XOSL  | N/A    |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_xlog <http://github.com/xcore/sc_xlog>`_                               | Logging component                                         | XOSL  | xcommon|
