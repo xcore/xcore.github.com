@@ -96,6 +96,16 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 |                 | `hw_l1_48_module <http://github.com/xcore/hw_l1_48_module>`_               | 3V3 powered DIL module with a 48 pin device               | XOSL  | N/A    |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `xmos_kicad_parts <https://github.com/topiaruss/xmos_kicad_parts>`_        | KiCAD schematics and footprints for L1-128 and L1-64      | ?     | N/A    |
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xk1_examples <http://github.com/xcore/sw_xk1_examples>`_               | XK-1 example applications                                 | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xc1_examples <http://github.com/xcore/sw_xc1_examples>`_               | XC-1 example applications                                 | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xc1a_examples <http://github.com/xcore/sw_xc1a_examples>`_             | XC-1A example applications                                | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xc2_examples <http://github.com/xcore/sw_xc2_examples>`_               | XC-2 example applications                                 | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xdk_examples <http://github.com/xcore/sw_xdk_examples>`_               | XDK example applications                                  | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Tools            | `tool_sire <http://github.com/xcore/tool_sire>`_                           | Language and runtime system for dynamic process creation  | XOSL  | N/A    |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
