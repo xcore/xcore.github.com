@@ -48,6 +48,8 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 |                 | `sc_uart <http://github.com/xcore/sc_uart>`_                               | UART Components                                           | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_i2c <http://github.com/xcore/sc_i2c>`_                                 | Generic I2C support                                       | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_can <http://github.com/xcore/sc_can>`_                                 | CAN support  (Controller Area Network)                    | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Analogue intfcs  | `sc_class_d_amplifier <http://github.com/xcore/sc_class_d_amplifier>`_     | Class D amplifier                                         | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
@@ -78,12 +80,14 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 |                 | `sc_lib_fixed_point <http://github.com/xcore/sc_lib_fixed_point>`_         | A library for manipulating 8.24 fixed point numbers.      | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Unclassified     | `sw_led_tile_controller <http://github.com/xcore/sw_led_tile_controller>`_ | LED Tile Controller                                       | XOSL  | xcommon|
-|apps             +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
-|                 | `sw_avb <http://github.com/xcore/sw_avb>`_                                 | AVB Audio Video Bridge implementation (IEEE 1722)         | XOSL  | xcommon|
+|apps and         +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|components       | `sw_avb <http://github.com/xcore/sw_avb>`_                                 | AVB Audio Video Bridge implementation (IEEE 1722)         | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sw_pintest <http://github.com/xcore/sw_pintest>`_                         | Application for testing pin connectivity                  | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_crypto <http://github.com/xcore/sc_crypto>`_                           | Cryptographic algorithms for the XCore                    | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_android_aap <http://github.com/xcore/sc_android_aap>`_                 | Android AAP firmware (interfaces to Android devices)      | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Hardware         | `proj_shift_registers <http://github.com/xcore/proj_shift_registers>`_     | Shift register board                                      | XOSL  | no     |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
