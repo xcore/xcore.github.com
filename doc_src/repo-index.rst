@@ -49,6 +49,8 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_i2c <http://github.com/xcore/sc_i2c>`_                                 | Generic I2C support                                       | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_i2s <http://github.com/xcore/sc_i2s>`_                                 | Generic I2S support                                       | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_can <http://github.com/xcore/sc_can>`_                                 | CAN support  (Controller Area Network)                    | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Analogue intfcs  | `sc_class_d_amplifier <http://github.com/xcore/sc_class_d_amplifier>`_     | Class D amplifier                                         | XOSL  | xcommon|
@@ -59,15 +61,19 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Memory intfcs    | `sc_sdram <http://github.com/xcore/sc_sdram>`_                             | SDRAM controller                                          | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_sram <http://github.com/xcore/sc_sram>`_                               | SRAM interface                                            | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_sdcard <http://github.com/xcore/sc_sdcard>`_                           | SD Card interface                                         | XOSL  | no     |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_fram_if <http://github.com/xcore/sc_fram_if>`_                         | A lightweight SPI F-RAM interface.                        | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
-|Networking       | `sc_usb <http://github.com/xcore/sc_usb>`_                                 | USB device library                                        | XOSL  | xcommon|
+|Networking       | `sc_usb <http://github.com/xcore/sc_usb>`_                                 | USB enumeration library                                   | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
-|                 | `sc_ethernet <http://github.com/xcore/sc_ethernet>`_                       | 10/100 Mii Ethernet mac and filters                       | ?     | xcommon|
+|                 | `sc_xud <http://github.com/xcore/sc_xud>`_                                 | USB device library                                        | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
-|                 | `sc_xtcp <http://github.com/xcore/sc_xtcp>`_                               | micro TCP/IP stack for use with sc_ethernet               | ?     | xcommon|
+|                 | `sc_ethernet <http://github.com/xcore/sc_ethernet>`_                       | 10/100 MII Ethernet mac and filters                       | ?     | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_xtcp <http://github.com/xcore/sc_xtcp>`_                               | Micro TCP/IP stack for use with sc_ethernet               | ?     | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_ethercat <http://github.com/xcore/sc_ethercat>`_                       | Feasibility study of EtherCAT                             | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
@@ -108,6 +114,8 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 |                 | `sw_xc1a_examples <http://github.com/xcore/sw_xc1a_examples>`_             | XC-1A example applications                                | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sw_xc2_examples <http://github.com/xcore/sw_xc2_examples>`_               | XC-2 example applications                                 | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xc5_examples <http://github.com/xcore/sw_xc5_examples>`_               | XC-5 example applications                                 | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sw_xdk_examples <http://github.com/xcore/sw_xdk_examples>`_               | XDK example applications                                  | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
