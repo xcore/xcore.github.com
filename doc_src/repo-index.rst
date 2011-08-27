@@ -89,6 +89,8 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 |apps and         +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |components       | `sw_avb <http://github.com/xcore/sw_avb>`_                                 | AVB Audio Video Bridge implementation (IEEE 1722)         | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 |`sw_basic_motor_examples <http://github.com/xcore/sw_basic_motor_examples>`_| Examples for basic control of stepper and DC motors       | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sw_pintest <http://github.com/xcore/sw_pintest>`_                         | Application for testing pin connectivity                  | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_crypto <http://github.com/xcore/sc_crypto>`_                           | Cryptographic algorithms for the XCore                    | XOSL  | xcommon|
