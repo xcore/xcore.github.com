@@ -50,6 +50,10 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 |                 | `sc_i2c <http://github.com/xcore/sc_i2c>`_                                 | Generic I2C support                                       | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_ps2 <http://github.com/xcore/sc_ps2>`_                                 | PS2 keyboard support                                      | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_i2s <http://github.com/xcore/sc_i2s>`_                                 | Generic I2S support                                       | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_can <http://github.com/xcore/sc_can>`_                                 | CAN support  (Controller Area Network)                    | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Analogue intfcs  | `sc_class_d_amplifier <http://github.com/xcore/sc_class_d_amplifier>`_     | Class D amplifier                                         | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
@@ -59,15 +63,19 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Memory intfcs    | `sc_sdram <http://github.com/xcore/sc_sdram>`_                             | SDRAM controller                                          | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_sram <http://github.com/xcore/sc_sram>`_                               | SRAM interface                                            | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_sdcard <http://github.com/xcore/sc_sdcard>`_                           | SD Card interface                                         | XOSL  | no     |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_fram_if <http://github.com/xcore/sc_fram_if>`_                         | A lightweight SPI F-RAM interface.                        | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
-|Networking       | `sc_usb <http://github.com/xcore/sc_usb>`_                                 | USB device library                                        | XOSL  | xcommon|
+|Networking       | `sc_usb <http://github.com/xcore/sc_usb>`_                                 | USB enumeration library                                   | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
-|                 | `sc_ethernet <http://github.com/xcore/sc_ethernet>`_                       | 10/100 Mii Ethernet mac and filters                       | ?     | xcommon|
+|                 | `sc_xud <http://github.com/xcore/sc_xud>`_                                 | USB device library                                        | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
-|                 | `sc_xtcp <http://github.com/xcore/sc_xtcp>`_                               | micro TCP/IP stack for use with sc_ethernet               | ?     | xcommon|
+|                 | `sc_ethernet <http://github.com/xcore/sc_ethernet>`_                       | 10/100 MII Ethernet mac and filters                       | ?     | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_xtcp <http://github.com/xcore/sc_xtcp>`_                               | Micro TCP/IP stack for use with sc_ethernet               | ?     | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_ethercat <http://github.com/xcore/sc_ethercat>`_                       | Feasibility study of EtherCAT                             | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
@@ -80,12 +88,16 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 |                 | `sc_lib_fixed_point <http://github.com/xcore/sc_lib_fixed_point>`_         | A library for manipulating 8.24 fixed point numbers.      | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Unclassified     | `sw_led_tile_controller <http://github.com/xcore/sw_led_tile_controller>`_ | LED Tile Controller                                       | XOSL  | xcommon|
-|apps             +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
-|                 | `sw_avb <http://github.com/xcore/sw_avb>`_                                 | AVB Audio Video Bridge implementation (IEEE 1722)         | XOSL  | xcommon|
+|apps and         +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|components       | `sw_avb <http://github.com/xcore/sw_avb>`_                                 | AVB Audio Video Bridge implementation (IEEE 1722)         | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 |`sw_basic_motor_examples <http://github.com/xcore/sw_basic_motor_examples>`_| Examples for basic control of stepper and DC motors       | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sw_pintest <http://github.com/xcore/sw_pintest>`_                         | Application for testing pin connectivity                  | XOSL  | xcommon|
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `sc_crypto <http://github.com/xcore/sc_crypto>`_                           | Cryptographic algorithms for the XCore                    | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sc_android_aap <http://github.com/xcore/sc_android_aap>`_                 | Android AAP firmware (interfaces to Android devices)      | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Hardware         | `proj_shift_registers <http://github.com/xcore/proj_shift_registers>`_     | Shift register board                                      | XOSL  | no     |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
@@ -98,8 +110,24 @@ whether they use the standard build structure from xcommon (sc_, sw_) or xdoc (d
 |                 | `hw_l1_48_module <http://github.com/xcore/hw_l1_48_module>`_               | 3V3 powered DIL module with a 48 pin device               | XOSL  | N/A    |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `xmos_kicad_parts <https://github.com/topiaruss/xmos_kicad_parts>`_        | KiCAD schematics and footprints for L1-128 and L1-64      | ?     | N/A    |
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xk1_examples <http://github.com/xcore/sw_xk1_examples>`_               | XK-1 example applications                                 | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xc1_examples <http://github.com/xcore/sw_xc1_examples>`_               | XC-1 example applications                                 | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xc1a_examples <http://github.com/xcore/sw_xc1a_examples>`_             | XC-1A example applications                                | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xc2_examples <http://github.com/xcore/sw_xc2_examples>`_               | XC-2 example applications                                 | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xc5_examples <http://github.com/xcore/sw_xc5_examples>`_               | XC-5 example applications                                 | XOSL  | xcommon|
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `sw_xdk_examples <http://github.com/xcore/sw_xdk_examples>`_               | XDK example applications                                  | XOSL  | xcommon|
 +-----------------+----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |Tools            | `tool_sire <http://github.com/xcore/tool_sire>`_                           | Language and runtime system for dynamic process creation  | XOSL  | N/A    |
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `dis-xs1 <http://git.infradead.org/users/segher/dis-xs1.git>`_             | XS1 Disassembler, Assembler, XC-1A JTAG tools             | GPL   | N/A    |
+|                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
+|                 | `tool_axe <https://github.com/rlsosborne/tool_axe>`_                       | XCore emulators                                           |XOSL/GP| N/A    |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
 |                 | `tool_pyxsim <http://github.com/xcore/tool_pyxsim>`_                       | Python wrapper for the XMOS simulator testbench           | XOSL  | N/A    |
 |                 +----------------------------------------------------------------------------+-----------------------------------------------------------+-------+--------+
