@@ -1,0 +1,4 @@
+genindex/doc/*.rst
+doc_src/_build/*
+genindex/doc/_build/*
+*.pyc
