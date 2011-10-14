@@ -1,0 +1,172 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>XDoc: common documentation infrastructure &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="static/xcomment.js"></script>
+    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+</div>
+
+            
+  <div class="section" id="xdoc-common-documentation-infrastructure">
+<h1>XDoc: common documentation infrastructure<a class="headerlink" href="#xdoc-common-documentation-infrastructure" title="Permalink to this headline">¶</a></h1>
+<div class="download container">
+<a
+onClick="window.open('https://github.com/xcore/xdoc/zipball/master');window.focus();return true;" href="xdoc_master_download.html">Download the latest master branch snapshot</a></div>
+<p><a class="reference external" href="http://github.com/xcore/xdoc">Visit the repository Github page</a></p>
+<p><a class="reference external" href="index.html">Go to repository index</a></p>
+<div class="section" id="details">
+<h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Last Release:</th><td class="field-body">unreleased</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">in development</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">Dave Lacey (github: davelxmos)</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Adaptation of sphinx documentation system for documenting XC/C
+projects</li>
+<li>Incorporation of doxygen comments (using <a class="reference external" href="http://github.com/michaeljones/breathe">breathe</a>)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>This repository does not contain any code. It contains the common
+Makefile and scripts to build documentation for other repositories.</p>
+<p>The documentation basically uses sphinx with the following additions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Themes/writers are provided for html and latex to maintain
+consistency across repos</li>
+<li>An adapted version of <a class="reference external" href="http://github.com/michaeljones/breathe">breathe</a> is provided to link doxygen
+comments into the documentation</li>
+<li>Makefiles etc. to link it all together and be able to pull
+out source/comments from source in different repositories</li>
+</ul>
+</div></blockquote>
+<p>You can find examples using this repository in:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://www.github.com/xcore/sc_ethernet">http://www.github.com/xcore/sc_ethernet</a></li>
+<li><a class="reference external" href="http://www.github.com/xcore/sc_xtcp">http://www.github.com/xcore/sc_xtcp</a></li>
+<li><a class="reference external" href="http://www.github.com/xcore/doc_tips_and_tricks">http://www.github.com/xcore/doc_tips_and_tricks</a></li>
+</ul>
+</div></blockquote>
+<p>In each case the doc/ directory has a Makefile which can build with
+the targets <tt class="docutils literal"><span class="pre">make</span> <span class="pre">html</span></tt> or <tt class="docutils literal"><span class="pre">make</span> <span class="pre">pdf</span></tt>.</p>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<p>None</p>
+</div>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<p>You need the following installed to build the documentation (the versions in brackets are know to work):</p>
+<blockquote>
+<div><ul class="simple">
+<li>Python (<a class="reference external" href="http://www.python.org/">http://www.python.org/</a>)  (2.6.5)</li>
+<li>Sphinx (<a class="reference external" href="http://sphinx.pocoo.org/">http://sphinx.pocoo.org/</a>) (1.0.7)</li>
+<li>Docutils (<a class="reference external" href="http://docutils.sourceforge.net/">http://docutils.sourceforge.net/</a>) (0.6)</li>
+<li>Doxygen (<a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/index.html">http://www.stack.nl/~dimitri/doxygen/index.html</a>) (1.6.3)</li>
+<li>LaTeX, if you want to build PDFs (<a class="reference external" href="http://www.latex-project.org/">http://www.latex-project.org/</a>)</li>
+<li>Gnu Make (xmake will work)</li>
+</ul>
+</div></blockquote>
+<p>You do not need to install breathe since an adapted version is
+included in this repository.
+Currently, building documentation has only been done on
+Linux variants. However, everything used is cross platform.</p>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the manitainer for this line.</p>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+
+
+<div id="searchbox">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Search" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

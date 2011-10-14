@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sw_flashlib_examples &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="static/xcomment.js"></script>
+    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+</div>
+
+            
+  <div class="section" id="sw-flashlib-examples">
+<h1>sw_flashlib_examples<a class="headerlink" href="#sw-flashlib-examples" title="Permalink to this headline">¶</a></h1>
+<div class="download container">
+<a
+onClick="window.open('https://github.com/xcore/sw_flashlib_examples/zipball/master');window.focus();return true;" href="sw_flashlib_examples_master_download.html">Download the latest master branch snapshot</a></div>
+<p><a class="reference external" href="http://github.com/xcore/sw_flashlib_examples">Visit the repository Github page</a></p>
+<p><a class="reference external" href="index.html">Go to repository index</a></p>
+<div class="section" id="details">
+<h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<p>Libflash Library</p>
+<p>Introduction:</p>
+<p>The libflash is an API which allows programs written in XC to read from and
+write to the SPI FLASH device during execution.</p>
+<p>Description:</p>
+<p>The FLASH device on boards can be used to store both the XMOS processor code
+and user information.</p>
+<p>The libflash library provides functions for reading and writing data to the
+SPI flash during execution of the firmware. The SPI flash must be programmed
+as per the XMOS flash format in order to use the libflash library.</p>
+<p>The xflash tool is provided to allow code images to be loaded onto the SPI
+Flash during manufacture and development. The xflash tool natively supports
+a wide range of SPI flash devices. The list of devices can be found in the
+knowledge base article.</p>
+<p><a class="reference external" href="https://www.xmos.com/support/knowledgebase/silicon/which-flash-devices-are-supported-xmos">https://www.xmos.com/support/knowledgebase/silicon/which-flash-devices-are-supported-xmos</a></p>
+<p>Devices that are not natively supported can be used by xflash by writing a
+SPI specification file for the device with characteristics such as page size,
+number of pages, etc.</p>
+<p>The SPI spec files for some unsupported devices can be downloaded from
+<a class="reference external" href="https://www.xcore.com/wiki/index.php/SPI_spec_files_for_use_with_xflash_and_flashlib">https://www.xcore.com/wiki/index.php/SPI_spec_files_for_use_with_xflash_and_flashlib</a></p>
+<p>Further details of the libflash library, XMOS flash format and the xflash
+tool can be found in the Tools User Guide:
+<a class="reference external" href="https://www.xmos.com/published/tools-user-guide">https://www.xmos.com/published/tools-user-guide</a></p>
+<p>A simple example is attached that shows how to read and write user data using
+libflash.</p>
+<p>The example can use one of the 4 FLASH chips defined at the top of the file.
+It prints the information about the part used, erases the user data partition,
+writes &#8220;Hello world!&#8221; to this partition and reads the data from it, printing
+the result to the user.</p>
+<p>Required Tools:</p>
+<p>Xmos Desktop Development Tools 11.2.2 or above.</p>
+<p>Executing the Example Application (GUI):</p>
+<p>To create the project:
+* Create a new workspace.
+* Select File -&gt; New -&gt; XC Project.
+* In the XC project window give a name to the project and select the platform</p>
+<blockquote>
+<div>on which the project would be run. Select empty project under the project
+type table.</div></blockquote>
+<ul class="simple">
+<li>Click on &#8220;Finish&#8221;.</li>
+<li>Copy the main.xc file. Right click on the project folder under Project
+Explorer and click paste.</li>
+</ul>
+<dl class="docutils">
+<dt>To link the Flash library:</dt>
+<dd><ul class="first last simple">
+<li>Right click on the project folder and click on &#8220;Properties&#8221;.</li>
+<li>Click and expand C/XC Build and click on &#8220;Settings&#8221;.</li>
+<li>In the Tool Settings tab click on the &#8220;Libraries&#8221; under Mapper/Linker.</li>
+<li>Type &#8220;flash&#8221; (without quotes) in the &#8220;Libraries (-l)&#8221; text box.</li>
+<li>Click Apply and Ok.</li>
+</ul>
+</dd>
+</dl>
+<p>To build, click on the project folder in the Project Explorer window and
+click on build icon.</p>
+<p>Writing the Application Into Flash:</p>
+<ul class="simple">
+<li>In the Project Explorer window right click on the .xe file and click on
+Run As -&gt; Run Configurations.</li>
+<li>In the Run Configurations window, select Flash Programmer and click on
+the &#8220;New launch Configuration&#8221; button.</li>
+<li>Select the Jtag adapter from the drop down list in the Main Tab.</li>
+<li>Specify the SPI spec filename and Boot partition size in the Xflash tab.</li>
+<li>Click run to flash the application into the flash.</li>
+</ul>
+<p>Executing The Example Application (Command Line):</p>
+<ul class="simple">
+<li>Open the XMOS command prompt and change the directory to the location of the
+main.xc file.</li>
+<li>Type the following command</li>
+</ul>
+<blockquote>
+<div><p>xcc main.xc  -target=&lt;boardname&gt; -lflash -o example.xe</p>
+<p>This creates the executable binary file example.xe.</p>
+</div></blockquote>
+<p>Example:
+For compiling and generating the code for XK-1 board the command would be
+xcc main.xc ?target=XK-1 ?lflash ?o example.xe</p>
+<p>Writing the Application Into Flash</p>
+<ul class="simple">
+<li>Once the xe file is created type the following command to load the file into
+the target board.</li>
+</ul>
+<blockquote>
+<div>xflash &#8211;boot-partition-size &lt;n&gt; example.xe &#8211;spi-spec &lt;flash_type&gt;.spispec</div></blockquote>
+<p>Example:
+For writing the application into a Ramtron FM25V10 device (not supported by
+xflash) and setting boot partition size as 139264 bytes.</p>
+<p>xflash &#8211;boot-partition-size 139264  example.xe &#8211;spi-spec FM25V10.txt</p>
+<p>Where FM25V10.txt is the spi spec file for the Ramtron FM25V10.txt.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+
+
+<div id="searchbox">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Search" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

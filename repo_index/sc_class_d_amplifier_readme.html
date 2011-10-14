@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Class D Amplifier &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="static/xcomment.js"></script>
+    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+</div>
+
+            
+  <div class="section" id="class-d-amplifier">
+<h1>Class D Amplifier<a class="headerlink" href="#class-d-amplifier" title="Permalink to this headline">¶</a></h1>
+<div class="download container">
+<a
+onClick="window.open('https://github.com/xcore/sc_class_d_amplifier/zipball/master');window.focus();return true;" href="sc_class_d_amplifier_master_download.html">Download the latest master branch snapshot</a></div>
+<p><a class="reference external" href="http://github.com/xcore/sc_class_d_amplifier">Visit the repository Github page</a></p>
+<p><a class="reference external" href="index.html">Go to repository index</a></p>
+<div class="section" id="details">
+<h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">None</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">draft</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/ChippendaleMupp">https://github.com/ChippendaleMupp</a></td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">A brief description of the repo</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Stereo Open Loop ClassD amplifier</li>
+<li>PWM outputs at 8x sample frequency</li>
+<li>Supports 48.0, 44.1 and 32kHz sample frequencies</li>
+</ul>
+</div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>No outstanding missing features</li>
+</ul>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<p>The example application produces samples for a 1kHz sine wave on both channels at 48kHz.  The samples are interpolated upto 384kHz via 96kHz.  They are then output in PWM on two 1 bit ports per channel.  Two 1 bit ports are required per channel to introduce deadtime to avoid shoot-through current.</p>
+<p>This code has been release to github from xmos.com&#8217;s example application code.  There are two documents support this code: &#8220;Class D Audio Power Amplifier&#8221; (Class-D-Audio-Power-Amplifier.pdf) and &#8220;Class D Audio Power Amplifier - iPod Dock&#8221; (Class-D-Audio-Power-Amplifier&#8212;iPod-Dock.pdf).  These have been copied to this repository for reference.</p>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>None</li>
+</ul>
+</div>
+<div class="section" id="required-repositories">
+<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>xcommon git&#64;github.com:xcore/xcommon.git</li>
+</ul>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>&lt;Description of support model&gt;</p>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+
+
+<div id="searchbox">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Search" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,170 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>XCORE.com CAN SOFTWARE COMPONENT &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="static/xcomment.js"></script>
+    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+</div>
+
+            
+  <div class="section" id="xcore-com-can-software-component">
+<h1>XCORE.com CAN SOFTWARE COMPONENT<a class="headerlink" href="#xcore-com-can-software-component" title="Permalink to this headline">¶</a></h1>
+<div class="download container">
+<a
+onClick="window.open('https://github.com/xcore/sc_can/zipball/master');window.focus();return true;" href="sc_can_master_download.html">Download the latest master branch snapshot</a></div>
+<p><a class="reference external" href="http://github.com/xcore/sc_can">Visit the repository Github page</a></p>
+<p><a class="reference external" href="index.html">Go to repository index</a></p>
+<div class="section" id="details">
+<h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body"></td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">Feature complete</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/DavidNorman">https://github.com/DavidNorman</a></td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">Controller Area Network component including RX/TX and LLC (Link Layer Controller)</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>two threads for each of the node one for LLC &amp; other for PHY layer.</li>
+<li>Baud Rates up to 500kbps (1Mbps alpha included)</li>
+<li>Support for extended identifier(29-bit) for PHY layer</li>
+<li>Support for dynamic bit rate control</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<p>RX and TX are executed as functions which each run in PHY layer which in turn passes messages to &amp; from LLC layer.</p>
+<p>A demo appliction is included.</p>
+</div>
+<div class="section" id="known-issues">
+<h3>KNOWN ISSUES<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<p>The 1Mbps version will not run within the timing constraints.</p>
+</div>
+<div class="section" id="required-modules">
+<h3>Required Modules<a class="headerlink" href="#required-modules" title="Permalink to this headline">¶</a></h3>
+<p>xcommon</p>
+</div>
+<div class="section" id="intructions-for-building-project">
+<h3>Intructions for Building Project<a class="headerlink" href="#intructions-for-building-project" title="Permalink to this headline">¶</a></h3>
+<p>The CAN component is built using (XDE) Version: 10.4.2 (build 1752) or later.</p>
+<p>This module can be demonstrated on XC-1 board with two CAN transceiver chips connected via ports 1A, 1B, 1C and 1D.
+Also this board should be connected through a CAN USB dongle to a PC</p>
+<p>There are the settings required for hyperterminal setup for use with the demo app:</p>
+<div class="section" id="ascii-set-up">
+<h4>ASCII set up :<a class="headerlink" href="#ascii-set-up" title="Permalink to this headline">¶</a></h4>
+<p>+untick the following options :</p>
+<ul class="simple">
+<li>send line ends with line feeds</li>
+<li>force incoming data to 7 bit ascii</li>
+</ul>
+<p>+tick following options :</p>
+<ul class="simple">
+<li>echo typed characters locally</li>
+<li>append line feeds to incoming line ends</li>
+<li>wrap lines that exceed terminal widths</li>
+</ul>
+<p>Port settings :</p>
+<p>bits per second : 115200
+parity          : none
+data bits       : 8
+stop bits       : 1
+flow control    : none</p>
+<p>This will display the CAN packet on the console window, which are monitored by the CAN dongle.
+On successful CAN communication by LLC &amp; PHY layer from one node to another node , glow 4 LEDs green on the board , else
+4 LEDs red.</p>
+</div>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the maintainer for this line.</p>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+
+
+<div id="searchbox">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Search" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

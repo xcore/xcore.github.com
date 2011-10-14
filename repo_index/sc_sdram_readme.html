@@ -1,0 +1,165 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>XCORE.com SDRAM SOFTWARE COMPONENT &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="static/xcomment.js"></script>
+    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+</div>
+
+            
+  <div class="section" id="xcore-com-sdram-software-component">
+<h1>XCORE.com SDRAM SOFTWARE COMPONENT<a class="headerlink" href="#xcore-com-sdram-software-component" title="Permalink to this headline">¶</a></h1>
+<div class="download container">
+<a
+onClick="window.open('https://github.com/xcore/sc_sdram/zipball/master');window.focus();return true;" href="sc_sdram_master_download.html">Download the latest master branch snapshot</a></div>
+<p><a class="reference external" href="http://github.com/xcore/sc_sdram">Visit the repository Github page</a></p>
+<p><a class="reference external" href="index.html">Go to repository index</a></p>
+<div class="section" id="details">
+<h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">1.2 unreleased - based on SDRAM 1.1 of April 2010</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">Initial updates to current tools, pending testing.</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/topiaruss">Russ Ferriday</a></td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">A Burst Mode access driver for the Micron Technology
+MT48LC16M16A2 Synchronous DRAM</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>One thread reads/writes data to SDRAM</li>
+<li>Optimised for burst access of blocks of 32 bit words (not for random access)</li>
+<li>Application retains control of refresh by calling sdram_refresh at
+appropriate to prevent unexpected delays</li>
+<li>16-bit - Peak write: 50MB/s, read 50MB/s.
+Single word write  (3 threads): 3120ns, read 3520ns.</li>
+<li>4-bit -   Peak write: 12.5MB/s, read 12.5MB/s.
+Single word write (4 threads): approx 2.5us, approx 3us.</li>
+<li>Code size: 2KB</li>
+<li>Thread count: 1</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Test on representative hardware.</li>
+<li>Document test procedure and check schematics</li>
+<li>Resolve two warnings related to buffered port</li>
+<li>Improve documentation for integrators</li>
+</ul>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>module_sdram_burst: the burst mode driver</li>
+<li>app_sdram_burst_example: contains a c client and an xc test harness</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Two warnings produced in XDE 11.2 related to buffered port</li>
+<li>Untested since moving to XDE 11.2</li>
+</ul>
+</div>
+<div class="section" id="required-repositories">
+<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>xcommon git&#64;github.com:xcore/xcommon.git</li>
+</ul>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted are at the discretion of the maintainer of this component.</p>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+
+
+<div id="searchbox">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Search" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

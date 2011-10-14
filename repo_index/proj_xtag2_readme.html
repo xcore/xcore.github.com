@@ -1,0 +1,183 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>XTAG2 &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="static/xcomment.js"></script>
+    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+</div>
+
+            
+  <div class="section" id="xtag2">
+<h1>XTAG2<a class="headerlink" href="#xtag2" title="Permalink to this headline">¶</a></h1>
+<div class="download container">
+<a
+onClick="window.open('https://github.com/xcore/proj_xtag2/zipball/master');window.focus();return true;" href="proj_xtag2_master_download.html">Download the latest master branch snapshot</a></div>
+<p><a class="reference external" href="http://github.com/xcore/proj_xtag2">Visit the repository Github page</a></p>
+<p><a class="reference external" href="index.html">Go to repository index</a></p>
+<div class="section" id="details">
+<h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">unreleased</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">Feature complete</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/mattfyles">https://github.com/mattfyles</a>, <a class="reference external" href="https://github.com/xmos-corin">https://github.com/xmos-corin</a></td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">XTAG2 software</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>XTAG2 hardware design</li>
+<li>XTAG2 bootloader</li>
+<li>XTAG2 firmware for gdb</li>
+</ul>
+</div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Test</li>
+<li>Sort otp.h out - it should not be in this repo</li>
+<li>Port <cite>burn_serial_number</cite> to other platforms (Linux, Windows)</li>
+<li>Provide source code for binary in <cite>burn_serial_number</cite></li>
+</ul>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<p>This repo contains the hardware design of the XTAG2 and the applications
+that run on it: the boot loader, the debugger, and a program to burn the serial number.</p>
+<p>app_l1_usb_boot_loader is stored in the OTP of an XTAG2 (or in flash if flash is present).
+If stored in OTP it has to fit in 8K - this can be a squeeze depending on the version of the XUD library.
+When executing this program will enumerate and wait for firmware to be downloaded to the XTAG2.</p>
+<p>app_l1_jtag is the default firmware for an XTAG2, and it implements a program that interfaces GDB to a system over JTAG.
+After compilation it is bundled with GDB and GDB will load it into any uninitialised XTAG2, and then query all connected XTAG2s
+for the elements on their JTAG scan chains.</p>
+<p>app_l1_otp_programmer is a small program that can be downloaded onto the XTAG2 instead of app_l1_jtag, and it will program a serial number
+into the XTAG2. Be careful, unless the program is changed the number will be all Xs.</p>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>none</li>
+</ul>
+</div>
+<div class="section" id="required-repositories">
+<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>xcommon git&#64;github.com:xcore/xcommon.git</li>
+<li>sc_jtag git&#64;github.com:xcore/sc_jtag.git</li>
+<li>sc_usb git&#64;github.com:xcore/sc_usb.git</li>
+<li>xmos_libusb_binaries git://github.com/mattfyles/xmos_libusb_binaries.git</li>
+</ul>
+<p>The directory structure should be:</p>
+<div class="highlight-none"><div class="highlight"><pre>...
+proj_xtag2/
+  app_l1_jtag
+  app_l1_otp_programmer/
+  ...
+sc_jtag/
+  module_jtag_master/
+  module_xcore_debug/
+  ...
+sc_usb/
+  module_xud/
+  module_usb_shared/
+  ...
+xcommon/
+  ...
+xmos_libusb_binaries/
+  ...
+
+...
+</pre></div>
+</div>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the maintainer for this line.</p>
+</div>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+
+
+<div id="searchbox">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Search" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+

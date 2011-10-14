@@ -1,0 +1,298 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>XCore/Github Howto (11.2.x tools) &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
+    <script type="text/javascript" src="static/xcomment.js"></script>
+    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+
+<script>
+function setheight() {
+h1 = document.getElementById('d1').style.height;
+h2 = document.getElementById('d2').style.height;
+
+if (parseInt(h1) > parseInt(h2)) {
+document.getElementById('d2').style.height=h1 + "px";
+}
+else {
+document.getElementById('d1').style.height=h2 + "px";
+}
+
+}
+</script>
+</head>
+
+<body onload="setheight();">
+
+  
+    <div class="document" id='d1'>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div style="float: right">
+</div>
+
+            
+  <div class="section" id="xcore-github-howto-11-2-x-tools">
+<h1>XCore/Github Howto (11.2.x tools)<a class="headerlink" href="#xcore-github-howto-11-2-x-tools" title="Permalink to this headline">¶</a></h1>
+<p>This howto shows how to use the Xcore open source code
+repositories. It assume you have already installed the XMOS
+Development tools and have used the Xmos Development Environment
+(XDE).</p>
+<p>To use code from the Xcore github repositories you need to:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Get the xcommon build system</li>
+<li>Create a suitable project to store your code</li>
+<li>Get some repository code</li>
+<li>Get coding!</li>
+</ol>
+</div></blockquote>
+<div class="section" id="get-the-xcommon-build-system">
+<h2>Get the xcommon build system<a class="headerlink" href="#get-the-xcommon-build-system" title="Permalink to this headline">¶</a></h2>
+<p>First you need to install the latest version of the <tt class="docutils literal"><span class="pre">xcommon</span></tt> build
+system. You can get it from:</p>
+<blockquote>
+<div><a class="reference external" href="xcommon_readme.html">xcommon download</a></div></blockquote>
+<p>Then import the system into the XDE (instructions are <a class="reference external" href="xcommon_master_download.html">here</a>).</p>
+</div>
+<div class="section" id="create-a-suitable-project-to-build-code">
+<h2>Create a suitable project to build code<a class="headerlink" href="#create-a-suitable-project-to-build-code" title="Permalink to this headline">¶</a></h2>
+<p>Once xcommon is installed, you need to create a project to build your
+code in. To use the Github shared code system you need to create a
+project that is slightly different to the normal XDE based projects.</p>
+<p>The first thing you need to do is get and import the latest version of
+<tt class="docutils literal"><span class="pre">xcore_template</span></tt> - this is a template that you can rename to make a
+new project of your own. You can get the latest template here:</p>
+<blockquote>
+<div><a class="reference external" href="xcore_template_readme.html">xcore_template download</a></div></blockquote>
+<p>Once this is imported you should have a project workspace that looks
+something like this:</p>
+<a class="reference internal image-reference" href="images/templateworkspace40.png"><img alt="images/templateworkspace40.png" src="images/templateworkspace40.png" style="width: 231.7px; height: 232.4px;" /></a>
+<p>You can now adapt the project to your use:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Right-click on the
+<tt class="docutils literal"><span class="pre">xcore_template</span></tt> to something else (by convention application
+projects have the prefix <tt class="docutils literal"><span class="pre">sw_</span></tt> e.g. <tt class="docutils literal"><span class="pre">sw_myproject</span></tt>).</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Projects in this style can contain several elements: <tt class="docutils literal"><span class="pre">app_</span></tt>
+directories that contain code that build to executables and <tt class="docutils literal"><span class="pre">module_</span></tt>
+directories that contain code modules to use in several apps.</p>
+</div>
+</li>
+<li><p class="first">Initially, you will not need to code your own module so delete
+the <tt class="docutils literal"><span class="pre">module_template</span></tt> directory (right-click &gt; Delete).</p>
+</li>
+<li><p class="first">Rename the <tt class="docutils literal"><span class="pre">app_template</span></tt> directory to <tt class="docutils literal"><span class="pre">app_github_test</span></tt> or
+whatever your want your application to be called.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>You should now have a workspace looking like this:</p>
+<a class="reference internal image-reference" href="images/myproject32.png"><img alt="images/myproject32.png" src="images/myproject32.png" style="width: 207.2px; height: 261.8px;" /></a>
+<p>So there is a project called <tt class="docutils literal"><span class="pre">sw_myproject</span></tt> that contains one
+application:: <tt class="docutils literal"><span class="pre">app_github_test</span></tt>. However, that application has no
+code in it. Let&#8217;s fix that:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Double-click on the <tt class="docutils literal"><span class="pre">Makefile</span></tt> within the <tt class="docutils literal"><span class="pre">app_github_test</span></tt>
+directory. The file will open in the editor pane of the XDE.
+This is the file that controls the building of your
+xapplication.</p>
+</li>
+<li><p class="first">Edit the line that says <tt class="docutils literal"><span class="pre">TARGET</span> <span class="pre">=</span></tt> and replace it with:</p>
+<div class="highlight-none"><div class="highlight"><pre>TARGET = XK-1
+</pre></div>
+</div>
+<p>This tells the Makefile which board you are building your
+application for. You could use any XMOS development board name here.</p>
+</li>
+<li><p class="first">Right-click on the <tt class="docutils literal"><span class="pre">src</span></tt> directory and choose
+<strong>New</strong> <strong>&gt;</strong><strong> Source File</strong>. Type <tt class="docutils literal"><span class="pre">main.xc</span></tt> as the name of
+the file. A new file should appear in the editor pane.</p>
+</li>
+<li><p class="first">Add the following &#8220;Hello world&#8221; code to your file:</p>
+<div class="highlight-none"><div class="highlight"><pre>#include &lt;print.h&gt;
+
+int main() {
+    printstrln(&quot;Hello World&quot;);
+    return 0;
+}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now click on menu item <strong>Project</strong> <strong>&gt;</strong><strong> Build Project</strong>. You
+should get a build log in the Console window that finishes with
+the <tt class="docutils literal"><span class="pre">Build</span> <span class="pre">Complete</span></tt> message.</p>
+</li>
+<li><p class="first">You should now see a file called <tt class="docutils literal"><span class="pre">app_github_test.xe</span></tt> in the
+<em>Binaries</em> section of your project in the Project explorer:</p>
+<a class="reference internal image-reference" href="images/myappbinary28.png"><img alt="images/myappbinary28.png" src="images/myappbinary28.png" style="width: 144.0px; height: 142.0px;" /></a>
+</li>
+<li><p class="first">Right-click on this binary and select
+<strong>Run As</strong> <strong>&gt;</strong><strong>XCore Application</strong>. Choose <em>Simulator</em> from
+the available devices and click on <strong>OK</strong>. You should now see
+the output of the program in the console window.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>You now have a working project and application that is ready to use
+the component code available on github. At this point you can start
+/coding and testing your application as normal. The next section shows
+how to incorporate other peoples component code into your application.</p>
+</div>
+<div class="section" id="get-some-repository-code">
+<h2>Get some repository code<a class="headerlink" href="#get-some-repository-code" title="Permalink to this headline">¶</a></h2>
+<p>You can import other people code into your application by going to the
+repository index:</p>
+<blockquote>
+<div><a class="reference external" href="index.html">Xcore Github Repository Index</a></div></blockquote>
+<p>This lists all the XCore/Github open source projects. When you click
+on a project the index gives you some details on the repository and
+download links for the latest snapshot from the development branch or
+the latest tagged version.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">Some repositories have dependencies. The details section of the
+repository in the index should list any other repositories you need
+to download.</p>
+</div>
+</div>
+<div class="section" id="using-the-repository-code">
+<h2>Using the repository code<a class="headerlink" href="#using-the-repository-code" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s try and use some repository code:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Download the lastest version of <tt class="docutils literal"><span class="pre">sc_uart</span></tt> and import it into
+the XDE.</li>
+</ul>
+</div></blockquote>
+<p>To incorporate this into our application we need to update the
+build of our application to pull in the relevant code modules and then
+write code that uses the module.</p>
+<p>We can see that the uart repository has two modules that can be used:
+<tt class="docutils literal"><span class="pre">module_uart_tx</span></tt> and <tt class="docutils literal"><span class="pre">module_uart_rx</span></tt>:</p>
+<a class="reference internal image-reference" href="images/uartmodules16.png"><img alt="images/uartmodules16.png" src="images/uartmodules16.png" style="width: 187.2px; height: 142.8px;" /></a>
+<p>For this howto, we shall use <tt class="docutils literal"><span class="pre">module_uart_tx</span></tt>. Open up the
+application Makefile again and change the line that starts <tt class="docutils literal"><span class="pre">USED_MODULES</span> <span class="pre">=</span></tt> to:</p>
+<div class="highlight-none"><div class="highlight"><pre>USED_MODULES = module_uart_tx
+</pre></div>
+</div>
+<p>This will incorporate all the source files from the <tt class="docutils literal"><span class="pre">module_uart_tx</span></tt>
+directory into the build of your application.</p>
+<p>To use the code you need to look at the documentation for the
+repository and/or the header files in the module.</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Replace code in <tt class="docutils literal"><span class="pre">main.xc</span></tt> with the following code:</p>
+<div class="highlight-none"><div class="highlight"><pre>#include &lt;xs1.h&gt;
+#include &quot;uart_tx.h&quot;
+
+port p = XS1_PORT_1J;
+
+void uart_test(chanend c_uart)
+{
+        char message[] = &quot;Hello World&quot;;
+        for (int i=0;i&lt;sizeof(message);i++)
+          uart_tx_send_byte(c_uart, message[i]);
+}
+
+#define BUFFER_SIZE 30
+
+int main() {
+        chan c_uart;
+        char buffer[BUFFER_SIZE];
+        par {
+                  uart_tx(p, buffer, BUFFER_SIZE, 115200,
+                          8, UART_TX_PARITY_NONE, 1, c_uart);
+                  uart_test(c_uart);
+        }
+    return 0;
+}
+</pre></div>
+</div>
+</li>
+<li><p class="first">Try rebuilding the application.</p>
+</li>
+</ul>
+</div></blockquote>
+<p>You should now see that the build output shows that you are building
+some extra files into your application.</p>
+<div class="admonition caution">
+<p class="first admonition-title">Caution</p>
+<p class="last">The new program will not do anything on the simulator since it now
+has hardware interaction in.</p>
+</div>
+<p>The application outputs some characters over UART. The XK-1 has a uart
+wire connected to the XTAG-2 adapter which can be displayed on a
+PC. This is connected to port <tt class="docutils literal"><span class="pre">XS1_PORT_1J</span></tt>.
+To run the new binary on an XK-1:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Plug in your XK-1 to your computer via he XTAG-2 adapter.</li>
+<li>Right-click on the <tt class="docutils literal"><span class="pre">app_github_test.xe</span></tt> and select
+<strong>Run As</strong> <strong>&gt;</strong><strong> Run Configurations...</strong>.</li>
+<li>Select the <em>hardware</em> button and select the XTAG-2 adapter from
+the adapter drop down.</li>
+<li>Check the <em>Run Uart Server</em> box.</li>
+<li>Click on <strong>Apply</strong> and the click on <strong>Run</strong></li>
+</ul>
+</div></blockquote>
+<p>You should now see <tt class="docutils literal"><span class="pre">Hello</span> <span class="pre">World</span></tt> displayed in the console. This is
+the message that has been passed through the uart connection.</p>
+</div>
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" id='d2'>
+        <div class="sphinxsidebarwrapper">
+
+
+<div id="searchbox">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Search" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+
+
+    <div class="footer">
+    </div>
+  </body>
+</html>
+
+
+
