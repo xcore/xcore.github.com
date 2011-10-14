@@ -30,7 +30,7 @@ The repo_name should begin with one of the following prefixes:
 
 *	sc_*<name>* for a software component
 *	hw_*<name>* for a hardware design
-*	ap_*<name>* for a full application (comprising multiple components)
+*	sw_*<name>* for a full software application (comprising multiple components)
 *	proj_*<name>* for a full project (comprising an application and hardware)
 
 Of course before requesting a new repo, please first consider whether it might better belong as part of an existing repo.
