@@ -20,9 +20,11 @@ volunteers who are interested in building quality stuff.
 
   * - Repository
     - Description
+    -
 {% for repo in group.repos %}
   * - `{{ repo.name }} <{{repo.name}}_readme.html>`_
     - {{ repo.description }}
+    - {{ repo.doc_link }}
 {% endfor %}
 
 {% endfor %}

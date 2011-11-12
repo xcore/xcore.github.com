@@ -3,6 +3,7 @@ from github2.client import Github
 import jinja2
 import subprocess
 import urllib
+import urllib2
 import re
 import sys
 from optparse import OptionParser
@@ -54,7 +55,6 @@ else:
 
 excludes = ['Community','xcore.github.com']
 repos = [r for r in repos if not r.name in excludes]
-
 #for repo in repos:
 #    print "   * - " + repo.name
 #    print "     - " + repo.description
@@ -104,6 +104,14 @@ for repo in repos:
         matched = False
     else:
         repo.tags = [{'name':'v1.4','version':'1.4'}]
+
+    try:
+        doc_link = "http://github.xcore.com/%s/index.html" % repo.name
+        urllib2.urlopen(doc_link)
+        repo.doc_link = '`docs <%s>`_' % doc_link
+    except urllib2.HTTPError:
+        repo.doc_link = ''
+
     for group in groups:
         if re.match(group['regexp'], repo.name):
             matched = True
@@ -131,6 +139,7 @@ for repo in repos:
         remote_readme = urllib.urlopen('https://raw.github.com/xcore/%s/master/README.rst'%repo.name,'doc/%s_readme.rst' % repo.name)
     else:
         remote_readme = open('templates/dummy_readme.rst','r')
+
 
 
 
