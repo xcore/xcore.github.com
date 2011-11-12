@@ -54,11 +54,19 @@ document.getElementById('d1').style.height=h2 + "px";
             
   <div class="section" id="slicekit-standard-for-modular-xmos-development-platform">
 <h1>Slicekit Standard for Modular XMOS Development Platform<a class="headerlink" href="#slicekit-standard-for-modular-xmos-development-platform" title="Permalink to this headline">¶</a></h1>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/hw_slicekit_system_readme.rst</tt>, line 6)</p>
+<p>Title underline too short.</p>
+<div class="highlight-none"><div class="highlight"><pre>Slicekit Standard for Modular XMOS Development Platform
+===========================================
+</pre></div>
+</div>
+</div>
+<p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/hw_slicekit_system"><span>Click here to visit the main repository page</span></a>.</p>
+<p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
 <a
 onClick="window.open('https://github.com/xcore/hw_slicekit_system/zipball/master');window.focus();return true;" href="hw_slicekit_system_master_download.html">Download the latest master branch snapshot</a></div>
-<p><a class="reference external" href="http://github.com/xcore/hw_slicekit_system">Visit the repository Github page</a></p>
-<p><a class="reference external" href="index.html">Go to repository index</a></p>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
 <p>XMOS is committed to collaborative, community development but not just in the software domain. We believe open source firmware development is ideally backed up by open and interoperable hardware development platforms. To this end, we would like to establish exactly such an open, low cost and modular hardware development system capable of supporting a wide range of projects and target applications. Not only that, but XMOS would also like to use the very same platform for the majority of our own development work on new software components, demos and perhaps even some reference designs.</p>
@@ -66,6 +74,14 @@ onClick="window.open('https://github.com/xcore/hw_slicekit_system/zipball/master
 <p>So this repository is the forum to develop this open <em>standard</em> for a modular XMOS development system.</p>
 <div class="section" id="platform-overview">
 <h3>Platform Overview<a class="headerlink" href="#platform-overview" title="Permalink to this headline">¶</a></h3>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/hw_slicekit_system_readme.rst</tt>, line 34)</p>
+<p>Title underline too short.</p>
+<div class="highlight-none"><div class="highlight"><pre>Platform Overview
+++++++++++++++
+</pre></div>
+</div>
+</div>
 <p>The basic proposal is for an XS1-L2 based, 4-layer &#8220;core&#8221; board with multiple application specific daughter boards that attach above(and maybe below) the core board, along the lines of arduino shields but with a much much larger amount of GPIO. For now I am calling the daughter cards <em>Slices</em> and the core boards <em>Basekits</em>. The naming derives from an XMOS internal PCB code naming scheme which has a cheesy theme.</p>
 <p>The intention is that the slice boards should generally be realizable as simple 2-layer, hand assembled affairs, though of course there is no reason to preclude more complex designs. In most cases power can be provided to the daughter board from the core board. The Basekit board would be 4-layer, but users would be able purchase these from digikey for a very reasonable price.</p>
 <p>In future additional Basekits could be offered, for example one having 2xL2 with decent interchip xlink bandwidth and supporting multiple side by side  slices on top.</p>
@@ -79,6 +95,14 @@ onClick="window.open('https://github.com/xcore/hw_slicekit_system/zipball/master
 </div>
 <div class="section" id="basekit">
 <h4>Basekit<a class="headerlink" href="#basekit" title="Permalink to this headline">¶</a></h4>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/hw_slicekit_system_readme.rst</tt>, line 56)</p>
+<p>Title underline too short.</p>
+<div class="highlight-none"><div class="highlight"><pre>Basekit
+-----
+</pre></div>
+</div>
+</div>
 <p>We propose to use an L2 for the initial Basekit board. This is differentiated from the XK-1 because it offers the opportunity to simultaneously have Ethernet or USB networking capability, and one or more I/O devices, memory add-ons etc. For example, an Ethernet-Camera system, or a USB-LCD display, an Ethernet-USB bridge, etc. We think it is also beneficial to have a development platform with more processing and IO resources so that one can concentrate on debug and proof of concept and worry about optimisation later. For projects which wish to develop L1 based designs, it is straightforward to emulate an L1 using an L2, using either one core or a subset of threads on both cores. The XMOS tools roadmap is going to address this type of prototyping and quickstart activity.</p>
 <p>As well as the vertical connectors for Slices, we propose to have XSYS connectors like on the XK-1 to chain multiple core boards (each with their own daughter boards) horizontally.</p>
 <p>The current very rough L2 Basekit board proposal has:</p>
@@ -198,6 +222,14 @@ filesystem, display pictures etc</td>
 </div>
 <div class="section" id="getting-involved">
 <h3>Getting Involved<a class="headerlink" href="#getting-involved" title="Permalink to this headline">¶</a></h3>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/hw_slicekit_system_readme.rst</tt>, line 134)</p>
+<p>Title underline too short.</p>
+<div class="highlight-none"><div class="highlight"><pre>Getting Involved
++++++++
+</pre></div>
+</div>
+</div>
 <p>There should already be a forum topic for discussing this project. Also, we would like to start accumulating ideas, materials, pinout proposals, ideas for connectors and so on as files in the repo, so please don&#8217;t be shy with pull requests which contain more detail on your ideas.</p>
 </div>
 </div>

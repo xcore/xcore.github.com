@@ -54,11 +54,11 @@ document.getElementById('d1').style.height=h2 + "px";
             
   <div class="section" id="xcore-com-uart-software-component">
 <h1>XCORE.com UART SOFTWARE COMPONENT<a class="headerlink" href="#xcore-com-uart-software-component" title="Permalink to this headline">¶</a></h1>
+<p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_uart"><span>Click here to visit the main repository page</span></a>.</p>
+<p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
 <a
 onClick="window.open('https://github.com/xcore/sc_uart/zipball/master');window.focus();return true;" href="sc_uart_master_download.html">Download the latest master branch snapshot</a></div>
-<p><a class="reference external" href="http://github.com/xcore/sc_uart">Visit the repository Github page</a></p>
-<p><a class="reference external" href="index.html">Go to repository index</a></p>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
 <table class="docutils field-list" frame="void" rules="none">
@@ -67,29 +67,45 @@ onClick="window.open('https://github.com/xcore/sc_uart/zipball/master');window.f
 <tbody valign="top">
 <tr class="field"><th class="field-name">Stable release:</th><td class="field-body">unreleased</td>
 </tr>
-<tr class="field"><th class="field-name">Status:</th><td class="field-body">Feature complete</td>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">(module_uart):  Design Ready</td>
 </tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">Vishal Shah (github: VishalShah9)</td>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">(module_uart_fast): Example</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">Dan Wilkinson (github: djpwilk)</td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="key-features">
 <h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="module-uart-rx-tx">
+<h4>module_uart_rx/tx<a class="headerlink" href="#module-uart-rx-tx" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><ul class="simple">
+<li>Designed to be composed with other application functions in the same thread. Note that this is a manual process.</li>
 <li>RX and TX in separate threads</li>
 <li>Baud Rates up to 115.2K</li>
 <li>Even, Odd or No Parity</li>
 <li>5,6,7 or 8 bits per byte</li>
 <li>1 or 2 stop bits</li>
 <li>configurable buffer sizes</li>
+<li>RX and TX are defined as functions which each run in their own virtual par which does not terminate, and have a
+simple client API.</li>
+<li>A simulator plugin testbench and demo applictions are included.</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="firmware-overview">
-<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
-<p>RX and TX are defined as functions which each run in their own virtual par which does not terminate, and have a simple client API.</p>
-<p>A simulator plugin testbench and demo applictions are included.</p>
+<div class="section" id="module-uart-fast-rx-tx">
+<h4>module_uart_fast_rx/tx<a class="headerlink" href="#module-uart-fast-rx-tx" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><ul class="simple">
+<li>Needs thread for transmission and another for reception</li>
+<li>Fixed to 8 bits, single start bit, no parity, single stop bit.</li>
+<li>All of these parameters can be changed by editing the module.</li>
+<li>The baud rate is parameterisable, but has to be a whole division of 100 MHz.</li>
+<li>Basic testing to 10 MBaud has been done</li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="known-issues">
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
@@ -102,6 +118,10 @@ onClick="window.open('https://github.com/xcore/sc_uart/zipball/master');window.f
 <li>xcommon git&#64;github.com:xmos/xcommon.git</li>
 </ul>
 </div></blockquote>
+</div>
+<div class="section" id="further-information">
+<h3>Further Information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h3>
+<p>see doc/summary.rst</p>
 </div>
 <div class="section" id="support">
 <h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>

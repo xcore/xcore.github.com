@@ -57,7 +57,7 @@ document.getElementById('d1').style.height=h2 + "px";
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">0.6.0  <a class="reference external" href="https://github.com/xcore/Community/wiki/Versioning">versioning</a>)</td>
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">0.6.0  <a class="reference external" href="https://github.com/xcore/Community/wiki/Versioning"><span>versioning</span></a>)</td>
 </tr>
 <tr class="field"><th class="field-name">Status:</th><td class="field-body">Alpha</td>
 </tr>
@@ -69,11 +69,11 @@ document.getElementById('d1').style.height=h2 + "px";
 </table>
 <div class="section" id="key-features">
 <h1>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h1>
+<p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/ap_par_audio_dsp"><span>Click here to visit the main repository page</span></a>.</p>
+<p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
 <a
 onClick="window.open('https://github.com/xcore/ap_par_audio_dsp/zipball/master');window.focus();return true;" href="ap_par_audio_dsp_master_download.html">Download the latest master branch snapshot</a></div>
-<p><a class="reference external" href="http://github.com/xcore/ap_par_audio_dsp">Visit the repository Github page</a></p>
-<p><a class="reference external" href="index.html">Go to repository index</a></p>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -83,7 +83,7 @@ IN 2/3 : processed by crossover thread (see below), OUT 2/3 (below 500Hz), OUT 4
 Note: OUT 6/7 are the same as OUT 4/5 on the HW.
 Note: delays is a thread that can be plugged instead of crossover or eq_wrapper</li>
 <li>Audio DSP using concurrent threads. 2 Threads processing 4 channels each in this example.</li>
-<li>Two configurations of Biquad filter (derived from <a class="reference external" href="https://github.com/xcore/sc_dsp_filters">https://github.com/xcore/sc_dsp_filters</a>)
+<li>Two configurations of Biquad filter (derived from <a class="reference external" href="https://github.com/xcore/sc_dsp_filters"><span>https://github.com/xcore/sc_dsp_filters</span></a>)
 biquad_cascade_eq.xc : Cascade of 5 Biquads used for the 5-band equaliser
 biquad_crossover.xc. Single Biquad configured as either highshelf or lowshelf filter</li>
 <li>Audio samples are communicated to a configurable set of DSP threads using streaming channels</li>
@@ -117,6 +117,10 @@ Note: crossover_proc produces 2 output channels (low and high freqs) from 1 inpu
 <ul class="simple">
 <li>iis</li>
 </ul>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/ap_par_audio_dsp_readme.rst</tt>, line 74)</p>
+<p>Bullet list ends without a blank line; unexpected unindent.</p>
+</div>
 <blockquote>
 <div><p>I2S interface to codec. up to 6 channels in, 8 channels out
 See Audio Data Flow</p>
@@ -130,6 +134,10 @@ See Audio Data Flow</p>
 <ul class="simple">
 <li>iis thread</li>
 </ul>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/ap_par_audio_dsp_readme.rst</tt>, line 84)</p>
+<p>Bullet list ends without a blank line; unexpected unindent.</p>
+</div>
 <blockquote>
 <div><p>ouputs samples of NUM_IN stereo channels over NUM_IN streaming channels
 inputs samples of NUM_OUT stereo channels over NUM_IN streaming channels</p>
@@ -137,6 +145,10 @@ inputs samples of NUM_OUT stereo channels over NUM_IN streaming channels</p>
 <ul class="simple">
 <li>DSP threads</li>
 </ul>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/ap_par_audio_dsp_readme.rst</tt>, line 88)</p>
+<p>Bullet list ends without a blank line; unexpected unindent.</p>
+</div>
 <blockquote>
 <div><p>input samples over streaming channel(s)
 process the stream on a per-sample basis
@@ -147,7 +159,7 @@ output samples over streaming channel(s).</p>
 </li>
 <li><p class="first">Coefficient Generation</p>
 <ul class="simple">
-<li>All coefficients were created with <a class="reference external" href="https://github.com/xcore/sc_dsp_filters">https://github.com/xcore/sc_dsp_filters</a></li>
+<li>All coefficients were created with <a class="reference external" href="https://github.com/xcore/sc_dsp_filters"><span>https://github.com/xcore/sc_dsp_filters</span></a></li>
 <li>The Makefile configurations can be found in in the source code next to the coefficients</li>
 </ul>
 </li>
@@ -162,6 +174,9 @@ output samples over streaming channel(s).</p>
 <li>Audio Loopback (to test iis interface)</li>
 <li>XTA timing checks</li>
 </ul>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/ap_par_audio_dsp_readme.rst</tt>, line 107)</p>
+Bullet list ends without a blank line; unexpected unindent.</div>
 <p>The checks are run at compile time (see timing_checks.xta script)
 To analyse the routes it in the GUI, Click &#8220;Timing-&gt;Time&#8221; and then run the .xta script
 The script is automatically run at compile time, does the xta check and prints a summary:</p>
@@ -179,6 +194,10 @@ The script is automatically run at compile time, does the xta check and prints a
 <li>Optimised assembly Biquad (ASM_BIQUAD_EQ)</li>
 <li>Debug Switches (see Debug Switches in defines.h).</li>
 </ul>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/ap_par_audio_dsp_readme.rst</tt>, line 125)</p>
+<p>Bullet list ends without a blank line; unexpected unindent.</p>
+</div>
 <p>Note: To use XScope XDE 11.2 tools are required. Add xscope library to compile.
 Note: Make sure NUM_IN and NUM_OUT matches the set of DSP threads connected to the streaming channels</p>
 </li>
@@ -199,6 +218,14 @@ Note: Make sure NUM_IN and NUM_OUT matches the set of DSP threads connected to t
 </div>
 <div class="section" id="required-repositories">
 <h1>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h1>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/ap_par_audio_dsp_readme.rst</tt>, line 141)</p>
+<p>Title underline too short.</p>
+<div class="highlight-none"><div class="highlight"><pre>Required Repositories
+================
+</pre></div>
+</div>
+</div>
 <ul class="simple">
 <li>xcommon git&#64;github.com:xcore/xcommon.git</li>
 </ul>

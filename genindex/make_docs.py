@@ -196,5 +196,5 @@ for x in ['github_howto.rst','github_howto_11_2.rst']:
     template.stream().dump('doc/%s'%x)
 
 
-subprocess.call('cd doc;make all',shell=True)
+subprocess.call('cd doc;make clean;make all',shell=True)
 

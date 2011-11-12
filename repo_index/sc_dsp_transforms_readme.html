@@ -54,11 +54,11 @@ document.getElementById('d1').style.height=h2 + "px";
             
   <div class="section" id="sc-dsp-transforms">
 <h1>sc_dsp_transforms<a class="headerlink" href="#sc-dsp-transforms" title="Permalink to this headline">¶</a></h1>
+<p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_dsp_transforms"><span>Click here to visit the main repository page</span></a>.</p>
+<p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
 <a
 onClick="window.open('https://github.com/xcore/sc_dsp_transforms/zipball/master');window.focus();return true;" href="sc_dsp_transforms_master_download.html">Download the latest master branch snapshot</a></div>
-<p><a class="reference external" href="http://github.com/xcore/sc_dsp_transforms">Visit the repository Github page</a></p>
-<p><a class="reference external" href="index.html">Go to repository index</a></p>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
 <table class="docutils field-list" frame="void" rules="none">
@@ -69,53 +69,52 @@ onClick="window.open('https://github.com/xcore/sc_dsp_transforms/zipball/master'
 </tr>
 <tr class="field"><th class="field-name">Status:</th><td class="field-body">draft</td>
 </tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/henkmuller">https://github.com/henkmuller</a></td>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/henkmuller"><span>https://github.com/henkmuller</span></a></td>
 </tr>
-<tr class="field"><th class="field-name">Description:</th><td class="field-body">DCT and other transforms</td>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">DCT, FFT, and other transforms</td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="key-features">
 <h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
-<p>Functionality:</p>
+<p>DCT Functionality:</p>
 <ul class="simple">
-<li>Basic quantising DCT for JPEG encoder</li>
-<li>Basic Huffman encoder</li>
+<li>Basic quantising DCT for JPEG compression</li>
+<li>Basic Huffman encoder for JPEG encoder</li>
 <li>Access functions to compress a series of blocks.</li>
 <li>Example app to compress a PBM file into a JPEG file (PBM because that
 uses little memory to store).</li>
 </ul>
-<p>Performance (provided you can stream data in and out):</p>
+<p>FFT Functionality:</p>
 <ul class="simple">
-<li>three 50 MIPS threads compress approx 1.7 Msamples/s.</li>
-<li>QVGA greyscale: 22 fps in three 50 MIPS threads.</li>
-<li>VGA greyscale: 5 fps in three 50 MIPS threads.</li>
-<li>VGA greyscale: 14 fps in three 125 MIPS threads. With an extra DCT thread
-this may go up to 20 fps.</li>
-<li>Colour-images: approx two thirds of the speed?</li>
+<li>Forward complex FFT</li>
+<li>Inverse complex FFT</li>
+<li>Forward real FFT</li>
+<li>Inverse real FFT</li>
+<li>Example app that performs forwards and inverse FFT in sequence</li>
 </ul>
-<p>The performance depends on the compression ratio. When compressing
-marginally, Huffman encoding starts to take a serious amount of time.</p>
 </div>
 <div class="section" id="to-do">
 <h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Interface with a camera.</li>
+<li>Interface DCT with a camera.</li>
 </ul>
 </div>
 <div class="section" id="firmware-overview">
 <h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
 <p>The purpose of this repo is to collect a series of algorithms to perform
 transforms on data, such as FFT, DCT, etc.</p>
-<p>There are two modules in the repo:</p>
+<p>There are three modules in the repo:</p>
 <ul class="simple">
-<li>module_fdctint: forward quantising DCT.
+<li>module_dct_jpeg: forward quantising DCT.
 The process requires patches of 8x8 integer values, and in situ replace
 this with 8x8 transformed and quantised patches.</li>
-<li>module_jhuffman: Huffman encode for JPEG images (this may have to go in a
+<li>module_huffman_jpeg: Huffman encode for JPEG images (this may have to go in a
 different repo).
 The process requires patches of 8x8 integer values, and streams bits out
 over a (streaming) channel.</li>
+<li>module_fft_simple: complex FFT (size must be a power of 2), and real FFT
+(two arrays of identical length that must both be a power of 2).</li>
 </ul>
 </div>
 <div class="section" id="known-issues">

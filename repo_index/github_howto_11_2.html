@@ -72,8 +72,8 @@ Development tools and have used the Xmos Development Environment
 <p>First you need to install the latest version of the <tt class="docutils literal"><span class="pre">xcommon</span></tt> build
 system. You can get it from:</p>
 <blockquote>
-<div><a class="reference external" href="xcommon_readme.html">xcommon download</a></div></blockquote>
-<p>Then import the system into the XDE (instructions are <a class="reference external" href="xcommon_master_download.html">here</a>).</p>
+<div><a class="reference external" href="xcommon_readme.html"><span>xcommon download</span></a></div></blockquote>
+<p>Then import the system into the XDE (instructions are <a class="reference external" href="xcommon_master_download.html"><span>here</span></a>).</p>
 </div>
 <div class="section" id="create-a-suitable-project-to-build-code">
 <h2>Create a suitable project to build code<a class="headerlink" href="#create-a-suitable-project-to-build-code" title="Permalink to this headline">¶</a></h2>
@@ -84,10 +84,10 @@ project that is slightly different to the normal XDE based projects.</p>
 <tt class="docutils literal"><span class="pre">xcore_template</span></tt> - this is a template that you can rename to make a
 new project of your own. You can get the latest template here:</p>
 <blockquote>
-<div><a class="reference external" href="xcore_template_readme.html">xcore_template download</a></div></blockquote>
+<div><a class="reference external" href="xcore_template_readme.html"><span>xcore_template download</span></a></div></blockquote>
 <p>Once this is imported you should have a project workspace that looks
 something like this:</p>
-<a class="reference internal image-reference" href="images/templateworkspace40.png"><img alt="images/templateworkspace40.png" src="images/templateworkspace40.png" style="width: 231.7px; height: 232.4px;" /></a>
+<a class="reference internal image-reference" href="images/templateworkspace.png"><img alt="images/templateworkspace.png" src="images/templateworkspace.png" style="width: 231.7px; height: 232.4px;" /></a>
 <p>You can now adapt the project to your use:</p>
 <blockquote>
 <div><ul>
@@ -110,7 +110,7 @@ whatever your want your application to be called.</p>
 </ul>
 </div></blockquote>
 <p>You should now have a workspace looking like this:</p>
-<a class="reference internal image-reference" href="images/myproject32.png"><img alt="images/myproject32.png" src="images/myproject32.png" style="width: 207.2px; height: 261.8px;" /></a>
+<a class="reference internal image-reference" href="images/myproject.png"><img alt="images/myproject.png" src="images/myproject.png" style="width: 207.2px; height: 261.8px;" /></a>
 <p>So there is a project called <tt class="docutils literal"><span class="pre">sw_myproject</span></tt> that contains one
 application:: <tt class="docutils literal"><span class="pre">app_github_test</span></tt>. However, that application has no
 code in it. Let&#8217;s fix that:</p>
@@ -148,7 +148,7 @@ the <tt class="docutils literal"><span class="pre">Build</span> <span class="pre
 </li>
 <li><p class="first">You should now see a file called <tt class="docutils literal"><span class="pre">app_github_test.xe</span></tt> in the
 <em>Binaries</em> section of your project in the Project explorer:</p>
-<a class="reference internal image-reference" href="images/myappbinary28.png"><img alt="images/myappbinary28.png" src="images/myappbinary28.png" style="width: 144.0px; height: 142.0px;" /></a>
+<a class="reference internal image-reference" href="images/myappbinary.png"><img alt="images/myappbinary.png" src="images/myappbinary.png" style="width: 144.0px; height: 142.0px;" /></a>
 </li>
 <li><p class="first">Right-click on this binary and select
 <strong>Run As</strong> <strong>&gt;</strong><strong>XCore Application</strong>. Choose <em>Simulator</em> from
@@ -167,7 +167,7 @@ how to incorporate other peoples component code into your application.</p>
 <p>You can import other people code into your application by going to the
 repository index:</p>
 <blockquote>
-<div><a class="reference external" href="index.html">Xcore Github Repository Index</a></div></blockquote>
+<div><a class="reference external" href="index.html"><span>Xcore Github Repository Index</span></a></div></blockquote>
 <p>This lists all the XCore/Github open source projects. When you click
 on a project the index gives you some details on the repository and
 download links for the latest snapshot from the development branch or
@@ -193,7 +193,7 @@ build of our application to pull in the relevant code modules and then
 write code that uses the module.</p>
 <p>We can see that the uart repository has two modules that can be used:
 <tt class="docutils literal"><span class="pre">module_uart_tx</span></tt> and <tt class="docutils literal"><span class="pre">module_uart_rx</span></tt>:</p>
-<a class="reference internal image-reference" href="images/uartmodules16.png"><img alt="images/uartmodules16.png" src="images/uartmodules16.png" style="width: 187.2px; height: 142.8px;" /></a>
+<a class="reference internal image-reference" href="images/uartmodules.png"><img alt="images/uartmodules.png" src="images/uartmodules.png" style="width: 187.2px; height: 142.8px;" /></a>
 <p>For this howto, we shall use <tt class="docutils literal"><span class="pre">module_uart_tx</span></tt>. Open up the
 application Makefile again and change the line that starts <tt class="docutils literal"><span class="pre">USED_MODULES</span> <span class="pre">=</span></tt> to:</p>
 <div class="highlight-none"><div class="highlight"><pre>USED_MODULES = module_uart_tx

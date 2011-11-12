@@ -1,3 +1,8 @@
+
+This summary page is auto-generated from the github repository. `Click here to visit the main repository page <http://github.com/xcore/{{repo.name}}>`_.
+
+`Go to repository index <index.html>`_
+
 .. container:: download
 
   .. raw:: html
@@ -14,9 +19,5 @@
 
 {% endfor %}
 
-
-`Visit the repository Github page <http://github.com/xcore/{{repo.name}}>`_
-
-`Go to repository index <index.html>`_
 
 

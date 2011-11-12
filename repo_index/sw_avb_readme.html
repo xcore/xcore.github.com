@@ -54,26 +54,26 @@ document.getElementById('d1').style.height=h2 + "px";
             
   <div class="section" id="avb-software-stack">
 <h1>AVB Software Stack<a class="headerlink" href="#avb-software-stack" title="Permalink to this headline">¶</a></h1>
+<p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sw_avb"><span>Click here to visit the main repository page</span></a>.</p>
+<p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
 <a
 onClick="window.open('https://github.com/xcore/sw_avb/zipball/master');window.focus();return true;" href="sw_avb_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="download container">
 <a onClick="window.open('https://github.com/xcore/sw_avb/zipball/v5.1.0beta1');window.focus();return true;" href="sw_avb_v5.1.0beta1_download.html">Download version 5.1.0beta1</a></div>
-<p><a class="reference external" href="http://github.com/xcore/sw_avb">Visit the repository Github page</a></p>
-<p><a class="reference external" href="index.html">Go to repository index</a></p>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">5.1.0</td>
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">5.1.1</td>
 </tr>
 <tr class="field"><th class="field-name">Status:</th><td class="field-body">Reference Software</td>
 </tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="mailto:davidn&#37;&#52;&#48;xmos&#46;com">davidn<span>&#64;</span>xmos<span>&#46;</span>com</a></td>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="mailto:davidn&#37;&#52;&#48;xmos&#46;com"><span>davidn<span>&#64;</span>xmos<span>&#46;</span>com</span></a></td>
 </tr>
-<tr class="field"><th class="field-name">Description:</th><td class="field-body">Audio over Ethernet Software (AVB)</td>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">Audio Video Bridging Software (AVB)</td>
 </tr>
 </tbody>
 </table>
@@ -86,20 +86,14 @@ onClick="window.open('https://github.com/xcore/sw_avb/zipball/master');window.fo
 <li>PTP server and protocol</li>
 <li>Audio interface for I2S and TDM</li>
 <li>Clock recovery and interface to PLL clock source</li>
-<li>Partial support for 1722.1 draft 0.12</li>
-</ul>
-</div>
-<div class="section" id="to-do">
-<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Firmware update over the wire</li>
+<li>Support for 1722.1 ADP and ACMP draft D15A</li>
 </ul>
 </div>
 <div class="section" id="firmware-overview">
 <h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
 <p>This is an implementation of the AVB transport stream protocol carrying audio data. It includes a PTP time
-server to provide a stable wallclock reference, clock recovery to synchronize listener audio to talker audio
-codecs.  It includes implementations of the Stream Reservation Protocol for conveying AVB stream reservation
+server to provide a stable wallclock reference and clock recovery to synchronize listener audio to talker audio
+codecs.  It also includes implementations of the Stream Reservation Protocol for conveying AVB stream reservation
 information through 802.1 network infrastructure.</p>
 </div>
 <div class="section" id="known-issues">
@@ -110,6 +104,14 @@ information through 802.1 network infrastructure.</p>
 </div>
 <div class="section" id="required-repositories">
 <h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
+<div class="system-message">
+<p class="system-message-title">System Message: WARNING/2 (<tt class="docutils">/home/davel/github/xcore.github.com/genindex/doc/sw_avb_readme.rst</tt>, line 69)</p>
+<p>Title underline too short.</p>
+<div class="highlight-none"><div class="highlight"><pre>Required Repositories
+================
+</pre></div>
+</div>
+</div>
 <ul class="simple">
 <li>sc_ethernet git&#64;github.com:xcore/sc_ethernet.git</li>
 <li>sc_xtcp git&#64;github.com:xcore/sc_xtcp.git</li>
