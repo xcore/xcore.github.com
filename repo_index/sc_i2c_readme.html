@@ -74,18 +74,34 @@ onClick="window.open('https://github.com/xcore/sc_i2c/zipball/master');window.fo
 <p>The I2C Component provides the ability to write and read the I2C Compatible Slave devices.</p>
 <div class="section" id="key-features">
 <h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
+<p>module_i2c:</p>
+<ul class="simple">
 <li>Works at 100 Kbps and 400 Kbps</li>
 <li>Supports Clock stretching</li>
 <li>Supports Multi master capability.</li>
 <li>Supports Clock synchronization.</li>
 </ul>
-</div></blockquote>
+<p>module_i2c_simple / module_i2c_single_port:</p>
+<ul class="simple">
+<li>Small footprint</li>
+<li>Works at 100 Kbps and 400 Kbps</li>
+<li>Single system-wide I2C bus with XCore acting as the single master.</li>
+<li>SDA and SCL can be on a single wide port (module_i2c_single_port)</li>
+</ul>
+<p>module_i2c_master:</p>
+<ul class="simple">
+<li>Works at 100 Kbps and 400 Kbps</li>
+<li>Multiple I2C busses</li>
+<li>Supports Clock stretching</li>
+<li>Support for Multi master capability.</li>
+<li>Support for Clock synchronization.</li>
+</ul>
 </div>
 <div class="section" id="firmware-overview">
 <h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
 <p>The Component is in the form of a function library and can be called in a thread.</p>
+<p>Module_i2c is meant to be deprecated, once module_i2c_master is completed,
+and once the slave part has been moved to module_i2c_slave.</p>
 </div>
 <div class="section" id="known-issues">
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
@@ -95,11 +111,9 @@ does not support HS-Mode.</p>
 </div>
 <div class="section" id="required-modules">
 <h3>Required Modules<a class="headerlink" href="#required-modules" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>xcommon git&#64;github.com:xmos/xcommon.git</li>
 </ul>
-</div></blockquote>
 </div>
 <div class="section" id="instructions-for-building-project-and-running-the-simulation">
 <h3>Instructions for Building Project and running the simulation.<a class="headerlink" href="#instructions-for-building-project-and-running-the-simulation" title="Permalink to this headline">¶</a></h3>

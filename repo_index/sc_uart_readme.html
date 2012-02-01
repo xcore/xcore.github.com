@@ -77,35 +77,38 @@ onClick="window.open('https://github.com/xcore/sc_uart/zipball/master');window.f
 </table>
 <div class="section" id="key-features">
 <h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="module-uart-rx-tx">
-<h4>module_uart_rx/tx<a class="headerlink" href="#module-uart-rx-tx" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="generic-uart">
+<h4>Generic UART<a class="headerlink" href="#generic-uart" title="Permalink to this headline">¶</a></h4>
+<p>module_uart_rx
+module_uart_tx</p>
 <blockquote>
 <div><ul class="simple">
-<li>Designed to be composed with other application functions in the same thread. Note that this is a manual process.</li>
-<li>RX and TX in separate threads</li>
-<li>Baud Rates up to 115.2K</li>
-<li>Even, Odd or No Parity</li>
-<li>5,6,7 or 8 bits per byte</li>
-<li>1 or 2 stop bits</li>
+<li>Inline library that assumes RX and TX in separate threads</li>
+<li>Baud Rates up to 115.2K, any combination of bits per byte, parity, stop bits</li>
 <li>configurable buffer sizes</li>
-<li>RX and TX are defined as functions which each run in their own virtual par which does not terminate, and have a
-simple client API.</li>
-<li>A simulator plugin testbench and demo applictions are included.</li>
+<li>An XSIM testbench and demo appliction for the XK-1A is included.</li>
 </ul>
 </div></blockquote>
 </div>
-<div class="section" id="module-uart-fast-rx-tx">
-<h4>module_uart_fast_rx/tx<a class="headerlink" href="#module-uart-fast-rx-tx" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="simple-fast-uart">
+<h4>Simple/Fast UART<a class="headerlink" href="#simple-fast-uart" title="Permalink to this headline">¶</a></h4>
+<p>module_uart_fast_rx
+module_uart_fast_tx</p>
 <blockquote>
 <div><ul class="simple">
 <li>Needs thread for transmission and another for reception</li>
-<li>Fixed to 8 bits, single start bit, no parity, single stop bit.</li>
+<li>Fixed to 8 bits per byte, single start bit, no parity, single stop bit.</li>
 <li>All of these parameters can be changed by editing the module.</li>
 <li>The baud rate is parameterisable, but has to be a whole division of 100 MHz.</li>
-<li>Basic testing to 10 MBaud has been done</li>
+<li>10 MBaud is achievable in a 100 MIPS thread</li>
+<li>Includes an XK-1A demo application</li>
 </ul>
 </div></blockquote>
 </div>
+</div>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference external" href="http://github.xcore.com/sc_uart"><span>http://github.xcore.com/sc_uart</span></a>.</p>
 </div>
 <div class="section" id="known-issues">
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
@@ -118,10 +121,6 @@ simple client API.</li>
 <li>xcommon git&#64;github.com:xmos/xcommon.git</li>
 </ul>
 </div></blockquote>
-</div>
-<div class="section" id="further-information">
-<h3>Further Information<a class="headerlink" href="#further-information" title="Permalink to this headline">¶</a></h3>
-<p>see doc/summary.rst</p>
 </div>
 <div class="section" id="support">
 <h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>

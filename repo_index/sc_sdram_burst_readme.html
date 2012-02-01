@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>XCORE.com xTcp SOFTWARE COMPONENT &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <title>XCORE.com SDRAM SOFTWARE COMPONENT &mdash; XCore Open Source Repository Index v0 documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -52,26 +52,26 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="xcore-com-xtcp-software-component">
-<h1>XCORE.com xTcp SOFTWARE COMPONENT<a class="headerlink" href="#xcore-com-xtcp-software-component" title="Permalink to this headline">¶</a></h1>
-<p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_xtcp"><span>Click here to visit the main repository page</span></a>.</p>
+  <div class="section" id="xcore-com-sdram-software-component">
+<h1>XCORE.com SDRAM SOFTWARE COMPONENT<a class="headerlink" href="#xcore-com-sdram-software-component" title="Permalink to this headline">¶</a></h1>
+<p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_sdram_burst"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
 <a
-onClick="window.open('https://github.com/xcore/sc_xtcp/zipball/master');window.focus();return true;" href="sc_xtcp_master_download.html">Download the latest master branch snapshot</a></div>
+onClick="window.open('https://github.com/xcore/sc_sdram_burst/zipball/master');window.focus();return true;" href="sc_sdram_burst_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">2.0.0</td>
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">1.2 unreleased - based on SDRAM 1.1 of April 2010</td>
 </tr>
-<tr class="field"><th class="field-name">Status:</th><td class="field-body">Ongoing development</td>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">Released</td>
 </tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/DavidNorman"><span>https://github.com/DavidNorman</span></a></td>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/djpwilk"><span>Dan Wilkinson</span></a></td>
 </tr>
-<tr class="field"><th class="field-name">Description:</th><td class="field-body">The micro TCP/IP stack</td>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">A Burst Mode access driver for the Micron Technology MT48LC16M16A2 Synchronous DRAM</td>
 </tr>
 </tbody>
 </table>
@@ -79,32 +79,52 @@ onClick="window.open('https://github.com/xcore/sc_xtcp/zipball/master');window.f
 <h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><ul class="simple">
-<li>TCP + UDP connections</li>
-<li>ICMP</li>
-<li>DHCP</li>
-<li>mDNS</li>
-<li>Example of HTTP server and Telnet</li>
-<li>TFTP server</li>
+<li>One thread reads/writes data to SDRAM</li>
+<li>Optimised for burst access of blocks of 32 bit words (not for random access) with 12.5 MHz sdram clock.</li>
+<li>Application retains control of refresh by calling sdram_refresh at
+appropriate to prevent unexpected delays</li>
+<li>16-bit - Peak write: 25MB/s, read 25MB/s.</li>
+<li>Code size: 2KB</li>
+<li>Thread count: 1</li>
 </ul>
 </div></blockquote>
 </div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Add build options for 8 and 4 bit data bus width</li>
+<li>Improve clock speed to 25 MHz</li>
+<li>Rework sdram burst write and read code to used fully timestamped IO and deprecate the p_sdram_gate mechanism</li>
+</ul>
+</div>
 <div class="section" id="firmware-overview">
 <h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
-<p>Multiple threads are used to process IP packets and forward them through a channel to upper layer handlers.</p>
-<p>Documentation can be found at <a class="reference external" href="http://github.xcore.com/sc_xtcp/index.html"><span>http://github.xcore.com/sc_xtcp/index.html</span></a></p>
+<blockquote>
+<div><ul class="simple">
+<li>module_sdram_burst: the burst mode driver</li>
+<li>app_sdram_burst_example: contains a c client and an xc test harness</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p>Full documentation can be found at: <a class="reference external" href="http://xcore.github.com/sc_sdram_burst/"><span>http://xcore.github.com/sc_sdram_burst/</span></a></p>
 </div>
 <div class="section" id="known-issues">
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
-<p>none</p>
+<ul class="simple">
+<li>Two warnings produced in XDE 11.2 related to buffered port for DQ which has its direction reversed. This warning can be ignored.</li>
+</ul>
 </div>
-<div class="section" id="required-modules">
-<h3>Required Modules<a class="headerlink" href="#required-modules" title="Permalink to this headline">¶</a></h3>
-<p>xcommon
-sc_ethernet</p>
+<div class="section" id="required-repositories">
+<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>xcommon git&#64;github.com:xcore/xcommon.git</li>
+</ul>
 </div>
 <div class="section" id="support">
 <h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
-<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the maintainer for this line.</p>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted are at the discretion of the maintainer of this component.</p>
 </div>
 </div>
 </div>

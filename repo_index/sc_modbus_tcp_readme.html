@@ -69,44 +69,49 @@ onClick="window.open('https://github.com/xcore/sc_modbus_tcp/zipball/master');wi
 </tr>
 <tr class="field"><th class="field-name">Status:</th><td class="field-body">draft</td>
 </tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">Vinith Mundhra</td>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">Vinith Mundhra (github: vinithmundhra)</td>
 </tr>
 <tr class="field"><th class="field-name">Description:</th><td class="field-body">Modbus TCP Component - Server</td>
 </tr>
 </tbody>
 </table>
-<div class="section" id="key-features">
-<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>&lt;Bullet pointed list of features&gt;</li>
-</ul>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>This is a Modbus TCP Server library. Modbus protocol specification and messaging implementation guide can be found here: <a class="reference external" href="http://www.modbus.org/specs.php"><span>http://www.modbus.org/specs.php</span></a></p>
+<p>A Modbus client can send &#8216;requests&#8217; to a Modbus Server via TCP. These requests may be to read / write a certain part of memory. The TCP layer carries this data from the client and passes it over to the modbus_event_handler. This frame is then processed by modbus_pkt_processing and a response is generated. This response is carried back to the client via TCP.</p>
 </div>
 <div class="section" id="to-do">
 <h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>&lt;Bullet pointed list of missing features&gt;</li>
+<li>A single thread variant that can process Modbus requests in parallel to TCP communications.</li>
 </ul>
 </div>
 <div class="section" id="firmware-overview">
 <h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
-<p>&lt;One or more paragraphs detailing the functionality of modules and apps in this repo&gt;</p>
+<ul class="simple">
+<li>module_modbus_tcp_serversrcmodbus_tcpip_if.*</li>
+</ul>
+<p>Handles TCP events and calls appropriate Modbus commands to process requests.</p>
+<ul class="simple">
+<li>module_modbus_tcp_serversrcmodbus_pkt_processing.*</li>
+</ul>
+<p>Actually, processes the request and generates (positive or negative) response.</p>
 </div>
 <div class="section" id="known-issues">
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>&lt;Bullet pointed list of problems&gt;</li>
-</ul>
+<p>Please report issues via the Issues tab in this github repo.</p>
 </div>
 <div class="section" id="required-repositories">
 <h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>&lt;list of repos, likely to include xcommon if it uses the build system&gt;</li>
+<li>sc_ethernet git://github.com/xcore/sc_ethernet.git</li>
+<li>sc_xtcp git://github.com/xcore/sc_xtcp.git</li>
 <li>xcommon git&#64;github.com:xcore/xcommon.git</li>
 </ul>
 </div>
 <div class="section" id="support">
 <h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
-<p>&lt;Description of support model&gt;</p>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the manitainer for this line.</p>
 </div>
 </div>
 </div>

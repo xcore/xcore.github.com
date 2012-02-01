@@ -69,9 +69,9 @@ onClick="window.open('https://github.com/xcore/sc_spi/zipball/master');window.fo
 </tr>
 <tr class="field"><th class="field-name">Status:</th><td class="field-body">Feature complete</td>
 </tr>
-<tr class="field"><th class="field-name">Description:</th><td class="field-body">SPI master/slave component.</td>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">SPI master and slave components.</td>
 </tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/mikexmos"><span>https://github.com/mikexmos</span></a></td>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/xsamc"><span>https://github.com/xsamc</span></a></td>
 </tr>
 </tbody>
 </table>
@@ -80,18 +80,22 @@ onClick="window.open('https://github.com/xcore/sc_spi/zipball/master');window.fo
 <blockquote>
 <div><ul class="simple">
 <li>Master and slave components</li>
-<li>Implements SPI mode 3</li>
-<li>Configurable clock, default value of 12.5 MHz</li>
+<li>Implements SPI modes 0, 1, 2, 3</li>
+<li>Configurable clock</li>
 </ul>
 </div></blockquote>
 </div>
 <div class="section" id="firmware-overview">
 <h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
-<p>SPI master/slave component. Simple API with functions to initialize, read and write values of 1, 2 or 4 bytes, and shutdown. This component API is function-based and does not require a dedicated thread. Includes data transfer test code.</p>
+<p>SPI master and slave components. Simple API with functions to initialize, read and write values of 1, 2 or 4 bytes, or arbitrary length arrays, and shutdown. This component API is function-based and does not require a dedicated thread. Includes data transfer test code.</p>
+</div>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p>Full documentation can be found at: <a class="reference external" href="http://xcore.github.com/sc_spi/"><span>http://xcore.github.com/sc_spi/</span></a></p>
 </div>
 <div class="section" id="known-issues">
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
-<p>none</p>
+<p>None</p>
 </div>
 <div class="section" id="required-modules">
 <h3>Required Modules<a class="headerlink" href="#required-modules" title="Permalink to this headline">¶</a></h3>

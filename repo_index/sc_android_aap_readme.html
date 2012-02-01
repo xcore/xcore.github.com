@@ -78,34 +78,74 @@ onClick="window.open('https://github.com/xcore/sc_android_aap/zipball/master');w
 <div class="section" id="key-features">
 <h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Recognizes Android (Samsung Google Nexus) phone</li>
+<li>Recognizes Android (Samsung Google Nexus S) phone</li>
 <li>Puts (and checks) the phone into accessory mode</li>
 <li>Processes IR remote command and sends it to Android phone to toggle phone application button objects</li>
 </ul>
-</div>
-<div class="section" id="to-do">
-<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="firmware-overview">
 <h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
 <p>Initial IR Remote implementation is based on an iPod Dock V2 board. The Android device is first recognized (checked) and put into &#8216;accessory&#8217; mode. Once this is successful, the XMOS device can communicate with the Android device using its bulk endpoints. Commands from IR remote is processed and sent to the application in the Android phone to toggle button objects.</p>
 <p>Phone application is available from the Android developer website and can be downloaded on to the phone using Android SDK.</p>
 <p>The IR folder contains code for processing remote commands.</p>
-<p>Please note that there might be some references to iPod - kindly ignore them.</p>
-</div>
-<div class="section" id="known-issues">
-<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="required-repositories">
 <h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>sc_usb_host</li>
 <li>xcommon git&#64;github.com:xcore/xcommon.git</li>
 </ul>
 </div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<p>** Installing and running the demo (Command Line) **</p>
+<p>From an environment that can access the XMOS Desktop Development tools, unzip the zipfile and from the app_android_aap_ir directory run:</p>
+<blockquote>
+<div><ul class="simple">
+<li>xmake all</li>
+<li>xflash bin/app_android_aap_ir/aap.xe</li>
+<li>power cycle the hardware</li>
+</ul>
+</div></blockquote>
+<p>To rapidly try out modifications to the firmware, from the app_android_aap_ir directory run:</p>
+<blockquote>
+<div><ul class="simple">
+<li>xmake all</li>
+<li>xrun bin/app_android_aap_ir/aap.xe</li>
+</ul>
+</div></blockquote>
+<p>Firmware run in this way will not persist following a power cycle of the hardware.</p>
+<p>** Installing and running the demo (XDE) **</p>
+<p>To install, open the XDE Eclipse IDE and perform the following steps:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Select the &#8220;Import&#8221; item from the &#8220;File&#8221; menu</li>
+<li>Select &#8220;General&#8221; -&gt; &#8220;Existing Projects into Workspace&#8221; and click &#8220;Next&#8221;</li>
+<li>Click on &#8220;Browse&#8221; next to &#8220;Select archive file&#8221; and select the button server zipfile</li>
+<li>Make sure the project you want to import is ticked in the &#8220;Projects:&#8221; list</li>
+<li>Click on &#8220;Finish&#8221;</li>
+</ul>
+</div></blockquote>
+<p>To build, select the project in the Project Explorer window and click on build icon.</p>
+<p>To run, click on the run icon. The initial run attempt will prompt for confirmation of whether to write the firmware to the iPod Dock flash, or run the firmware.</p>
+<blockquote>
+<div><ul class="simple">
+<li>if the firmware is written to flash, the hardware must then be power cycled</li>
+<li>if the firmware is run directly from XDE it will not persist following a power cycle of the hardware</li>
+</ul>
+</div></blockquote>
+<p>To configure the project to run on a particular device or in the simulator click on the drop down arrow next to the run icon and select &#8220;Run Configurations&#8221;</p>
+</div>
 <div class="section" id="support">
 <h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
-<p>Please contact: vinithmundhra</p>
+<p>This release of firmware is supported on following XMOS Boards:
+XR-IPOD-DOCK-V2 1V1</p>
+<p>Please contact: vinithmundhra for firmware issues. Users wishing to develop this work further and who are not MFI licensed should contact XMOS to enquire about obtaining a suitable development board.</p>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>

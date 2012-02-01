@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>XCORE.com xTcp SOFTWARE COMPONENT &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <title>PARSER MODULE &mdash; XCore Open Source Repository Index v0 documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -52,59 +52,64 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="xcore-com-xtcp-software-component">
-<h1>XCORE.com xTcp SOFTWARE COMPONENT<a class="headerlink" href="#xcore-com-xtcp-software-component" title="Permalink to this headline">¶</a></h1>
-<p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_xtcp"><span>Click here to visit the main repository page</span></a>.</p>
+  <div class="section" id="parser-module">
+<h1>PARSER MODULE<a class="headerlink" href="#parser-module" title="Permalink to this headline">¶</a></h1>
+<p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_parser"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
 <a
-onClick="window.open('https://github.com/xcore/sc_xtcp/zipball/master');window.focus();return true;" href="sc_xtcp_master_download.html">Download the latest master branch snapshot</a></div>
+onClick="window.open('https://github.com/xcore/sc_parser/zipball/master');window.focus();return true;" href="sc_parser_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">2.0.0</td>
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">1.0.4</td>
 </tr>
-<tr class="field"><th class="field-name">Status:</th><td class="field-body">Ongoing development</td>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">Feature complete</td>
 </tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/DavidNorman"><span>https://github.com/DavidNorman</span></a></td>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/leleb"><span>Raffaele Bacchi</span></a></td>
 </tr>
-<tr class="field"><th class="field-name">Description:</th><td class="field-body">The micro TCP/IP stack</td>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">A general purpose parser module</td>
 </tr>
 </tbody>
 </table>
 <div class="section" id="key-features">
 <h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
-<li>TCP + UDP connections</li>
-<li>ICMP</li>
-<li>DHCP</li>
-<li>mDNS</li>
-<li>Example of HTTP server and Telnet</li>
-<li>TFTP server</li>
+<ul class="simple">
+<li>custom EBNF grammar</li>
 </ul>
-</div></blockquote>
+</div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Check for duplicated symbol definition in grammar by the grammar compiler</li>
+<li>Check for left recursion in grammar by the grammar compiler.</li>
+</ul>
 </div>
 <div class="section" id="firmware-overview">
 <h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
-<p>Multiple threads are used to process IP packets and forward them through a channel to upper layer handlers.</p>
-<p>Documentation can be found at <a class="reference external" href="http://github.xcore.com/sc_xtcp/index.html"><span>http://github.xcore.com/sc_xtcp/index.html</span></a></p>
+<p>CompParser: a module for parsing data according to a compiled grammar.
+EbnfGrammarCompiler: a module to generate compiled grammar from an EBNF like grammar.
+ExpressionParser: a demo usage of the parser modules that implements an expression interpreter.
+XmlParser: a demo usage of the parser modules that builds a tree structure that reflects the element structure of an xml source.</p>
 </div>
 <div class="section" id="known-issues">
 <h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
-<p>none</p>
+<ul class="simple">
+<li>&lt;Bullet pointed list of problems&gt;</li>
+</ul>
 </div>
-<div class="section" id="required-modules">
-<h3>Required Modules<a class="headerlink" href="#required-modules" title="Permalink to this headline">¶</a></h3>
-<p>xcommon
-sc_ethernet</p>
+<div class="section" id="required-repositories">
+<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>xcommon git&#64;github.com:xcore/xcommon.git</li>
+</ul>
 </div>
 <div class="section" id="support">
 <h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
-<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the maintainer for this line.</p>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted are at the discretion of the maintainer of this component.</p>
 </div>
 </div>
 </div>
