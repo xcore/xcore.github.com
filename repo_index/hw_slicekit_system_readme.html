@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Slicekit Standard for Modular XMOS Development Platform &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <title>hw_slicekit_system &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,9 +21,8 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
     <script type="text/javascript" src="static/xcomment.js"></script>
-    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+    <link rel="top" title="Xcore Open Source Repository Index v documentation" href="index.html" /> 
 
 <script>
 function setheight() {
@@ -52,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="slicekit-standard-for-modular-xmos-development-platform">
-<h1>Slicekit Standard for Modular XMOS Development Platform<a class="headerlink" href="#slicekit-standard-for-modular-xmos-development-platform" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="hw-slicekit-system">
+<h1>hw_slicekit_system<a class="headerlink" href="#hw-slicekit-system" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/hw_slicekit_system"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -61,145 +60,7 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/hw_slicekit_system/zipball/master');window.focus();return true;" href="hw_slicekit_system_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<p>XMOS is committed to collaborative, community development but not just in the software domain. We believe open source firmware development is ideally backed up by open and interoperable hardware development platforms. To this end, we would like to establish exactly such an open, low cost and modular hardware development system capable of supporting a wide range of projects and target applications. Not only that, but XMOS would also like to use the very same platform for the majority of our own development work on new software components, demos and perhaps even some reference designs.</p>
-<p>We very much hope that the same basic platform can serve both XMOS own commercial requirements as well as underpinning a busy development community. To this end, we have proposed here a (very) rough outline of the goals of this new development system and we would like to have feedback, contributions and discussion from our community to make sure we realize an open development hardware standard that works, well enough, for everyone. Probably we can&#8217;t please all of the people all of the time but lets see how close we can get. Ultimately the platform needs to serve a variety of XMOS commercial development needs but at this point we don&#8217;t see any reason why these can&#8217;t co-exist with the goals of the wider community.</p>
-<p>So this repository is the forum to develop this open <em>standard</em> for a modular XMOS development system.</p>
-<div class="section" id="platform-overview">
-<h3>Platform Overview<a class="headerlink" href="#platform-overview" title="Permalink to this headline">¶</a></h3>
-<p>The basic proposal is for an XS1-L2 based, 4-layer &#8220;core&#8221; board with multiple application specific daughter boards that attach above(and maybe below) the core board, along the lines of arduino shields but with a much much larger amount of GPIO. For now I am calling the daughter cards <em>Slices</em> and the core boards <em>Basekits</em>. The naming derives from an XMOS internal PCB code naming scheme which has a cheesy theme.</p>
-<p>The intention is that the slice boards should generally be realizable as simple 2-layer, hand assembled affairs, though of course there is no reason to preclude more complex designs. In most cases power can be provided to the daughter board from the core board. The Basekit board would be 4-layer, but users would be able purchase these from digikey for a very reasonable price.</p>
-<p>In future additional Basekits could be offered, for example one having 2xL2 with decent interchip xlink bandwidth and supporting multiple side by side  slices on top.</p>
-<div class="section" id="connectors">
-<h4>Connectors<a class="headerlink" href="#connectors" title="Permalink to this headline">¶</a></h4>
-<p>This is a tricky one. The kind of vertical pass through connectors that create the best flexibility in the system topologies that can be created are very expensive, and above all we want this project to yield a low cost modular development system.</p>
-<p>We could stick with the horizontal connectors used on the XK1, but that would result in a topology of &#8216;ugly protuberances&#8217; which precludes the possibility of making compact prototypes that can be boxed up if required.</p>
-<p>At the moment we are leaning towards a simple system having a base board with multiple slices connected above it. Many of these slices (like the ethernet for example) are going to be really tiny. Others would be defined by the size of the connectors on them (e.g. for an LCD slice).</p>
-<p>Another option is to have short FFC cables and connectors to do the connections.</p>
-<p>As you can probably tell by now, we&#8217;re looking for some input here...</p>
-</div>
-<div class="section" id="basekit">
-<h4>Basekit<a class="headerlink" href="#basekit" title="Permalink to this headline">¶</a></h4>
-<p>We propose to use an L2 for the initial Basekit board. This is differentiated from the XK-1 because it offers the opportunity to simultaneously have Ethernet or USB networking capability, and one or more I/O devices, memory add-ons etc. For example, an Ethernet-Camera system, or a USB-LCD display, an Ethernet-USB bridge, etc. We think it is also beneficial to have a development platform with more processing and IO resources so that one can concentrate on debug and proof of concept and worry about optimisation later. For projects which wish to develop L1 based designs, it is straightforward to emulate an L1 using an L2, using either one core or a subset of threads on both cores. The XMOS tools roadmap is going to address this type of prototyping and quickstart activity.</p>
-<p>As well as the vertical connectors for Slices, we propose to have XSYS connectors like on the XK-1 to chain multiple core boards (each with their own daughter boards) horizontally.</p>
-<p>The current very rough L2 Basekit board proposal has:</p>
-<blockquote>
-<div><ul class="simple">
-<li>A number of GPIO connectors to attach slices, with a gioven slice interfacing to core 0 GPIO or core 1 GPIO.</li>
-<li>2 XSYS connectors carrying JTAG and one 2 bit xlink.</li>
-<li>clock, power supplies, reset, JTAG</li>
-<li>1 x XS1-L2</li>
-</ul>
-</div></blockquote>
-<p>Please see the sample datasheet in this repo for more detail on proposed port maps and examples of how these map to various slice board functionality.</p>
-</div>
-<div class="section" id="slices">
-<h4>Slices<a class="headerlink" href="#slices" title="Permalink to this headline">¶</a></h4>
-<p>XMOS plans over the next year to produce a variety of Slice boards designed to facilitate our own applications development. Some of these are listed below,  but bear in mind that this list is subject to change. While we hope and expect this set to be useful to community projects, we know this is only a start and we hope that our XCORE.com regulars will be producing their own daughter boards to supplement the functions provided by these XMOS offerings.</p>
-<blockquote>
-<div><ul class="simple">
-<li>Ethernet Slice (10/100 phy, connector, magnetics).</li>
-<li>USB Slice (SMSC USB phy, clock generation and USB-B connector) - there is a good argument for including this on the Basekit board though</li>
-<li>Audio Slice (simple Stereo line level audio input and output with codecs and SPDIF optical output).</li>
-<li>LCD Slice (QVGA LCD touchscreen connector, power supply for backlight)</li>
-<li>Camera Slice (CMOS image sensor, mount, power supply)</li>
-<li>Memory Slice (SDcard connector plus an SDRAM, SDCard not supplied)</li>
-<li>Prototyping Slice (breadboard plus perhaps other bits and piece - LEDS, RS232 connector?)</li>
-</ul>
-</div></blockquote>
-<p>While we can&#8217;t at this point put pricing on these, they are all pretty miniminal two layer boards with just the components listed above so you should be able to have a good guess - certainly many of them should be well into the sub $20 range.</p>
-</div>
-</div>
-<div class="section" id="projects">
-<h3>Projects<a class="headerlink" href="#projects" title="Permalink to this headline">¶</a></h3>
-<p>As mentioned before hardware platform is intended to facilitate the development of interoperable open source SW components. To this end we have plans to get this process started by developing some showcase demos designed to run on different combos of Slicekit and the above slices, and which incorporate a variety of nascent component developments developed by XMOS and by the rest of the community. For example, we are considering the following:</p>
-<table border="1" class="docutils">
-<colgroup>
-</colgroup>
-<thead valign="bottom">
-<tr><th class="head">Demo</th>
-<th class="head">Base</th>
-<th class="head">Slice 1</th>
-<th class="head">Slice 2</th>
-<th class="head">SW Components</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr><td>Webserver</td>
-<td>L2</td>
-<td>Ethernet</td>
-<td>NA</td>
-<td>Ethernet, TCPIP</td>
-<td>Simple webserver demo</td>
-</tr>
-<tr><td>MP3 player</td>
-<td>L2</td>
-<td>Memory</td>
-<td>Audio</td>
-<td>SDCard R/W via SPI or SDIO,
-MP3 decoder, I2S, SPDIF
-FAT32/16 lib</td>
-<td>Play music files from SDCard.</td>
-</tr>
-<tr><td>QVGA MJPEG camera</td>
-<td>L2</td>
-<td>Camera</td>
-<td>Ethernet</td>
-<td>Ethernet, JPEG encoder</td>
-<td>Motion JPEG stream over ethernet</td>
-</tr>
-<tr><td>SD filesystem Browser</td>
-<td>L2</td>
-<td>LCD</td>
-<td>Memory</td>
-<td>SDRAM Controller, LCD driver,
-SDIO, jpeg decoder, graphics lib
-FAT32/16 lib</td>
-<td>Use touchscreen to browse SDcard
-filesystem, display pictures etc</td>
-</tr>
-</tbody>
-</table>
-<p>We&#8217;d make an overall project repo for each of these, or for whichever showcases we settle on eventually. Additionally, each new Slice developed (either by XMOS or by anyone else) would get its own github repo.</p>
-<div class="section" id="boxes">
-<h4>Boxes<a class="headerlink" href="#boxes" title="Permalink to this headline">¶</a></h4>
-<p>Because a profusion of small dev boards may present us with a bit of an inventory issue, we are thinking that we should manufacture and supply these boards in sets, which roughly align with the showcase demos. Currently the breakdown looks something like this:</p>
-<table border="1" class="docutils">
-<colgroup>
-</colgroup>
-<thead valign="bottom">
-<tr><th class="head">Box</th>
-<th class="head">Contents</th>
-<th class="head">showcase demo</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr><td>Starter</td>
-<td>Base-L2, Ethernet Slice, Prototyping Slice, XTAG2</td>
-<td>Simple Webserver</td>
-</tr>
-<tr><td>Music</td>
-<td>Audio Slice, Memory Slice</td>
-<td>MP3 Player</td>
-</tr>
-<tr><td>Pictures</td>
-<td>LCD slice, Camera Slice</td>
-<td>MJPEG camera</td>
-</tr>
-</tbody>
-</table>
-<p>We should aim to flesh out this list with more, or better ideas that may already be floating around that are in a more advanced state of development but are compatible with the base platform outlined here. Having said that, the Basekit board definition and the list of official Slice cards is for the time being up for discussion so nothing is set in stone yet.</p>
-</div>
-</div>
-<div class="section" id="hardware-suppliers">
-<h3>Hardware Suppliers<a class="headerlink" href="#hardware-suppliers" title="Permalink to this headline">¶</a></h3>
-<p>XMOS is open to any ideas third party developers may have about what business models can be built around this proposal. The opportunity exists, since this is an open source initiative, for community members to build and supply any or all of the proposed boards to potential users regardless of whether XMOS originally designed them or not and whether or not XMOS is already supplying them. In fact we would not be averse to the idea of having the entire line supplied by members of the community if they can demonstrate the ability to fulfill demand.</p>
-<p>Similarly, commercial products based on these modules are not precluded.</p>
-</div>
-<div class="section" id="getting-involved">
-<h3>Getting Involved<a class="headerlink" href="#getting-involved" title="Permalink to this headline">¶</a></h3>
-<p>There should already be a forum topic for discussing this project. Also, we would like to start accumulating ideas, materials, pinout proposals, ideas for connectors and so on as files in the repo, so please don&#8217;t be shy with pull requests which contain more detail on your ideas.</p>
-</div>
+<p>Not Found</p>
 </div>
 </div>
 

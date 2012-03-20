@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>XCORE.com I2C Master Component &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <title>sc_i2c &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,9 +21,8 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
     <script type="text/javascript" src="static/xcomment.js"></script>
-    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+    <link rel="top" title="Xcore Open Source Repository Index v documentation" href="index.html" /> 
 
 <script>
 function setheight() {
@@ -52,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="xcore-com-i2c-master-component">
-<h1>XCORE.com I2C Master Component<a class="headerlink" href="#xcore-com-i2c-master-component" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="sc-i2c">
+<h1>sc_i2c<a class="headerlink" href="#sc-i2c" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_i2c"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -61,127 +60,7 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/sc_i2c/zipball/master');window.focus();return true;" href="sc_i2c_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Status:</th><td class="field-body">Feature complete</td>
-</tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">Dan Wilkinson (github: djpwilk)</td>
-</tr>
-</tbody>
-</table>
-<p>The I2C Component provides the ability to write and read the I2C Compatible Slave devices.</p>
-<div class="section" id="key-features">
-<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
-<p>module_i2c:</p>
-<ul class="simple">
-<li>Works at 100 Kbps and 400 Kbps</li>
-<li>Supports Clock stretching</li>
-<li>Supports Multi master capability.</li>
-<li>Supports Clock synchronization.</li>
-</ul>
-<p>module_i2c_simple / module_i2c_single_port:</p>
-<ul class="simple">
-<li>Small footprint</li>
-<li>Works at 100 Kbps and 400 Kbps</li>
-<li>Single system-wide I2C bus with XCore acting as the single master.</li>
-<li>SDA and SCL can be on a single wide port (module_i2c_single_port)</li>
-</ul>
-<p>module_i2c_master:</p>
-<ul class="simple">
-<li>Works at 100 Kbps and 400 Kbps</li>
-<li>Multiple I2C busses</li>
-<li>Supports Clock stretching</li>
-<li>Support for Multi master capability.</li>
-<li>Support for Clock synchronization.</li>
-</ul>
-</div>
-<div class="section" id="firmware-overview">
-<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
-<p>The Component is in the form of a function library and can be called in a thread.</p>
-<p>Module_i2c is meant to be deprecated, once module_i2c_master is completed,
-and once the slave part has been moved to module_i2c_slave.</p>
-</div>
-<div class="section" id="known-issues">
-<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
-<p>does not support 10 bit addressing
-does not support CBUS capability.
-does not support HS-Mode.</p>
-</div>
-<div class="section" id="required-modules">
-<h3>Required Modules<a class="headerlink" href="#required-modules" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>xcommon git&#64;github.com:xmos/xcommon.git</li>
-</ul>
-</div>
-<div class="section" id="instructions-for-building-project-and-running-the-simulation">
-<h3>Instructions for Building Project and running the simulation.<a class="headerlink" href="#instructions-for-building-project-and-running-the-simulation" title="Permalink to this headline">¶</a></h3>
-<p>The Software Components for I2C are built using XMOS Development Environment (XDE) Version: 10.4.2 (build 1752) or later.
-The module can be simulated using test bench.
-Following steps is to followed to run the simulation</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li>import the xcommon and xmos_i2c folders into XMOS Development Environment.</li>
-</ol>
-<blockquote>
-<div><ol class="arabic simple">
-<li>open run configuration.</li>
-</ol>
-</div></blockquote>
-<ol class="arabic simple">
-<li>In Main tab select simulator in Device options.</li>
-</ol>
-<blockquote>
-<div><ol class="arabic simple">
-<li>Select simulator Tab.</li>
-<li>Tick enable tracing.</li>
-<li>Tick Pads.</li>
-<li>In Local Tracing options click on ADD button and select stdcore[1] and ports.</li>
-<li>Select Pins tab.</li>
-<li>Enable Pin connections</li>
-<li>Click on Add Button.</li>
-</ol>
-</div></blockquote>
-<ol class="arabic simple">
-<li>Select stdcore[1].</li>
-</ol>
-<blockquote>
-<div><ol class="arabic simple">
-<li>Connect Port XS1_PORT_1B to XS1_PORT_1F.</li>
-<li>Connect Port XS1_PORT_1A to XS1_PORT_1E.</li>
-<li>Connect Port XS1_PORT_1B to XS1_PORT_1D.</li>
-<li>Connect Port XS1_PORT_1A to XS1_PORT_1C.</li>
-<li>Connect Port XS1_PORT_1B to XS1_PORT_1G</li>
-<li>Connect Port XS1_PORT_1A to XS1_PORT_1H.</li>
-<li>Connect Port XS1_PORT_1F to XS1_PORT_1D</li>
-<li>Connect Port XS1_PORT_1E to XS1_PORT_1C.</li>
-<li>Connect Port XS1_PORT_1F to XS1_PORT_1G.</li>
-<li>Connect Port XS1_PORT_1E to XS1_PORT_1H.</li>
-<li>Connect Port XS1_PORT_1D to XS1_PORT_1G.</li>
-<li>Connect Port XS1_PORT_1C to XS1_PORT_1H.</li>
-</ol>
-</div></blockquote>
-<ol class="arabic simple">
-<li>Apply the changes and run.</li>
-</ol>
-<blockquote>
-<div><ol class="arabic simple">
-<li>In i2c_test_def.h keep MASTER_TX uncommenting for master transmit and slave receive.</li>
-<li>For Comment MASTER_TX for slave transmit and master receive.</li>
-<li>For single master and single slave comment MASTER2 and SLAVE2 or comment MASTER1 and SLAVE1.</li>
-<li>for single slave and two masters select MASTER1 and MASTER2 comment SLAVE1 or SLAVE2.</li>
-<li>for two slaves and single master select SLAVE1 and SLAVE2 comment MASTER1 or MASTER2.</li>
-<li>for two master and two slaves select both  MASTER1 and MASTER2, and SLAVE1 and SLAVE2.</li>
-<li>run the simulation. Check for valid data on the console window.</li>
-</ol>
-</div></blockquote>
-</div></blockquote>
-</div>
-<div class="section" id="support">
-<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
-<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the maintainer for this line.</p>
-</div>
+<p>Not Found</p>
 </div>
 </div>
 

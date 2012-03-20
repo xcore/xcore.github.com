@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>HW_L1_48_MODULE &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <title>hw_l1_48_module &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,9 +21,8 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
     <script type="text/javascript" src="static/xcomment.js"></script>
-    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+    <link rel="top" title="Xcore Open Source Repository Index v documentation" href="index.html" /> 
 
 <script>
 function setheight() {
@@ -53,7 +52,7 @@ document.getElementById('d1').style.height=h2 + "px";
 
             
   <div class="section" id="hw-l1-48-module">
-<h1>HW_L1_48_MODULE<a class="headerlink" href="#hw-l1-48-module" title="Permalink to this headline">¶</a></h1>
+<h1>hw_l1_48_module<a class="headerlink" href="#hw-l1-48-module" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/hw_l1_48_module"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -61,72 +60,7 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/hw_l1_48_module/zipball/master');window.focus();return true;" href="hw_l1_48_module_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<p>This project is a 19mm x 52mm PCB to emulate a 600mil (0.6&#8221;) wide 40-pin DIP package PCB that contains the XS1-L1-48TQFP and all required system support circuitry.</p>
-<div class="section" id="files">
-<h3>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h3>
-<p>The following folders are provided in repository:</p>
-<ul>
-<li><p class="first">design_files - schematics, BOM, gerbers and DxDesigner/PADS design files.</p>
-<blockquote>
-<div><ul class="simple">
-<li>1V0 - initial tested prototype board that uses the 7-pin JTAG header from an XTAG2</li>
-<li>1V1 - improved but untested design that allows an XTAG2 to mount directly onto the board</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">photos - some photos of the hand soldered prototypes.</p>
-</li>
-<li><p class="first">software - example software that was used to check the operation of the boards on some breadboard.</p>
-</li>
-</ul>
-</div>
-<div class="section" id="features">
-<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>XMOS XS1-L1-TQFP48</li>
-<li>8 x 100nF decouplers (4 per supply rail).</li>
-<li>3V3-&gt;1V0 SMPS Regulator (NCP1521B)</li>
-<li>PLL loop filter (100nf + 4R7)</li>
-<li>4 MBit Winbond W25X40 SPI FLASH.</li>
-<li>Reset circuit using dual Diodes Inc. APX803-29SR 2.9V voltage supervisors. There are many pin compatible supervisors available in this SOT23-3 package.</li>
-<li>It has TRST wired to RST, removing the need for the dual open-drain buffer. The JTAG tap is reset using 5 TCK clocks with TMS high.</li>
-<li>The system clock is a 25MHz 2.5x3.2mm oscillator (Pericom FKSSD1025).</li>
-<li>7 pin JTAG header (as per XTAG2) to allow programming when integrated into a system (details of simple adapter in jtag_adpater directory).</li>
-<li>3V3 power input only.</li>
-<li>Simple 2 layer PCB with 0.15mm/0.15mm track and gap and 0.3mm minimum hole size (can be made at PCBTrain for ?57.75 for 10 on a 15 working day turn).</li>
-<li>Future provision could be made to make the module suitable for surface mount when the through hole pins are not populated.</li>
-<li>The module can be easily assembled by hand with a soldering iron, some fine solder and a hot air reflow gun (for the oscillator and L1-48 ground paddle).</li>
-</ul>
-</div>
-<div class="section" id="pinout">
-<h3>Pinout<a class="headerlink" href="#pinout" title="Permalink to this headline">¶</a></h3>
-<p>The module provides the following pinout:</p>
-<ul class="simple">
-<li>28 pins I/O - 16 x 1, 8 x 1, 4(32) x 1</li>
-<li>4 GND</li>
-<li>2 3V3 power</li>
-<li>6 JTAG signals (no DEBUG).</li>
-</ul>
-</div>
-<div class="section" id="board-revisions">
-<h3>Board Revisions<a class="headerlink" href="#board-revisions" title="Permalink to this headline">¶</a></h3>
-<p>0V9:</p>
-<ul class="simple">
-<li>Initial prototype.</li>
-<li>Board the same as 1V0.</li>
-</ul>
-<p>1V0:</p>
-<ul class="simple">
-<li>Changed R3 from 10K to 1K to guarantee correct reset under all conditions and to allow for the current drawn by U5.</li>
-<li>Changed C2 to 100nF from 1uF.</li>
-<li>Changed U3 from a Winbond W25X10 to a Winbond W25X40, due to parts availability.</li>
-</ul>
-<p>1V1:</p>
-<ul class="simple">
-<li>Changed the JTAG out connector to be compatible with the XTAG2. The top silkscreen has been changed to show the orientation required by the XTAG2 to connect onto the headers correctly. Due to reordering these pins, the pinout of the JTAG pins on the 40-pin DIP headers has changed.</li>
-<li>This board has been designed, but not build/tested - therefore manufacture this design at your own risk.</li>
-</ul>
-</div>
+<p>Not Found</p>
 </div>
 </div>
 

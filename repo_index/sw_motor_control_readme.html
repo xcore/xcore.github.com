@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Advanced Motor Control &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <title>sw_motor_control &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,9 +21,8 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
     <script type="text/javascript" src="static/xcomment.js"></script>
-    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+    <link rel="top" title="Xcore Open Source Repository Index v documentation" href="index.html" /> 
 
 <script>
 function setheight() {
@@ -52,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="advanced-motor-control">
-<h1>Advanced Motor Control<a class="headerlink" href="#advanced-motor-control" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="sw-motor-control">
+<h1>sw_motor_control<a class="headerlink" href="#sw-motor-control" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sw_motor_control"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -61,140 +60,7 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/sw_motor_control/zipball/master');window.focus();return true;" href="sw_motor_control_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">2.0</td>
-</tr>
-<tr class="field"><th class="field-name">Status:</th><td class="field-body">Design Ready</td>
-</tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/DavidNorman"><span>https://github.com/DavidNorman</span></a></td>
-</tr>
-</tbody>
-</table>
-<p>Firmware and documentation to go with the XMOS XK-MC-LVM2 and XP-MC-CTRL-L2 Motor Control Development Kits.</p>
-<div class="section" id="key-features">
-<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
-<li>Dual Axis Field Oriented Control (Speed Control) of PMSM Motors</li>
-<li>Dual Axis Trapezoidal Commutation (Speed Control) of BLDC Motors</li>
-<li>Up to 142kHz inner loop performance</li>
-<li>Complementary PWM up to 48 KHz at 11-bit complementary PWM resolution</li>
-<li>CAN or Ethernet interface with LabView GUI, or use push-button control</li>
-<li>Component based approach to motor drive and communications interfaces</li>
-</ul>
-</div></blockquote>
-</div>
-<div class="section" id="firmware-overview">
-<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
-<p>The software is split into modules and applicatons, as describes below:</p>
-<table border="1" class="docutils">
-<colgroup>
-</colgroup>
-<tbody valign="top">
-<tr><td>Type</td>
-<td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>Application</td>
-<td>app_dsc_demo</td>
-<td>Fully functional dual axis FOC speed control of two LDO PMSM motors</td>
-</tr>
-<tr><td>Application</td>
-<td>app_control_board_demo</td>
-<td>Standalone control board demonstration example</td>
-</tr>
-<tr><td>Application</td>
-<td>app_basic_bldc</td>
-<td>Simple dual axis motor BLDC trapezoidal commutation example</td>
-</tr>
-<tr><td>Application</td>
-<td>app_power_board_test</td>
-<td>Manufacturing test sw for power board</td>
-</tr>
-<tr><td>Application</td>
-<td>app_control_board_test</td>
-<td>Manufacturing test sw for power board</td>
-</tr>
-<tr><td>Host Software</td>
-<td>gui</td>
-<td>LabView gui for ethernet or CAN control of dev board from PC</td>
-</tr>
-<tr><td>Component</td>
-<td>module_dsc_adc</td>
-<td>Interfaces to various external ADCs for current sampling</td>
-</tr>
-<tr><td>Component</td>
-<td>module_dsc_blocks</td>
-<td>Inner loop transforms (e.g. park, clarke, PI)</td>
-</tr>
-<tr><td>Component</td>
-<td>module_dsc_comms</td>
-<td>Code to bridge the ethernet/CAN into the main code loop</td>
-</tr>
-<tr><td>Component</td>
-<td>module_dsc_display</td>
-<td>Module for operating the LCD and buttons</td>
-</tr>
-<tr><td>Component</td>
-<td>module_dsc_hall</td>
-<td>Interface to Hall sensors (only used for BLDC commutation)</td>
-</tr>
-<tr><td>Component</td>
-<td>module_dsc_qei</td>
-<td>A quadrature encoder interface</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="required-modules">
-<h3>Required Modules<a class="headerlink" href="#required-modules" title="Permalink to this headline">¶</a></h3>
-<p>In addition, the code imports and uses the following components from the xcore github repos:</p>
-<table border="1" class="docutils">
-<colgroup>
-</colgroup>
-<tbody valign="top">
-<tr><td>Type</td>
-<td>Name</td>
-<td>Description</td>
-</tr>
-<tr><td>Component</td>
-<td>git://github.com/xcore/sc_ethernet.git</td>
-<td>Ethernet MII module</td>
-</tr>
-<tr><td>Component</td>
-<td>git://github.com/xcore/sc_xtcp.git</td>
-<td>TCP/IP stack</td>
-</tr>
-<tr><td>Component</td>
-<td>git://github.com/xcore/sc_can.git</td>
-<td>CAN phy/mac module</td>
-</tr>
-<tr><td>Component</td>
-<td>git://github.com/xcore/sc_pwm.git</td>
-<td>PWM module</td>
-</tr>
-<tr><td>Component</td>
-<td>git://github.com/xcore/xcommon.git</td>
-<td>Common makefile and build tools</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="known-issues">
-<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
-<p>See CHANGELOG.rst</p>
-</div>
-<div class="section" id="getting-started-and-installation">
-<h3>Getting Started and Installation<a class="headerlink" href="#getting-started-and-installation" title="Permalink to this headline">¶</a></h3>
-<p>If you have purchased one of the XMOS motor control kits (available from digikey), the doc directory contains a quickstart guide to get your board up and running quickly. The doc directory also contains a user guide for the motor control application firmware and components.</p>
-</div>
-<div class="section" id="support">
-<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
-<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the manitainer for this line.</p>
-</div>
+<p>Not Found</p>
 </div>
 </div>
 

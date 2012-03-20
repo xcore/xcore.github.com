@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Fixed point library &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <title>sc_lib_fixed_point &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,9 +21,8 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
     <script type="text/javascript" src="static/xcomment.js"></script>
-    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+    <link rel="top" title="Xcore Open Source Repository Index v documentation" href="index.html" /> 
 
 <script>
 function setheight() {
@@ -52,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="fixed-point-library">
-<h1>Fixed point library<a class="headerlink" href="#fixed-point-library" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="sc-lib-fixed-point">
+<h1>sc_lib_fixed_point<a class="headerlink" href="#sc-lib-fixed-point" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_lib_fixed_point"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -61,83 +60,7 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/sc_lib_fixed_point/zipball/master');window.focus();return true;" href="sc_lib_fixed_point_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Version:</th><td class="field-body">unreleased</td>
-</tr>
-<tr class="field"><th class="field-name">Status:</th><td class="field-body">32-bit 8.24 feature complete.</td>
-</tr>
-<tr class="field"><th class="field-name">Description:</th><td class="field-body">Fixed point library</td>
-</tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/henkmuller"><span>https://github.com/henkmuller</span></a></td>
-</tr>
-</tbody>
-</table>
-<p>This is a library of functions that implement standard mathematical
-functions in fixed point. One group of functions use a &#8220;8.24&#8221; fixed point format
-with 24 bits behind the binary point, and 8 bits before the binary point.
-Numbers are represented in 2&#8217;s complement. Another group works on unsigned integers</p>
-<p>More details to follow in the doc directory.</p>
-<div class="section" id="key-features">
-<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>8.24 signed fixed point:<ul>
-<li>basic functions: mul, div, sqrt</li>
-<li>emulation of manipulation of exponent and mantissa: ldexp, frexp</li>
-<li>trigonometric functions: sin, cos</li>
-<li>exponential functions: exp, log, sinh, cosh</li>
-<li>test harness that checks on precision against double precision C.</li>
-</ul>
-</li>
-<li>32.0 unsigned fiex point:<ul>
-<li>sqrt</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="to-do">
-<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Get size and speed into test harness.</li>
-<li>Make 64 bit version, probably 16.48 (blocked by lack of long long in XC)</li>
-<li>Run minimiser over errors in order to improve coefficients for our domain.</li>
-<li>Add other mathematical functions (atan2, errf etc)</li>
-<li>Add optional check on overflows (with a compile time flag for code that has size constraints)</li>
-<li>Add optional check on domain errors, eg. sqrt(-1)</li>
-</ul>
-</div>
-<div class="section" id="firmware-overview">
-<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id1">
-<h4>8.24<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<p>A collection of functions, all stored in a single module. The function
-names are suffixed with <tt class="docutils literal"><span class="pre">f8_24</span></tt> to denote that these are single precision
-fixed point functions. There are some obvious dependencies, mostly on ldexp
-and frexp.</p>
-<p>Two extra functions, mulf8_24 and divf8_24 perform multiplication and division on
-fixed point numbers.</p>
-</div>
-<div class="section" id="id2">
-<h4>32.0<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
-<p>A single function to compute sqrt</p>
-</div>
-</div>
-<div class="section" id="known-issues">
-<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
-<p>none</p>
-</div>
-<div class="section" id="required-repositories">
-<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>xcommon git&#64;github.com:xmos/xcommon.git</li>
-</ul>
-</div>
-<div class="section" id="support">
-<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
-<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the maintainer for this line.</p>
-</div>
+<p>Not Found</p>
 </div>
 </div>
 

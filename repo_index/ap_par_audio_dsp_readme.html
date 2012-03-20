@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Key Features &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <title>ap_par_audio_dsp &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,9 +21,8 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
     <script type="text/javascript" src="static/xcomment.js"></script>
-    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+    <link rel="top" title="Xcore Open Source Repository Index v documentation" href="index.html" /> 
 
 <script>
 function setheight() {
@@ -52,23 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <p>XMOS Parallel Audio DSP example</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">0.6.0  <a class="reference external" href="https://github.com/xcore/Community/wiki/Versioning"><span>versioning</span></a>)</td>
-</tr>
-<tr class="field"><th class="field-name">Status:</th><td class="field-body">Alpha</td>
-</tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">ThomasGmeinder</td>
-</tr>
-<tr class="field"><th class="field-name">Description:</th><td class="field-body">Configurable Application example for parallel DSP processing of several audio channels</td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="key-features">
-<h1>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ap-par-audio-dsp">
+<h1>ap_par_audio_dsp<a class="headerlink" href="#ap-par-audio-dsp" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/ap_par_audio_dsp"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -76,136 +60,8 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/ap_par_audio_dsp/zipball/master');window.focus();return true;" href="ap_par_audio_dsp_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Up to 6 channels in, 8 channels out
-IN 1/2 : processed by eq_wrapper (see below), OUT 1/2
-IN 2/3 : processed by crossover thread (see below), OUT 2/3 (below 500Hz), OUT 4/5 (above 500Hz)
-Note: OUT 6/7 are the same as OUT 4/5 on the HW.
-Note: delays is a thread that can be plugged instead of crossover or eq_wrapper</li>
-<li>Audio DSP using concurrent threads. 2 Threads processing 4 channels each in this example.</li>
-<li>Two configurations of Biquad filter (derived from <a class="reference external" href="https://github.com/xcore/sc_dsp_filters"><span>https://github.com/xcore/sc_dsp_filters</span></a>)
-biquad_cascade_eq.xc : Cascade of 5 Biquads used for the 5-band equaliser
-biquad_crossover.xc. Single Biquad configured as either highshelf or lowshelf filter</li>
-<li>Audio samples are communicated to a configurable set of DSP threads using streaming channels</li>
-<li>Delay buffer example (see delay_bufs and shared_mem_dsp.c)</li>
-<li>Configurability. See User Guide Section</li>
-<li>Wealth of Debug Features (See Debug section)</li>
-</ul>
+<p>Not Found</p>
 </div>
-</div>
-<div class="section" id="to-do">
-<h1>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>&lt;Bullet pointed list of missing features&gt;</li>
-</ul>
-</div>
-<div class="section" id="firmware-overview">
-<h1>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h1>
-<ul>
-<li><p class="first">HW Platform: XR-USB-AUDIO-2.0-MC</p>
-</li>
-<li><p class="first">DSP Threads</p>
-<ul class="simple">
-<li>eq_wrapper : 5-Band Equaliser processing 2 channels using peak EQ filters. Receives control commands to change EQ settings. Can send level metering data</li>
-<li>crossover : Using highshelf filter to suppress frequs above 500Hz, lowshelf filter to suppress freqs below 500Hz
-Note: crossover_proc produces 2 output channels (low and high freqs) from 1 input channel</li>
-<li>delays : Using a delay buffer, delays audio of left channel by 5000 samples (0.1 seconds at 48kHz)</li>
-<li>eq_client : Periodically Changes Equaliser setup on the fly by switching between different Equaliser Presets.</li>
-</ul>
-</li>
-<li><p class="first">Other Threads</p>
-<ul class="simple">
-<li>iis</li>
-</ul>
-<blockquote>
-<div><p>I2S interface to codec. up to 6 channels in, 8 channels out
-See Audio Data Flow</p>
-</div></blockquote>
-<ul class="simple">
-<li>mswait : wait a number of milliseconds</li>
-<li>clkgen : generates PLL input clock</li>
-</ul>
-</li>
-<li><p class="first">Audio Data Flow (per channel)</p>
-<ul class="simple">
-<li>iis thread</li>
-</ul>
-<blockquote>
-<div><p>ouputs samples of NUM_IN stereo channels over NUM_IN streaming channels
-inputs samples of NUM_OUT stereo channels over NUM_IN streaming channels</p>
-</div></blockquote>
-<ul class="simple">
-<li>DSP threads</li>
-</ul>
-<blockquote>
-<div><p>input samples over streaming channel(s)
-process the stream on a per-sample basis
-output samples over streaming channel(s).</p>
-</div></blockquote>
-</li>
-<li><p class="first">Input-Output latency: &lt;= one sample period</p>
-</li>
-<li><p class="first">Coefficient Generation</p>
-<ul class="simple">
-<li>All coefficients were created with <a class="reference external" href="https://github.com/xcore/sc_dsp_filters"><span>https://github.com/xcore/sc_dsp_filters</span></a></li>
-<li>The Makefile configurations can be found in in the source code next to the coefficients</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="debug-support">
-<h1>Debug Support<a class="headerlink" href="#debug-support" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>XScope Probes for Equaliser input and output (Oscilloscope view of sample streams from HW in realtime)</li>
-<li>Ability to override ADC audio input with custom reference signals.</li>
-<li>Option to run on simulator (for development/debug without HW)</li>
-<li>Audio Loopback (to test iis interface)</li>
-<li>XTA timing checks</li>
-</ul>
-<p>The checks are run at compile time (see timing_checks.xta script)
-To analyse the routes it in the GUI, Click &#8220;Timing-&gt;Time&#8221; and then run the .xta script
-The script is automatically run at compile time, does the xta check and prints a summary:</p>
-</div>
-<div class="section" id="user-guide">
-<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
-<ul>
-<li><p class="first">DSP threads can be plugged in to process selected channels on core0 as shown in main()</p>
-</li>
-<li><p class="first">Configuration Options</p>
-<ul class="simple">
-<li>Number of input and output channels (NUM_IN, NUM_OUT)</li>
-<li>Set of DSP threads (see main())</li>
-<li>EQ Bands (EQ_BANKS)</li>
-<li>Optimised assembly Biquad (ASM_BIQUAD_EQ)</li>
-<li>Debug Switches (see Debug Switches in defines.h).</li>
-</ul>
-<p>Note: To use XScope XDE 11.2 tools are required. Add xscope library to compile.
-Note: Make sure NUM_IN and NUM_OUT matches the set of DSP threads connected to the streaming channels</p>
-</li>
-<li><p class="first">Tool aspects
-- Device options (Simulator or Hardware) can be selected in &#8220;Run Configurations&#8221; and &#8220;Debug Configurations&#8221;
-- For more information see Tools User Guide.</p>
-</li>
-</ul>
-</div>
-<div class="section" id="known-issues">
-<h1>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>Level metering output from Equaliser not activated</li>
-<li>Limited testing of configuration space. E.g. only at 48kHz</li>
-<li>biquadAsmXover not operational. Must be changed to take coefficient object as argument</li>
-<li>Unexpected data type errors from XScope</li>
-</ul>
-</div>
-<div class="section" id="required-repositories">
-<h1>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>xcommon git&#64;github.com:xcore/xcommon.git</li>
-</ul>
-</div>
-<div class="section" id="support">
-<h1>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h1>
-<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the maintainer for this line.</p>
 </div>
 
 

@@ -6,13 +6,13 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Modbus TCP Component &mdash; XCore Open Source Repository Index v0 documentation</title>
+    <title>sc_modbus_tcp &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0',
+        VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -21,9 +21,8 @@
     <script type="text/javascript" src="static/jquery.js"></script>
     <script type="text/javascript" src="static/underscore.js"></script>
     <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="http://mathjax.connectmv.com/MathJax.js"></script>
     <script type="text/javascript" src="static/xcomment.js"></script>
-    <link rel="top" title="XCore Open Source Repository Index v0 documentation" href="index.html" /> 
+    <link rel="top" title="Xcore Open Source Repository Index v documentation" href="index.html" /> 
 
 <script>
 function setheight() {
@@ -52,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="modbus-tcp-component">
-<h1>Modbus TCP Component<a class="headerlink" href="#modbus-tcp-component" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="sc-modbus-tcp">
+<h1>sc_modbus_tcp<a class="headerlink" href="#sc-modbus-tcp" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_modbus_tcp"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -61,58 +60,7 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/sc_modbus_tcp/zipball/master');window.focus();return true;" href="sc_modbus_tcp_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">unreleased</td>
-</tr>
-<tr class="field"><th class="field-name">Status:</th><td class="field-body">draft</td>
-</tr>
-<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">Vinith Mundhra (github: vinithmundhra)</td>
-</tr>
-<tr class="field"><th class="field-name">Description:</th><td class="field-body">Modbus TCP Component - Server</td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
-<p>This is a Modbus TCP Server library. Modbus protocol specification and messaging implementation guide can be found here: <a class="reference external" href="http://www.modbus.org/specs.php"><span>http://www.modbus.org/specs.php</span></a></p>
-<p>A Modbus client can send &#8216;requests&#8217; to a Modbus Server via TCP. These requests may be to read / write a certain part of memory. The TCP layer carries this data from the client and passes it over to the modbus_event_handler. This frame is then processed by modbus_pkt_processing and a response is generated. This response is carried back to the client via TCP.</p>
-</div>
-<div class="section" id="to-do">
-<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>A single thread variant that can process Modbus requests in parallel to TCP communications.</li>
-</ul>
-</div>
-<div class="section" id="firmware-overview">
-<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>module_modbus_tcp_serversrcmodbus_tcpip_if.*</li>
-</ul>
-<p>Handles TCP events and calls appropriate Modbus commands to process requests.</p>
-<ul class="simple">
-<li>module_modbus_tcp_serversrcmodbus_pkt_processing.*</li>
-</ul>
-<p>Actually, processes the request and generates (positive or negative) response.</p>
-</div>
-<div class="section" id="known-issues">
-<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
-<p>Please report issues via the Issues tab in this github repo.</p>
-</div>
-<div class="section" id="required-repositories">
-<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>sc_ethernet git://github.com/xcore/sc_ethernet.git</li>
-<li>sc_xtcp git://github.com/xcore/sc_xtcp.git</li>
-<li>xcommon git&#64;github.com:xcore/xcommon.git</li>
-</ul>
-</div>
-<div class="section" id="support">
-<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
-<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the manitainer for this line.</p>
-</div>
+<p>Not Found</p>
 </div>
 </div>
 
