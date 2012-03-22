@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sc_ethercat &mdash; Xcore Open Source Repository Index v documentation</title>
+    <title>Ethercat &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -51,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="sc-ethercat">
-<h1>sc_ethercat<a class="headerlink" href="#sc-ethercat" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="ethercat">
+<h1>Ethercat<a class="headerlink" href="#ethercat" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_ethercat"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -60,7 +60,66 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/sc_ethercat/zipball/master');window.focus();return true;" href="sc_ethercat_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<p>Not Found</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">unreleased</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">idea</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/henkmuller"><span>https://github.com/henkmuller</span></a></td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">Feasibility study for EtherCAT</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Ethercat test-harness to run on XC-2</li>
+<li>Ethercat slave to run on XC-3</li>
+<li>Low latency MII Rx and Tx</li>
+<li>Rudimentary EtherCAT protocol handler</li>
+<li>Current latency of 800ns, but memory access has not been implemented yet
+(PHY latency adds 400 ns). Return path latency approximately 640 ns
+(preamble) + 400 ns (PHY) + 160 ns (processing)</li>
+</ul>
+</div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Mailbox protocol</li>
+<li>Network variable protocol</li>
+<li>Memory interface.</li>
+</ul>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<p>The module and applicatons in this repo are a feasibility study on coding
+an EtherCAT slave on an XS1 device. The target is either an L2 or a G4,
+depending on whether fast threads are required (&gt; 100 MIPS requires an L2)
+and on whether a fast switch is required (the G4 switch is very low
+latency).</p>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>app_ethercat_test won&#8217;t build (and is deprecated)</li>
+</ul>
+</div>
+<div class="section" id="required-repositories">
+<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>sc_ethernet git&#64;github.com:xcore/sc_ethernet.git  (SMI module)</li>
+<li>xcommon git&#64;github.com:xcore/xcommon.git  (build system)</li>
+<li>xdoc git&#64;github.com:xcore/xdoc.git  (documentation)</li>
+</ul>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>&lt;Description of support model&gt;</p>
+</div>
 </div>
 </div>
 

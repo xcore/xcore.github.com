@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sc_multi_uart &mdash; Xcore Open Source Repository Index v documentation</title>
+    <title>Multi-UART Component &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -51,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="sc-multi-uart">
-<h1>sc_multi_uart<a class="headerlink" href="#sc-multi-uart" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="multi-uart-component">
+<h1>Multi-UART Component<a class="headerlink" href="#multi-uart-component" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_multi_uart"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -60,7 +60,69 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/sc_multi_uart/zipball/master');window.focus();return true;" href="sc_multi_uart_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<p>Not Found</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Version:</th><td class="field-body">1.0.0rc0</td>
+</tr>
+<tr class="field"><th class="field-name">Vendor:</th><td class="field-body">XMOS</td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">Multiple UART to Ethernet (TELNET) bridge, plus web server controller</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Support for 8 channels of UART RX &amp; TX on 8 bit ports</li>
+<li>Reconfigurable at runtime</li>
+<li>Supports upto 115200bps in both directions</li>
+<li>Support for a variety of data lengths, parity configurations and stop bit configurations</li>
+</ul>
+</div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Support for inverted signals</li>
+</ul>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<p>There are two apps within this module.</p>
+<blockquote>
+<div><ul class="simple">
+<li>app_multi_uart_demo - This is a self contained test application for test and verification of the multi-uart component</li>
+<li>app_serial_to_ethernet_demo - This is a demonstration application that integrates the multi-uart component with the ethernet and TCP components and provides and ethernet to UART solution over HTTP and Telnet</li>
+</ul>
+</div></blockquote>
+<p>The primary module is module_multi_uart. This contains the multi-uart module and provides both receive and transmit functionality along with an API for using them.</p>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>None</li>
+</ul>
+</div>
+<div class="section" id="required-software-dependencies">
+<h3>Required software (dependencies)<a class="headerlink" href="#required-software-dependencies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>sc_xtcp</li>
+<li>xcommon (if using develpoment tools earlier than 11.11.0)</li>
+<li>sc_ethernet</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>This package is support by XMOS Ltd. Issues can be raised against the software
+at:</p>
+<blockquote>
+<div><a class="reference external" href="http://www.xmos.com/support"><span>http://www.xmos.com/support</span></a></div></blockquote>
+</div></blockquote>
+</div>
 </div>
 </div>
 

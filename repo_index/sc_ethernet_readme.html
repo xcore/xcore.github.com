@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sc_ethernet &mdash; Xcore Open Source Repository Index v documentation</title>
+    <title>XCORE.com ETHERNET SOFTWARE COMPONENT &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -51,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="sc-ethernet">
-<h1>sc_ethernet<a class="headerlink" href="#sc-ethernet" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="xcore-com-ethernet-software-component">
+<h1>XCORE.com ETHERNET SOFTWARE COMPONENT<a class="headerlink" href="#xcore-com-ethernet-software-component" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_ethernet"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -62,7 +62,71 @@ onClick="window.open('https://github.com/xcore/sc_ethernet/zipball/master');wind
 <a onClick="window.open('https://github.com/xcore/sc_ethernet/zipball/version_1.4');window.focus();return true;" href="sc_ethernet_version_1.4_download.html">Download version 1.4</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<p>Not Found</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">2.0</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">Feature complete</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/DavidNorman"><span>https://github.com/DavidNorman</span></a></td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">Ethernet MII driver</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>RX and TX in separate threads</li>
+<li>Packet filtering by extension function</li>
+<li>Memory based locking protocol</li>
+<li>FIFO based memory allocation for lower RAM overhead</li>
+<li>High priority (VLAN priority tag) queues</li>
+<li>802.1Qat traffic shaping</li>
+<li>Dual port</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="low-thread-count-mii-driver">
+<h3>Low thread count MII driver<a class="headerlink" href="#low-thread-count-mii-driver" title="Permalink to this headline">¶</a></h3>
+<p>An alternative, low thread count MII driver is available.</p>
+<blockquote>
+<div><ul class="simple">
+<li>MII pins in 1 thread</li>
+<li>Rx buffer support handled by interrupt in a designated second thread</li>
+<li>Optional service thread for providing an API similar to the 5-thread implementation</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<p>RX and TX are defined as functions which each run in their own thread. Thread count is 5 for single
+port, and 7 for dual port support.  Both ports must be MII and attached to the same xcore.</p>
+<p>Full documentation can be found at <a class="reference external" href="http://xcore.github.com/sc_ethernet/"><span>http://xcore.github.com/sc_ethernet/</span></a></p>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>The rx_packet-rx_packet timing constraint may fail because of the user defined packet filters. The user
+is required to fill in the timing details inside any user specified filter in order to help the XTA
+analyze the receive filter timing correctly.</li>
+<li>Packets exceeding the Ethernet maximum length can cause system crash</li>
+<li>Does not reject Ethernet/Ethernet-II/Ethernet-DIX encoded frames where the frame length does not match the length field</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="required-modules">
+<h3>Required Modules<a class="headerlink" href="#required-modules" title="Permalink to this headline">¶</a></h3>
+<p>xcommon</p>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the maintainer for this line.</p>
+</div>
 </div>
 </div>
 

@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 from github2.client import Github
 import jinja2
 import subprocess
@@ -81,7 +82,7 @@ repos.sort(key = lambda r: r.name)
 
 
 #repos = repos[:10]
-#repos = [r for r in repos if r.name == 'sw_avb']
+#repos = [r for r in repos if r.name == 'sw_flash_multiboot_example']
 
 def get_commit_date((tag,commit)):
     c = github.commits.show('xcore'+'/'+repo.name, commit)
@@ -93,6 +94,7 @@ def get_tag_version(tag):
     if re.match('version_.*',tag):
         return tag[8:]
     return None
+
 
 for repo in repos:
     print "Processing %s" % repo.name
@@ -125,6 +127,7 @@ groups.append(unmatched_group)
 for group in groups:
     group['repos'].sort(key = lambda r: r.name)
 
+
 if repos != []:
     print "Rendering index"
     template = env.get_template('index.rst')
@@ -136,10 +139,10 @@ for repo in repos:
 
     template = env.get_template('readme_insert.rst')
     if github_api:
-        remote_readme = urllib.urlopen('https://raw.github.com/xcore/%s/master/README.rst'%repo.name,'doc/%s_readme.rst' % repo.name)
+        readme_url = 'https://raw.github.com/xcore/%s/master/README.rst'%repo.name
+        remote_readme = urllib.urlopen(readme_url)
     else:
         remote_readme = open('templates/dummy_readme.rst','r')
-
 
 
 
@@ -148,7 +151,10 @@ for repo in repos:
     post_title = []
 
     line = remote_readme.readline()
-    line = re.sub('\<title\>',repo.name,line)
+    try:
+        line = line.replace('<title>',repo.name)
+    except:
+        pass
     if line != '': pre_title.append(line)
 
 
@@ -156,7 +162,10 @@ for repo in repos:
     title_underline = ''
     while not done_title:
         line = remote_readme.readline()
-        line = re.sub('\<title\>',repo.name,line)
+        try:
+            line = line.replace('<title>',repo.name)
+        except:
+            pass
         if line != '':
             pre_title.append(line)
         done_title = (line == '') or (re.match('(---)|(===)|(\.\.\.)',line))

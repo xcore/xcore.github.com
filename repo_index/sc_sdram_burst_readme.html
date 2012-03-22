@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sc_sdram_burst &mdash; Xcore Open Source Repository Index v documentation</title>
+    <title>XCORE.com SDRAM SOFTWARE COMPONENT &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -51,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="sc-sdram-burst">
-<h1>sc_sdram_burst<a class="headerlink" href="#sc-sdram-burst" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="xcore-com-sdram-software-component">
+<h1>XCORE.com SDRAM SOFTWARE COMPONENT<a class="headerlink" href="#xcore-com-sdram-software-component" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_sdram_burst"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -60,7 +60,71 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/sc_sdram_burst/zipball/master');window.focus();return true;" href="sc_sdram_burst_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<p>Not Found</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Latest release:</th><td class="field-body">2.0.0rc0</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">djpwilk</td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">SDRAM driver software component</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>One thread reads/writes data to SDRAM</li>
+<li>Optimised for burst access of blocks of 32 bit words (not for random access) with 12.5 MHz sdram clock.</li>
+<li>Application retains control of refresh by calling sdram_refresh at
+appropriate to prevent unexpected delays</li>
+<li>16-bit - Peak write: 25MB/s, read 25MB/s.</li>
+<li>Code size: 2KB</li>
+<li>Thread count: 1</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Add build options for 8 and 4 bit data bus width</li>
+<li>Improve clock speed to 25 MHz</li>
+<li>Rework sdram burst write and read code to used fully timestamped IO and deprecate the p_sdram_gate mechanism</li>
+</ul>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>module_sdram_burst: the burst mode driver</li>
+<li>app_sdram_burst_example: contains a c client and an xc test harness</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p>Full documentation can be found at: <a class="reference external" href="http://xcore.github.com/sc_sdram_burst/"><span>http://xcore.github.com/sc_sdram_burst/</span></a></p>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Two warnings produced in XDE 11.2 related to buffered port for DQ which has its direction reversed. This warning can be ignored.</li>
+</ul>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted are at the discretion of the maintainer of this component.</p>
+</div>
+<div class="section" id="required-software-dependencies">
+<h3>Required software (dependencies)<a class="headerlink" href="#required-software-dependencies" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>xcommon (if using development tools earlier than 11.11.0)</li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 </div>
 

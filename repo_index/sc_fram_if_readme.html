@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sc_fram_if &mdash; Xcore Open Source Repository Index v documentation</title>
+    <title>XCORE.com FRAM SOFTWARE COMPONENT &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -51,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="sc-fram-if">
-<h1>sc_fram_if<a class="headerlink" href="#sc-fram-if" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="xcore-com-fram-software-component">
+<h1>XCORE.com FRAM SOFTWARE COMPONENT<a class="headerlink" href="#xcore-com-fram-software-component" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_fram_if"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -60,7 +60,63 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/sc_fram_if/zipball/master');window.focus();return true;" href="sc_fram_if_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<p>Not Found</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">unreleased</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">Feature complete</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">Corin (github: xmos-corin)</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul>
+<li><p class="first">Example project that shows how to interface to a RAMTRON FM25V10 (1Mbit) or FM25H20 (2Mbit) SPI F-RAM Memory. These have the advantages of:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Low power than FLASH.</li>
+<li>Faster write performance (there are no write delays).</li>
+<li>Much larger umber of write cycles (at least 100 trillion).</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Uses a light weight SPI interface.</p>
+</li>
+<li><p class="first">Provides a low level interface, so the client manages the data directly on the F-RAM.</p>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<p>You can read and write to it using xflash/flashlib and a suitalbe SPI-spec file, but this is a lightweight interface for fast access to it.
+The XCore can boot from it as if it was a normal FLASH.</p>
+<p>The example project shows how to (by commenting in/out the appropriate options in main()):</p>
+<blockquote>
+<div><ul class="simple">
+<li>test the memory by writing data (0x00, 0x55, 0xFF) and verifying the contents of the F-RAM.</li>
+<li>read the contents of the F-RAM and printing it to the terminal.</li>
+<li>write a binary file to the F-RAM (e.g. the XK-1 FLASH firmware in example/xk-1.bin).</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<p>None, although the interface to the F-RAM could be sped up, by using clock blocks and buffered ports.</p>
+</div>
+<div class="section" id="required-modules">
+<h3>Required Modules<a class="headerlink" href="#required-modules" title="Permalink to this headline">¶</a></h3>
+<p>None.</p>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the manitainer for this line.</p>
+</div>
 </div>
 </div>
 

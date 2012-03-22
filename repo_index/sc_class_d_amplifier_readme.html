@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>sc_class_d_amplifier &mdash; Xcore Open Source Repository Index v documentation</title>
+    <title>Class D Amplifier &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -51,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="sc-class-d-amplifier">
-<h1>sc_class_d_amplifier<a class="headerlink" href="#sc-class-d-amplifier" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="class-d-amplifier">
+<h1>Class D Amplifier<a class="headerlink" href="#class-d-amplifier" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/sc_class_d_amplifier"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -60,7 +60,55 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/sc_class_d_amplifier/zipball/master');window.focus();return true;" href="sc_class_d_amplifier_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<p>Not Found</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">None</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">draft</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body"><a class="reference external" href="https://github.com/ChippendaleMupp"><span>https://github.com/ChippendaleMupp</span></a></td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">A brief description of the repo</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Stereo Open Loop ClassD amplifier</li>
+<li>PWM outputs at 8x sample frequency</li>
+<li>Supports 48.0, 44.1 and 32kHz sample frequencies</li>
+</ul>
+</div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>No outstanding missing features</li>
+</ul>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<p>The example application produces samples for a 1kHz sine wave on both channels at 48kHz.  The samples are interpolated upto 384kHz via 96kHz.  They are then output in PWM on two 1 bit ports per channel.  Two 1 bit ports are required per channel to introduce deadtime to avoid shoot-through current.</p>
+<p>This code has been release to github from xmos.com&#8217;s example application code.  There are two documents support this code: &#8220;Class D Audio Power Amplifier&#8221; (Class-D-Audio-Power-Amplifier.pdf) and &#8220;Class D Audio Power Amplifier - iPod Dock&#8221; (Class-D-Audio-Power-Amplifier&#8212;iPod-Dock.pdf).  These have been copied to this repository for reference.</p>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>None</li>
+</ul>
+</div>
+<div class="section" id="required-repositories">
+<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>xcommon git&#64;github.com:xcore/xcommon.git</li>
+</ul>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>&lt;Description of support model&gt;</p>
+</div>
 </div>
 </div>
 

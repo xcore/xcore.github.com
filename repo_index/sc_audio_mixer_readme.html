@@ -60,7 +60,80 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/sc_audio_mixer/zipball/master');window.focus();return true;" href="sc_audio_mixer_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<p>Not Found</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Stable release:</th><td class="field-body">unreleased</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">first port to github</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">xross</td>
+</tr>
+<tr class="field"><th class="field-name">Description:</th><td class="field-body">Audio mixer component and examples</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Build-time configurable input/output count mixer thread.</li>
+<li>Mixer threa takes samples in via a channel, and outputs mixes via another channel</li>
+<li>Control commands come in from a third control channel</li>
+<li>Includes saturation</li>
+<li>Includes example use application</li>
+</ul>
+</div>
+<div class="section" id="to-do">
+<h3>To Do<a class="headerlink" href="#to-do" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Add routing</li>
+<li>Add dB control</li>
+</ul>
+</div>
+<div class="section" id="firmware-overview">
+<h3>Firmware Overview<a class="headerlink" href="#firmware-overview" title="Permalink to this headline">¶</a></h3>
+<p>This repo contains audio mixer and example application.</p>
+<p>There is an example application included in this module:</p>
+<blockquote>
+<div><ul class="simple">
+<li>app_example_mixer - This is a self contained test application for testing the mixer.  It passes sin waves into the mixer.</li>
+</ul>
+</div></blockquote>
+<p>The primary module is module_audio_mixer. This contains the audio mixer module which provides mixing functionality along with an API for using it.</p>
+</div>
+<div class="section" id="issues">
+<h3>Issues<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><dl class="first docutils">
+<dt>When compiled on 11.2.2 tools the program traps on termination:</dt>
+<dd><p class="first">TRAP ET: 4, SPC: 000103ee, SSR: 0, ED: 00000002 (ILLEGAL_RESOURCE: Src chanend in use)</p>
+<p>This appears to be an issue with the 11.2.2 tools release.</p>
+<dl class="last docutils">
+<dt>Possible work-arounds:</dt>
+<dd><ul class="first last simple">
+<li>Use platform.h and stdcore[] syntax. This enforces mapper generation on channel allocation rather than compiler</li>
+<li>Use beta release of XMOS tools (available from xmos.com)</li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><p class="first">See github issue tracking for other issues</p>
+</li>
+</ul>
+</div>
+<div class="section" id="required-repositories">
+<h3>Required Repositories<a class="headerlink" href="#required-repositories" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>xcommon git&#64;github.com:xcore/xcommon.git</li>
+</ul>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the maintainer for this line.</p>
+</div>
 </div>
 </div>
 

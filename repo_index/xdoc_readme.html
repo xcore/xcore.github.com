@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>xdoc &mdash; Xcore Open Source Repository Index v documentation</title>
+    <title>XDoc: common documentation infrastructure &mdash; Xcore Open Source Repository Index v documentation</title>
     <link rel="stylesheet" href="static/xdoc.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -51,8 +51,8 @@ document.getElementById('d1').style.height=h2 + "px";
 </div>
 
             
-  <div class="section" id="xdoc">
-<h1>xdoc<a class="headerlink" href="#xdoc" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="xdoc-common-documentation-infrastructure">
+<h1>XDoc: common documentation infrastructure<a class="headerlink" href="#xdoc-common-documentation-infrastructure" title="Permalink to this headline">¶</a></h1>
 <p>This summary page is auto-generated from the github repository. <a class="reference external" href="http://github.com/xcore/xdoc"><span>Click here to visit the main repository page</span></a>.</p>
 <p><a class="reference external" href="index.html"><span>Go to repository index</span></a></p>
 <div class="download container">
@@ -60,7 +60,80 @@ document.getElementById('d1').style.height=h2 + "px";
 onClick="window.open('https://github.com/xcore/xdoc/zipball/master');window.focus();return true;" href="xdoc_master_download.html">Download the latest master branch snapshot</a></div>
 <div class="section" id="details">
 <h2>Details:<a class="headerlink" href="#details" title="Permalink to this headline">¶</a></h2>
-<p>Not Found</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Last Release:</th><td class="field-body">unreleased</td>
+</tr>
+<tr class="field"><th class="field-name">Status:</th><td class="field-body">in development</td>
+</tr>
+<tr class="field"><th class="field-name">Maintainer:</th><td class="field-body">Dave Lacey (github: davelxmos)</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li>Adaptation of sphinx documentation system for documenting XC/C
+projects</li>
+<li>Incorporation of doxygen comments (using <a class="reference external" href="http://github.com/michaeljones/breathe"><span>breathe</span></a>)</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>This repository does not contain any code. It contains the common
+Makefile and scripts to build documentation for other repositories.</p>
+<p>The documentation basically uses sphinx with the following additions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Themes/writers are provided for html and latex to maintain
+consistency across repos</li>
+<li>An adapted version of <a class="reference external" href="http://github.com/michaeljones/breathe"><span>breathe</span></a> is provided to link doxygen
+comments into the documentation</li>
+<li>Makefiles etc. to link it all together and be able to pull
+out source/comments from source in different repositories</li>
+</ul>
+</div></blockquote>
+<p>You can find examples using this repository in:</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://www.github.com/xcore/sc_ethernet"><span>http://www.github.com/xcore/sc_ethernet</span></a></li>
+<li><a class="reference external" href="http://www.github.com/xcore/sc_xtcp"><span>http://www.github.com/xcore/sc_xtcp</span></a></li>
+<li><a class="reference external" href="http://www.github.com/xcore/doc_tips_and_tricks"><span>http://www.github.com/xcore/doc_tips_and_tricks</span></a></li>
+</ul>
+</div></blockquote>
+<p>In each case the doc/ directory has a Makefile which can build with
+the targets <tt class="docutils literal"><span class="pre">make</span> <span class="pre">html</span></tt> or <tt class="docutils literal"><span class="pre">make</span> <span class="pre">pdf</span></tt>.</p>
+</div>
+<div class="section" id="known-issues">
+<h3>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h3>
+<p>None</p>
+</div>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<p>You need the following installed to build the documentation (the versions in brackets are know to work):</p>
+<blockquote>
+<div><ul class="simple">
+<li>Python (<a class="reference external" href="http://www.python.org/"><span>http://www.python.org/</span></a>)  (2.6.5)</li>
+<li>Sphinx (<a class="reference external" href="http://sphinx.pocoo.org/"><span>http://sphinx.pocoo.org/</span></a>) (1.0.7)</li>
+<li>Docutils (<a class="reference external" href="http://docutils.sourceforge.net/"><span>http://docutils.sourceforge.net/</span></a>) (0.6)</li>
+<li>Doxygen (<a class="reference external" href="http://www.stack.nl/~dimitri/doxygen/index.html"><span>http://www.stack.nl/~dimitri/doxygen/index.html</span></a>) (1.6.3)</li>
+<li>LaTeX, if you want to build PDFs (<a class="reference external" href="http://www.latex-project.org/"><span>http://www.latex-project.org/</span></a>)</li>
+<li>Gnu Make (xmake will work)</li>
+</ul>
+</div></blockquote>
+<p>You do not need to install breathe since an adapted version is
+included in this repository.
+Currently, building documentation has only been done on
+Linux variants. However, everything used is cross platform.</p>
+</div>
+<div class="section" id="support">
+<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
+<p>Issues may be submitted via the Issues tab in this github repo. Response to any issues submitted as at the discretion of the manitainer for this line.</p>
+</div>
 </div>
 </div>
 
